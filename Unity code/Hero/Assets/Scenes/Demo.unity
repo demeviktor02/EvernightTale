@@ -7342,11 +7342,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1442379876}
   - component: {fileID: 1442379875}
-  - component: {fileID: 1442379878}
   - component: {fileID: 1442379877}
   - component: {fileID: 1442379880}
   - component: {fileID: 1442379879}
-  - component: {fileID: 1442379881}
   - component: {fileID: 1442379882}
   - component: {fileID: 1442379883}
   - component: {fileID: 1442379884}
@@ -7448,60 +7446,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1442379878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442379874}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 868d99356204ddf48b1c07d2bc85955b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_JumpForce: 13
-  m_CrouchSpeed: 0.4
-  m_MovementSmoothing: 0.05
-  m_AirControl: 1
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
-  m_GroundCheck: {fileID: 431506652}
-  m_CeilingCheck: {fileID: 951641419}
-  m_CrouchDisableCollider: {fileID: 1442379879}
-  m_Grounded: 0
-  m_FacingRight: 1
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1442379881}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: OnLandig
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1442379881}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: OnCrouching
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!61 &1442379879
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7544,33 +7488,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.5048263}
   serializedVersion: 2
   m_Radius: 0.53280926
---- !u!114 &1442379881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442379874}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dea85e89d55b9db498fa8a4e5d06c06d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 1442379878}
-  animator: {fileID: 1442379882}
-  runSpeed: 40
-  jumpPressedRemember: 0
-  jumpPressedRememberTime: 0.2
-  GroundedRemember: 0
-  GroundedRememberTime: 0.2
-  CutJumpHeight: 0.5
-  doubleJump: 0
-  wallCheck: {fileID: 787242089}
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  wallJumpingTime: 0.2
-  wallJumpingCounter: 0
 --- !u!95 &1442379882
 Animator:
   serializedVersion: 3
