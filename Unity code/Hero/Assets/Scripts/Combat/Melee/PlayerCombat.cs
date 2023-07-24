@@ -23,6 +23,7 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                //FindObjectOfType<AudioManager>().Play("PlayerHit");
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
