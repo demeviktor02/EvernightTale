@@ -16,9 +16,20 @@ public class NPC : MonoBehaviour
     public bool inDialoge = false;
     public bool dialogeEnd = false;
 
+    public GameObject PressE;
+
     // Update is called once per frame
     void Update()
     {
+        if (playerIsClose && inDialoge == false)
+        {
+            PressE.SetActive(true);
+        }
+        else
+        {
+            PressE.SetActive(false);
+        }
+
         if (Input.GetKeyDown(KeyCode.E) && inDialoge)
         {
             NextLine();
