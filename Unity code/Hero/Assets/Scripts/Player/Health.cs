@@ -13,12 +13,27 @@ public class Health : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
-    private GameMaster gm;
+    private GameManager gm;
 
     void Start()
     {
-        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameMaster>();
-        transform.position = gm.lastCheckPointPos;
+        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+
+        if (gm.switchedScene == true)
+        {
+            gm.switchedScene = false;
+        }
+        else
+        {
+            if (gm.lastCheckPointSceneName != SceneManager.GetActiveScene().name)
+            {
+                SceneManager.LoadScene(gm.lastCheckPointSceneName);
+            }
+            transform.position = gm.lastCheckPointPos;
+        }
+        
+        
+              
     }
 
     void Update()
@@ -31,7 +46,7 @@ public class Health : MonoBehaviour
             health = numOfHearts;
         }
 
-        if (health <= 0)
+        if (health <= 0 || Input.GetKeyDown(KeyCode.P))
         {
             Die();
         }
