@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public string lastCheckPointSceneName;
     public Vector2 lastCheckPointPos;
+    public Vector2 switchedScenePosition;
 
     public bool switchedScene = false;
     void Awake()

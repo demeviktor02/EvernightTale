@@ -16,7 +16,7 @@ public class OnCollideChangeScene : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         gm.switchedScene = true;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = otherSide;
+        gm.switchedScenePosition = otherSide;
         SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
     }
 }

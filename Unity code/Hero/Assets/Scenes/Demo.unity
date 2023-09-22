@@ -1201,6 +1201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastCheckPointSceneName: Demo
   lastCheckPointPos: {x: 291.32, y: -15.08}
+  switchedScenePosition: {x: 0, y: 0}
   switchedScene: 0
 --- !u!4 &164917114
 Transform:

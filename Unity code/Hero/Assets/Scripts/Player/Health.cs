@@ -22,6 +22,7 @@ public class Health : MonoBehaviour
         if (gm.switchedScene == true)
         {
             gm.switchedScene = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = gm.switchedScenePosition;
         }
         else
         {
@@ -31,9 +32,9 @@ public class Health : MonoBehaviour
             }
             transform.position = gm.lastCheckPointPos;
         }
-        
-        
-              
+
+
+
     }
 
     void Update()
