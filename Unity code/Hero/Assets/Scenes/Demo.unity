@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastCheckPointSceneName: Demo
-  lastCheckPointPos: {x: 291.32, y: -15.08}
+  lastCheckPointPos: {x: -2.6, y: -29.46}
   switchedScenePosition: {x: 0, y: 0}
   switchedScene: 0
 --- !u!4 &164917114
@@ -11781,7 +11781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3554930815775588652, guid: 0621a47abf0a16141a3dfadb2f0b9db1, type: 3}
       propertyPath: IsUnilocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0621a47abf0a16141a3dfadb2f0b9db1, type: 3}
@@ -13401,7 +13401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3554930815775588652, guid: 0621a47abf0a16141a3dfadb2f0b9db1, type: 3}
       propertyPath: IsUnilocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0621a47abf0a16141a3dfadb2f0b9db1, type: 3}
