@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tutorial_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 1dcd378bcf43f2b4ba42884dde69b50f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 46527324160
+    m_Localized: Welcome to the demo Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 280766619648
+    m_Localized: Press (A) - (D) to move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 430310334464
+    m_Localized: Press (W) to jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 562187640832
+    m_Localized: Hold (W) to jump higher
+    m_Metadata:
+      m_Items: []
+  - m_Id: 719717310464
+    m_Localized: Jumping course --->
+    m_Metadata:
+      m_Items: []
+  - m_Id: 902077259776
+    m_Localized: Press (1) to equip your sword
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1

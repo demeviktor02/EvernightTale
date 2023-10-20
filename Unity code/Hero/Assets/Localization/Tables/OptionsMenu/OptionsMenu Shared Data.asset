@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: OptionsMenu Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: OptionsMenu
+  m_TableCollectionNameGuidString: 70a61f95980773f4ebe114e6dc3e9e72
+  m_Entries:
+  - m_Id: 45327753216
+    m_Key: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123949981696
+    m_Key: Graphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 198721839104
+    m_Key: Launguage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 520819220480
+    m_Key: Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 593640726528
+    m_Key: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1306626269184
+    m_Key: Fullscreen
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1697795635835

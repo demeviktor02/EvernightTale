@@ -1,6 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
@@ -17,7 +19,6 @@ public class SettingsMenu : MonoBehaviour
 
     public Slider volumeSlider;
 
-    public SettingMenuData settingsMenuData;
 
     public float volumeData = -80;
     public int graphicsData = 2;
@@ -73,13 +74,19 @@ public class SettingsMenu : MonoBehaviour
         }
         else
         {
-            LoadData();
 
             SetVolume(volumeData);
             SetQuality(graphicsData);
             SetFullScreen(isFullScreenData);
             SetResolution(resolutionData);
         } 
+    }
+
+    public void setLaungage(int laungageIndex)
+    {
+        //yield return LocalizationSettings.InitializationOperation; IENUMERATOR
+
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[laungageIndex];
     }
 
     public void SetResolution(int resolutionIndex)
@@ -90,7 +97,6 @@ public class SettingsMenu : MonoBehaviour
 
         resolutionData = resolutionIndex;
 
-        SaveData();
     }
 
     public void SetVolume(float volume)
@@ -101,7 +107,6 @@ public class SettingsMenu : MonoBehaviour
 
         volumeData = volume;
 
-        SaveData();
     }
 
     public void SetQuality(int qualityIndex)
@@ -112,7 +117,6 @@ public class SettingsMenu : MonoBehaviour
 
         graphicsData = qualityIndex;
 
-        SaveData();
     }
 
     public void SetFullScreen(bool isFullscreen)
@@ -128,21 +132,6 @@ public class SettingsMenu : MonoBehaviour
             Screen.SetResolution(Screen.width, Screen.height, isFullscreen);
         }
 
-        SaveData();
     }
 
-    public void SaveData()
-    {
-        SaveSystem.SaveSettings(this);
-    }
-
-    public void LoadData()
-    {
-        SettingMenuData data = SaveSystem.LoadData();
-
-        volumeData = data.volume;
-        graphicsData = data.graphics;
-        isFullScreenData = data.isFullScreen;
-        resolutionData = data.resolution;
-    }
 }
