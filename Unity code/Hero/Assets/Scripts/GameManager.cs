@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
+    public static GameManager instance;
 
     public string lastCheckPointSceneName;
     public Vector2 lastCheckPointPos;
@@ -22,5 +22,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void FindSaveManager()
+    {
+        GameObject.FindWithTag("SaveManager").GetComponent<SaveData>().SaveGame();
     }
 }
