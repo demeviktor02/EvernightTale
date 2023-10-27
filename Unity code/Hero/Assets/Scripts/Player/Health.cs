@@ -84,4 +84,12 @@ public class Health : MonoBehaviour
     {
         health -= damage;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Water")
+        {
+            Die();
+        }
+    }
 }
