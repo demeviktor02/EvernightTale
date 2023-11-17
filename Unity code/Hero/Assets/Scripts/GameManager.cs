@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void FindSaveManager()
-    {
-        GameObject.FindWithTag("SaveManager").GetComponent<SaveData>().SaveGame();
-    }
+    //public void FindSaveManager()
+    //{
+    //    GameObject.FindWithTag("SaveManager").GetComponent<SaveData>().SaveGame();
+    //}
 }

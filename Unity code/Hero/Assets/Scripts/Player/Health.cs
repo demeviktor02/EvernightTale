@@ -26,11 +26,11 @@ public class Health : MonoBehaviour
         }
         else
         {
-            if (gm.lastCheckPointSceneName != SceneManager.GetActiveScene().name)
-            {
-                SceneManager.LoadScene(gm.lastCheckPointSceneName);
-            }
-            transform.position = gm.lastCheckPointPos;
+            //if (gm.lastCheckPointSceneName != SceneManager.GetActiveScene().name)
+            //{
+            //    SceneManager.LoadScene(gm.lastCheckPointSceneName);
+            //}
+            //transform.position = gm.lastCheckPointPos;
         }
 
 

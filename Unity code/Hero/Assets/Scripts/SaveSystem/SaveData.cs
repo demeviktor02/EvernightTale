@@ -60,7 +60,7 @@ public class SaveData : MonoBehaviour
 
             Debug.Log("Load game complete!");
 
-            SetValue();
+            //SetValue();
         }
         else
         {

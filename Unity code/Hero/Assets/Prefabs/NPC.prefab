@@ -1094,7 +1094,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8139875319663317112}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1124,3 +1124,5 @@ MonoBehaviour:
   wordSpeed: 0.06
   playerIsClose: 0
   inDialoge: 0
+  dialogeEnd: 0
+  PressE: {fileID: 0}

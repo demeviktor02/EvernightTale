@@ -55,6 +55,8 @@ public class SettingsMenu : MonoBehaviour
                       
         }
 
+        SetResolution(firstResolutionData);
+
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.RefreshShownValue();
 
