@@ -18,28 +18,28 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 45327753216
-    m_Localized: Options
+  - m_Id: 17424127182675968
+    m_Localized: CREDITS
     m_Metadata:
       m_Items: []
   - m_Id: 123949981696
-    m_Localized: Graphics
+    m_Localized: GRAPHICS
     m_Metadata:
       m_Items: []
   - m_Id: 198721839104
-    m_Localized: Launguage
+    m_Localized: LANGUAGE
     m_Metadata:
       m_Items: []
   - m_Id: 520819220480
-    m_Localized: Volume
-    m_Metadata:
-      m_Items: []
-  - m_Id: 593640726528
-    m_Localized: Back
+    m_Localized: VOLUME
     m_Metadata:
       m_Items: []
   - m_Id: 1306626269184
-    m_Localized: Fullscreen
+    m_Localized: FULLSCREEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17421413690286080
+    m_Localized: RESOLUTION
     m_Metadata:
       m_Items: []
   references:

@@ -19,15 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 60687294464
-    m_Localized: Play
+    m_Localized: PLAY
     m_Metadata:
       m_Items: []
   - m_Id: 2285002203136
-    m_Localized: Settings
+    m_Localized: OPTIONS
     m_Metadata:
       m_Items: []
   - m_Id: 2366052933632
-    m_Localized: Exit
+    m_Localized: QUIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17426502609969152
+    m_Localized: CONTINUE
     m_Metadata:
       m_Items: []
   references:

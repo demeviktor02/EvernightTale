@@ -27,6 +27,10 @@ MonoBehaviour:
     m_Key: UIExit
     m_Metadata:
       m_Items: []
+  - m_Id: 17426502609969152
+    m_Key: UIContinue
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

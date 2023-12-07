@@ -15,10 +15,6 @@ MonoBehaviour:
   m_TableCollectionName: OptionsMenu
   m_TableCollectionNameGuidString: 70a61f95980773f4ebe114e6dc3e9e72
   m_Entries:
-  - m_Id: 45327753216
-    m_Key: Options
-    m_Metadata:
-      m_Items: []
   - m_Id: 123949981696
     m_Key: Graphics
     m_Metadata:
@@ -31,12 +27,16 @@ MonoBehaviour:
     m_Key: Volume
     m_Metadata:
       m_Items: []
-  - m_Id: 593640726528
-    m_Key: Back
-    m_Metadata:
-      m_Items: []
   - m_Id: 1306626269184
     m_Key: Fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17421413690286080
+    m_Key: Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17424127182675968
+    m_Key: Credits
     m_Metadata:
       m_Items: []
   m_Metadata:

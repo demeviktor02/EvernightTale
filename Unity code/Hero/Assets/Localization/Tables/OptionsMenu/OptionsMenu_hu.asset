@@ -18,28 +18,28 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 45327753216
-    m_Localized: "Be\xE1l\xEDt\xE1sok"
+  - m_Id: 17424127182675968
+    m_Localized: CREDITS
     m_Metadata:
       m_Items: []
   - m_Id: 123949981696
-    m_Localized: Grafika
+    m_Localized: GRAFIKA
     m_Metadata:
       m_Items: []
   - m_Id: 198721839104
-    m_Localized: Nyelv
+    m_Localized: NYELV
     m_Metadata:
       m_Items: []
   - m_Id: 520819220480
-    m_Localized: "Hanger\u0151"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 593640726528
-    m_Localized: Vissza
+    m_Localized: "HANGER\u0150"
     m_Metadata:
       m_Items: []
   - m_Id: 1306626269184
-    m_Localized: "Teljes k\xE9perny\u0151"
+    m_Localized: "TELJES K\xC9PERNY\u0150"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17421413690286080
+    m_Localized: "FELBONT\xC1S"
     m_Metadata:
       m_Items: []
   references:
