@@ -43,7 +43,7 @@ public class SettingsMenu : MonoBehaviour
         int firstResolutionData = 0;
         for (int i = 0; i < resolutions.Length; i++)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height + " @ " + (Mathf.Round((float)resolutions[i].refreshRate)) + "hz";
+            string option = resolutions[i].width + " x " + resolutions[i].height;
             options.Add(option);
 
             
