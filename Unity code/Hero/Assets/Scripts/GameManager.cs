@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public int lastLevelIndex = 0;
     public string lastCheckPointSceneName;
     public Vector2 lastCheckPointPos;
     public Vector2 switchedScenePosition;

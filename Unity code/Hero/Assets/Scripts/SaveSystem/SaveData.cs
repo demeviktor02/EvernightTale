@@ -93,12 +93,14 @@ public class SaveData : MonoBehaviour
 
     public void GetValue()
     {
-        playerData.lastCheckPointpos = GameManager.instance.lastCheckPointPos;
+        playerData.lastLevelIndex = GameManager.instance.lastLevelIndex;
+        //playerData.lastCheckPointpos = GameManager.instance.lastCheckPointPos;
     }
 
     public void SetValue()
     {
-        GameManager.instance.lastCheckPointPos = playerData.lastCheckPointpos;
+        GameManager.instance.lastLevelIndex = playerData.lastLevelIndex;
+        //GameManager.instance.lastCheckPointPos = playerData.lastCheckPointpos;
     }
 
     public void ContinueOrNewGame()
@@ -134,6 +136,7 @@ public class SaveData : MonoBehaviour
 [System.Serializable]
 public class PlayerData
 {
-    public Vector2 lastCheckPointpos;
+    public int lastLevelIndex;
+    //public Vector2 lastCheckPointpos;
 
 }

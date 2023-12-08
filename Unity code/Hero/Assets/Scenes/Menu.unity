@@ -6011,7 +6011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData:
-    lastCheckPointpos: {x: 0, y: 0}
+    lastLevelIndex: 0
   saveFilePath: 
   Save1: {fileID: 4383914847724044454}
   Save2: {fileID: 4383914848844313111}
@@ -10106,6 +10106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02e83282a93fd54ca864187b02cfded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastLevelIndex: 1
   lastCheckPointSceneName: 
   lastCheckPointPos: {x: 0, y: 0}
   switchedScenePosition: {x: 0, y: 0}
@@ -14054,7 +14055,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1250144992}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14279,7 +14280,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1250144992}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15478,7 +15479,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1250144992}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
