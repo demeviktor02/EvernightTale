@@ -34,5 +34,25 @@ MonoBehaviour:
     m_Localized: "FOLYTAT\xC1S"
     m_Metadata:
       m_Items: []
+  - m_Id: 17760336597655552
+    m_Localized: "V\xC1LASZD KI A MENT\xC9SED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17760452171702272
+    m_Localized: "MENT\xC9S 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17760479904440320
+    m_Localized: "MENT\xC9S 2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17760482425217024
+    m_Localized: "MENT\xC9S 3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17760716857450496
+    m_Localized: VISSZA
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

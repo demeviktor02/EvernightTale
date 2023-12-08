@@ -31,6 +31,26 @@ MonoBehaviour:
     m_Key: UIContinue
     m_Metadata:
       m_Items: []
+  - m_Id: 17760336597655552
+    m_Key: UISelectYourSave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17760452171702272
+    m_Key: UISave1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17760479904440320
+    m_Key: UISave2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17760482425217024
+    m_Key: UISave3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17760716857450496
+    m_Key: UIBack
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

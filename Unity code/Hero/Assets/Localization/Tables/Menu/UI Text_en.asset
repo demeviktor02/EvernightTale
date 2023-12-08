@@ -34,5 +34,25 @@ MonoBehaviour:
     m_Localized: CONTINUE
     m_Metadata:
       m_Items: []
+  - m_Id: 17760336597655552
+    m_Localized: SELECT YOUR SAVE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17760452171702272
+    m_Localized: SAVE 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17760479904440320
+    m_Localized: SAVE 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17760482425217024
+    m_Localized: SAVE 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17760716857450496
+    m_Localized: BACK
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

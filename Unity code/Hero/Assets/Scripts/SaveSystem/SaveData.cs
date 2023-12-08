@@ -8,12 +8,17 @@ public class SaveData : MonoBehaviour
     public PlayerData playerData;
     [SerializeField]
     private string saveFilePath;
+    public TMPro.TMP_Text Save1;
+    public TMPro.TMP_Text Save2;
+    public TMPro.TMP_Text Save3;
 
     void Start()
     {
         playerData = new PlayerData();
 
         saveFilePath = "";
+
+        ContinueOrNewGame();
     }
 
     void Update()
@@ -60,7 +65,7 @@ public class SaveData : MonoBehaviour
 
             Debug.Log("Load game complete!");
 
-            //SetValue();
+            SetValue();
         }
         else
         {
@@ -77,6 +82,8 @@ public class SaveData : MonoBehaviour
             File.Delete(Application.persistentDataPath + "/PlayerData" + saveNumber + ".json");
 
             Debug.Log("Save file deleted!");
+
+            ContinueOrNewGame();
         }
         else
         {
@@ -93,6 +100,35 @@ public class SaveData : MonoBehaviour
     {
         GameManager.instance.lastCheckPointPos = playerData.lastCheckPointpos;
     }
+
+    public void ContinueOrNewGame()
+    {
+        if (File.Exists(Application.persistentDataPath + "/PlayerData" + 1 + ".json"))
+        {
+            Save1.text = "CONTINUE";
+        }
+        else
+        {
+            Save1.text = "NEW GAME";
+        }
+        if (File.Exists(Application.persistentDataPath + "/PlayerData" + 2 + ".json"))
+        {
+            Save2.text = "CONTINUE";
+        }
+        else
+        {
+            Save2.text = "NEW GAME";
+        }
+        if (File.Exists(Application.persistentDataPath + "/PlayerData" + 3 + ".json"))
+        {
+            Save3.text = "CONTINUE";
+        }
+        else
+        {
+            Save3.text = "NEW GAME";
+        }
+    }
+
 }
 
 [System.Serializable]
