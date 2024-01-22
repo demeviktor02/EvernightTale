@@ -17,6 +17,6 @@ public class OnCollideChangeScene : MonoBehaviour
     {
         gm.switchedScene = true;
         gm.switchedScenePosition = otherSide;
-        SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
+        SceneManager.LoadScene(SceneName);
     }
 }

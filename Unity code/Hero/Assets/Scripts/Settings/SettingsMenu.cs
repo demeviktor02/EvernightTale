@@ -55,33 +55,33 @@ public class SettingsMenu : MonoBehaviour
                       
         }
 
-        SetResolution(firstResolutionData);
+        //SetResolution(firstResolutionData);
 
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.RefreshShownValue();
 
-        if (PlayerPrefs.GetString("unity.player_session_count") == "1")
-        {
-            volumeData = -80;
-            graphicsData = 2;
-            isFullScreenData = true;
-            resolutionData = firstResolutionData;
+        //if (PlayerPrefs.GetString("unity.player_session_count") == "1")
+        //{
+        //    volumeData = -80;
+        //    graphicsData = 2;
+        //    isFullScreenData = true;
+        //    resolutionData = firstResolutionData;
 
 
-            SetVolume(volumeData);
-            SetQuality(graphicsData);
-            SetFullScreen(isFullScreenData);
-            SetResolution(resolutionData);
+        //    SetVolume(volumeData);
+        //    SetQuality(graphicsData);
+        //    SetFullScreen(isFullScreenData);
+        //    SetResolution(resolutionData);
 
-        }
-        else
-        {
+        //}
+        //else
+        //{
 
-            SetVolume(volumeData);
-            SetQuality(graphicsData);
-            SetFullScreen(isFullScreenData);
-            SetResolution(resolutionData);
-        } 
+        //    SetVolume(volumeData);
+        //    SetQuality(graphicsData);
+        //    SetFullScreen(isFullScreenData);
+        //    SetResolution(resolutionData);
+        //} 
     }
 
     public void setLaungage(int laungageIndex)
