@@ -123,7 +123,8 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetFullScreen(bool isFullscreen)
     {
-        Screen.SetResolution(resolutions[resolutionData].width, resolutions[resolutionData].height, isFullscreen);
+        //Screen.SetResolution(resolutions[resolutionData].width, resolutions[resolutionData].height, isFullscreen);
+        Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, isFullscreen);
 
         FullScreentoggle.isOn = isFullscreen;
 

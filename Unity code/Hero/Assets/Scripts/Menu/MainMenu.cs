@@ -12,6 +12,12 @@ public class MainMenu : MonoBehaviour
 
     public void LoadGame()
     {
+        StartCoroutine(Load());
+    }
+
+    public IEnumerator Load()
+    {
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene(GameManager.instance.lastLevelIndex);
     }
 
