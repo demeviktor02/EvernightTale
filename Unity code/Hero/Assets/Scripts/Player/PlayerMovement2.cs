@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement2 : MonoBehaviour
 {
@@ -40,6 +41,20 @@ public class PlayerMovement2 : MonoBehaviour
 
     private bool doubleJump;
 
+    public Joystick joystick;
+    public Button jumpButton;
+    public Button pauseButton;
+
+    private void Start()
+    {
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            joystick.gameObject.SetActive(true);
+            jumpButton.gameObject.SetActive(true);
+            pauseButton.gameObject.SetActive(true);
+        }
+    }
+
     private void Update()
     {
         if (IsWalled() || isWallJumping)
@@ -58,9 +73,21 @@ public class PlayerMovement2 : MonoBehaviour
             GroundedRemember = GroundedRememberTime;
         }
 
-        horizontal = Input.GetAxisRaw("Horizontal");
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            horizontal = joystick.Horizontal;
+        }
+        else
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+        }
+
+        
+
+        
 
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
+
 
         if (Input.GetButtonDown("Jump") && !WasCrourch) 
         {
@@ -225,5 +252,10 @@ public class PlayerMovement2 : MonoBehaviour
             Quaternion theScale = Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z);
             transform.localRotation = theScale;
         }
+    }
+
+    public void MobileJump()
+    {
+        jumpPressedRemember = jumpPressedRememberTime;
     }
 }

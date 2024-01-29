@@ -28,6 +28,12 @@ public class MainMenu : MonoBehaviour
 
     public void PlayLevel(int index)
     {
+        StartCoroutine(Play(index));
+    }
+
+    public IEnumerator Play(int index)
+    {
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene(index);
     }
 
