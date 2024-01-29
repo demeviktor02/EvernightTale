@@ -30,6 +30,11 @@ public class SettingsMenu : MonoBehaviour
     
     void Start()
     {
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            FullScreentoggle.gameObject.SetActive(false);
+        }
+
         string SessionNumber = PlayerPrefs.GetString("unity.player_session_count");
         Debug.Log(SessionNumber);
         text.text = SessionNumber;

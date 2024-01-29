@@ -42,5 +42,18 @@ MonoBehaviour:
     m_Localized: RESOLUTION
     m_Metadata:
       m_Items: []
+  - m_Id: 36328233022091264
+    m_Localized: CREATED BY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36328308632809472
+    m_Localized: "NIKOLETT M\xC1TRAI - ART AND DESIGN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36328642696540160
+    m_Localized: VIKTOR DEME - PROGRAMMING
+    m_Metadata:
+      m_Items: []
   references:
-    version: 1
+    version: 2
+    RefIds: []
