@@ -47,6 +47,10 @@ public class PlayerMovement2 : MonoBehaviour
 
     private void Start()
     {
+        joystick = GameManager.instance.joystick;
+        jumpButton = GameManager.instance.jumpButton;
+        pauseButton = GameManager.instance.pauseButton;
+
         if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
         {
             joystick.gameObject.SetActive(true);

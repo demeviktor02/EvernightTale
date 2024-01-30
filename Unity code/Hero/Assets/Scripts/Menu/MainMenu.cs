@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
     public void PlayGame()
     {
+        GameManager.instance.inGame = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void LoadGame()
     {
+        GameManager.instance.inGame = true;
         StartCoroutine(Load());
     }
 
@@ -28,6 +31,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayLevel(int index)
     {
+        GameManager.instance.inGame = true;
         StartCoroutine(Play(index));
     }
 

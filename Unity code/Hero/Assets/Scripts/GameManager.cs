@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class GameManager : MonoBehaviour
     public string lastCheckPointSceneName;
     public Vector2 lastCheckPointPos;
     public Vector2 switchedScenePosition;
+    public bool inGame;
+
+    public Joystick joystick;
+    public Button jumpButton;
+    public Button pauseButton;
 
     public bool switchedScene = false;
     void Awake()
@@ -24,6 +30,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 
     //public void FindSaveManager()
     //{
