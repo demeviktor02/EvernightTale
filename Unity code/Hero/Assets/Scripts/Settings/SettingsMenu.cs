@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Localization.Settings;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.IO;
+
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -15,24 +18,29 @@ public class SettingsMenu : MonoBehaviour
 
     public TMPro.TMP_Dropdown qualityDropdonw;
 
+    public TMPro.TMP_Text resolutionText;
+
     public TMPro.TMP_Dropdown resolutionDropdown;
+
+    public TMPro.TMP_Dropdown languageDropdown;
 
     public Slider volumeSlider;
 
 
-    public float volumeData = -80;
-    public int graphicsData = 2;
-    public bool isFullScreenData = false;
-    public int resolutionData = 0;
-
     public TMPro.TMP_Text text;
 
-    
+    public string saveFilePath;
+    public SettingsData settingsData;
     void Start()
     {
-        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        saveFilePath = Application.persistentDataPath + "/PlayerData" + "Settings" + ".json";
+
+        if (Application.platform == RuntimePlatform.WebGLPlayer || Application.platform == RuntimePlatform.Android ||
+            Application.platform == RuntimePlatform.IPhonePlayer)
         {
             FullScreentoggle.gameObject.SetActive(false);
+            resolutionText.gameObject.SetActive(false);
+            resolutionDropdown.gameObject.SetActive(false);
         }
 
         string SessionNumber = PlayerPrefs.GetString("unity.player_session_count");
@@ -60,40 +68,47 @@ public class SettingsMenu : MonoBehaviour
                       
         }
 
-        //SetResolution(firstResolutionData);
 
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.RefreshShownValue();
 
-        //if (PlayerPrefs.GetString("unity.player_session_count") == "1")
-        //{
-        //    volumeData = -80;
-        //    graphicsData = 2;
-        //    isFullScreenData = true;
-        //    resolutionData = firstResolutionData;
+        if (PlayerPrefs.GetString("unity.player_session_count") == "1")
+        {
+            settingsData.volumeData = 0;
+            settingsData.graphicsData = 2;
+            settingsData.isFullScreenData = true;
+            settingsData.resolutionData = firstResolutionData;
 
 
-        //    SetVolume(volumeData);
-        //    SetQuality(graphicsData);
-        //    SetFullScreen(isFullScreenData);
-        //    SetResolution(resolutionData);
+            SetVolume(settingsData.volumeData);
+            SetQuality(settingsData.graphicsData);
+            SetFullScreen(settingsData.isFullScreenData);
+            SetResolution(settingsData.resolutionData);
+            SetLanguage(settingsData.languageData);
 
-        //}
-        //else
-        //{
+            SaveOptions();
+        }
+        else
+        {
+            LoadOptions();
 
-        //    SetVolume(volumeData);
-        //    SetQuality(graphicsData);
-        //    SetFullScreen(isFullScreenData);
-        //    SetResolution(resolutionData);
-        //} 
+            SetVolume(settingsData.volumeData);
+            SetQuality(settingsData.graphicsData);
+            SetFullScreen(settingsData.isFullScreenData);
+            SetResolution(settingsData.resolutionData);
+            SetLanguage(settingsData.languageData);
+        } 
     }
 
-    public void setLaungage(int laungageIndex)
+    public void SetLanguage(int languageIndex)
     {
-        //yield return LocalizationSettings.InitializationOperation; IENUMERATOR
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[languageIndex];
 
-        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[laungageIndex];
+        languageDropdown.value = languageIndex;
+
+        settingsData.languageData = languageIndex;
+
+        SaveOptions();
     }
 
     public void SetResolution(int resolutionIndex)
@@ -102,8 +117,9 @@ public class SettingsMenu : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
         resolutionDropdown.value = resolutionIndex;
 
-        resolutionData = resolutionIndex;
+        settingsData.resolutionData = resolutionIndex;
 
+        SaveOptions();
     }
 
     public void SetVolume(float volume)
@@ -112,8 +128,9 @@ public class SettingsMenu : MonoBehaviour
 
         volumeSlider.value = volume;
 
-        volumeData = volume;
+        settingsData.volumeData = volume;
 
+        SaveOptions();
     }
 
     public void SetQuality(int qualityIndex)
@@ -122,8 +139,9 @@ public class SettingsMenu : MonoBehaviour
 
         qualityDropdonw.value = qualityIndex;
 
-        graphicsData = qualityIndex;
+        settingsData.graphicsData = qualityIndex;
 
+        SaveOptions();
     }
 
     public void SetFullScreen(bool isFullscreen)
@@ -133,13 +151,50 @@ public class SettingsMenu : MonoBehaviour
 
         FullScreentoggle.isOn = isFullscreen;
 
-        isFullScreenData = isFullscreen;
+        settingsData.isFullScreenData = isFullscreen;
 
-        if (Application.platform == RuntimePlatform.Android)
+        SaveOptions();
+    }
+
+    public void SaveOptions()
+    {
+
+        string saveSettingsData = JsonUtility.ToJson(settingsData);
+        File.WriteAllText(saveFilePath, saveSettingsData);
+
+        Debug.Log("Settings save file created at: " + saveFilePath);
+
+    }
+
+
+    public void LoadOptions()
+    {
+
+        if (File.Exists(saveFilePath))
         {
-            Screen.SetResolution(Screen.width, Screen.height, isFullscreen);
+            string loadPlayerData = File.ReadAllText(saveFilePath);
+            settingsData = JsonUtility.FromJson<SettingsData>(loadPlayerData);
+
+            Debug.Log("Load game complete!");
+
+
+        }
+        else
+        {
+            Debug.Log("There is no load!");
         }
 
     }
 
+
+}
+
+[System.Serializable]
+public class SettingsData
+{
+    public float volumeData;
+    public int graphicsData;
+    public bool isFullScreenData;
+    public int resolutionData;
+    public int languageData;
 }

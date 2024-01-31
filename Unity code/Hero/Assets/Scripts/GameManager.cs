@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public Button pauseButton;
 
     public bool switchedScene = false;
+
+
     void Awake()
     {
         if (instance == null)
