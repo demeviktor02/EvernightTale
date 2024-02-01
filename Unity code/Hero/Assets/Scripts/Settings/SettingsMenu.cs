@@ -31,8 +31,18 @@ public class SettingsMenu : MonoBehaviour
 
     public string saveFilePath;
     public SettingsData settingsData;
+
+    void OnLoadCallback(Scene scene, LoadSceneMode sceneMode)
+    {
+        Start();
+        Debug.Log("Whoohhoooo");
+    }
+
+
     void Start()
     {
+        SceneManager.sceneLoaded += this.OnLoadCallback;
+
         saveFilePath = Application.persistentDataPath + "/PlayerData" + "Settings" + ".json";
 
         if (Application.platform == RuntimePlatform.WebGLPlayer || Application.platform == RuntimePlatform.Android ||
@@ -56,12 +66,15 @@ public class SettingsMenu : MonoBehaviour
         int firstResolutionData = 0;
         for (int i = 0; i < resolutions.Length; i++)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height;
+            string option = resolutions[i].width + " x " + resolutions[i].height + " @" + resolutions[i].refreshRate;
             options.Add(option);
+            
+            
 
             
-                if (resolutions[i].width == Screen.width &&
-                resolutions[i].height == Screen.height)
+                if (resolutions[i].width == Screen.currentResolution.width &&
+                resolutions[i].height == Screen.currentResolution.height &&
+                resolutions[i].refreshRate == Screen.currentResolution.refreshRate)
                 {
                     firstResolutionData = i;
                 }
@@ -100,6 +113,13 @@ public class SettingsMenu : MonoBehaviour
         } 
     }
 
+
+    public void SetPlayerSessionCountToZero()
+    {
+        PlayerPrefs.SetString("unity.player_session_count", "0");
+        text.text = PlayerPrefs.GetString("unity.player_session_count");
+    }
+
     public void SetLanguage(int languageIndex)
     {
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[languageIndex];
@@ -114,7 +134,7 @@ public class SettingsMenu : MonoBehaviour
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        Screen.SetResolution(resolution.width, resolution.height, settingsData.isFullScreenData);
         resolutionDropdown.value = resolutionIndex;
 
         settingsData.resolutionData = resolutionIndex;
@@ -147,7 +167,7 @@ public class SettingsMenu : MonoBehaviour
     public void SetFullScreen(bool isFullscreen)
     {
         //Screen.SetResolution(resolutions[resolutionData].width, resolutions[resolutionData].height, isFullscreen);
-        Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, isFullscreen);
+        Screen.SetResolution(Screen.width, Screen.height, isFullscreen);
 
         FullScreentoggle.isOn = isFullscreen;
 
