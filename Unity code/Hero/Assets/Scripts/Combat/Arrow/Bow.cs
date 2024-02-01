@@ -6,7 +6,10 @@ public class Bow : MonoBehaviour
 {
 
     public GameObject arrow;
+    public float startLaunchForce;
     public float launchForce;
+    public float maxLaunchForce;
+    public float LaunchForceTime;
     public Transform shotPoint;
 
     private float timeBtwShots;
@@ -36,12 +39,23 @@ public class Bow : MonoBehaviour
         direction = mousePosition - bowPosition;
         transform.right = direction;
 
+
+
         if (timeBtwShots <= 0)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0) && launchForce <= maxLaunchForce)
+            {
+                Debug.Log("Hold");
+                launchForce += Time.deltaTime * LaunchForceTime;
+
+            }
+
+            if (Input.GetMouseButtonUp(0))
             {
                 Shoot();
+                launchForce = startLaunchForce;
                 timeBtwShots = startTimeBtwShots;
+                Debug.Log("Hold end");
             }
         }
         else
@@ -49,7 +63,7 @@ public class Bow : MonoBehaviour
             timeBtwShots -= Time.deltaTime;
         }
 
-        
+
 
         for (int i = 0; i < numberOfPoints; i++)
         {
