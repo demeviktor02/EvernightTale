@@ -47,6 +47,8 @@ public class PlayerMovement2 : MonoBehaviour
 
     private void Start()
     {
+        GameManager.instance.transition.Play("LevelLoaderEnd");
+
         joystick = GameManager.instance.joystick;
         jumpButton = GameManager.instance.jumpButton;
         pauseButton = GameManager.instance.pauseButton;
@@ -57,6 +59,8 @@ public class PlayerMovement2 : MonoBehaviour
             jumpButton.gameObject.SetActive(true);
             pauseButton.gameObject.SetActive(true);
         }
+
+        jumpButton.onClick.AddListener(jumpButtonTaskOnClick);
     }
 
     private void Update()
@@ -259,6 +263,11 @@ public class PlayerMovement2 : MonoBehaviour
     }
 
     public void MobileJump()
+    {
+        jumpPressedRemember = jumpPressedRememberTime;
+    }
+
+    void jumpButtonTaskOnClick()
     {
         jumpPressedRemember = jumpPressedRememberTime;
     }

@@ -16,9 +16,11 @@ public class GameManager : MonoBehaviour
     public Joystick joystick;
     public Button jumpButton;
     public Button pauseButton;
+    public Button changeWeaponButton;
 
     public bool switchedScene = false;
 
+    public Animator transition;
 
     void Awake()
     {

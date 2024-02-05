@@ -8,8 +8,14 @@ public class OnCollideChangeScene : MonoBehaviour
     public string SceneName;
     public GameManager gm;
     public Vector2 otherSide;
+
+    public Animator transition;
+
+    public float transitionTime = 3f;
+
     private void Start()
     {
+        transition = GameManager.instance.transition;
         gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
@@ -17,6 +23,16 @@ public class OnCollideChangeScene : MonoBehaviour
     {
         gm.switchedScene = true;
         gm.switchedScenePosition = otherSide;
+        StartCoroutine(LoadLevel());
+    }
+
+
+    IEnumerator LoadLevel()
+    {
+        GameManager.instance.transition.Play("LevelLoaderStart");
+
+        yield return new WaitForSeconds(transitionTime);
+
         SceneManager.LoadScene(SceneName);
     }
 }

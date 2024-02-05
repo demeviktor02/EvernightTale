@@ -1,13 +1,25 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponSwitching : MonoBehaviour
 {
 
     public int selectedWeapon = 0;
 
+    public Button changeWeaponButton;
+
     // Start is called before the first frame update
     void Start()
     {
+        changeWeaponButton = GameManager.instance.changeWeaponButton;
+
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            changeWeaponButton.gameObject.SetActive(true);            
+        }
+
+        changeWeaponButton.onClick.AddListener(changeWeaponButtonTaskOnClick);
+
         SelectWeapon();
     }
 
@@ -54,5 +66,19 @@ public class WeaponSwitching : MonoBehaviour
             }
             i++;
         }
+    }
+
+    void changeWeaponButtonTaskOnClick()
+    {
+        if (selectedWeapon >= transform.childCount - 1)
+        {
+            selectedWeapon = 0;
+        }
+        else
+        {
+            selectedWeapon++;
+        }
+
+        SelectWeapon();
     }
 }

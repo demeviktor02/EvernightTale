@@ -85,32 +85,38 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.RefreshShownValue();
 
-        if (PlayerPrefs.GetString("unity.player_session_count") == "1")
+        if (Application.platform != RuntimePlatform.Android &&
+            Application.platform != RuntimePlatform.IPhonePlayer)
         {
-            settingsData.volumeData = 0;
-            settingsData.graphicsData = 2;
-            settingsData.isFullScreenData = true;
-            settingsData.resolutionData = firstResolutionData;
 
 
-            SetVolume(settingsData.volumeData);
-            SetQuality(settingsData.graphicsData);
-            SetFullScreen(settingsData.isFullScreenData);
-            SetResolution(settingsData.resolutionData);
-            SetLanguage(settingsData.languageData);
+            if (PlayerPrefs.GetString("unity.player_session_count") == "1")
+            {
+                settingsData.volumeData = 0;
+                settingsData.graphicsData = 2;
+                settingsData.isFullScreenData = true;
+                settingsData.resolutionData = firstResolutionData;
 
-            SaveOptions();
+
+                SetVolume(settingsData.volumeData);
+                SetQuality(settingsData.graphicsData);
+                SetFullScreen(settingsData.isFullScreenData);
+                SetResolution(settingsData.resolutionData);
+                SetLanguage(settingsData.languageData);
+
+                SaveOptions();
+            }
+            else
+            {
+                LoadOptions();
+
+                SetVolume(settingsData.volumeData);
+                SetQuality(settingsData.graphicsData);
+                SetFullScreen(settingsData.isFullScreenData);
+                SetResolution(settingsData.resolutionData);
+                SetLanguage(settingsData.languageData);
+            }
         }
-        else
-        {
-            LoadOptions();
-
-            SetVolume(settingsData.volumeData);
-            SetQuality(settingsData.graphicsData);
-            SetFullScreen(settingsData.isFullScreenData);
-            SetResolution(settingsData.resolutionData);
-            SetLanguage(settingsData.languageData);
-        } 
     }
 
 
