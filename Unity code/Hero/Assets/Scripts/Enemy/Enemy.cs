@@ -5,18 +5,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Animator animator;
-
-    
-    
     public int maxHealth = 100;
     public int currentHealth;
 
-    public Color basicColor;
-
-    // Start is called before the first frame update
     void Start()
     {
-        basicColor = GetComponent<SpriteRenderer>().color;
         currentHealth = maxHealth;
     }
 
@@ -32,7 +25,6 @@ public class Enemy : MonoBehaviour
     {
         currentHealth -= damage;
 
-        StartCoroutine(BlinkRed());
         animator.SetTrigger("Hurt");
 
         if (currentHealth <= 0)
@@ -50,16 +42,6 @@ public class Enemy : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
 
-        
-    }
-
-    public virtual IEnumerator BlinkRed()
-    {
-        GetComponent<SpriteRenderer>().color = Color.red;
-
-        yield return new WaitForSeconds(0.2f);
-
-        GetComponent<SpriteRenderer>().color = basicColor;
     }
 
 }

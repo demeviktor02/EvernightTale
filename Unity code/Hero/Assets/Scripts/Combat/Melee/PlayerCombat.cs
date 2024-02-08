@@ -19,11 +19,11 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Time.time >= nextAttackTime)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                //FindObjectOfType<AudioManager>().Play("PlayerHit");
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
@@ -40,7 +40,6 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
-            enemy.GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
 
