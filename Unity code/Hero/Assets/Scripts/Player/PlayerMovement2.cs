@@ -45,6 +45,8 @@ public class PlayerMovement2 : MonoBehaviour
     public Button jumpButton;
     public Button pauseButton;
 
+    public bool isWalking = false;
+
     private void Start()
     {
         GameManager.instance.transition.Play("LevelLoaderEnd");
@@ -65,6 +67,20 @@ public class PlayerMovement2 : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            isWalking = !isWalking;
+            animator.SetBool("IsWalking", isWalking);
+            if (isWalking)
+            {
+                speed = 4f;
+            }
+            else
+            {
+                speed = 8f;
+            }
+        }
+
         if (IsWalled() || isWallJumping)
         {
             animator.enabled = false;
@@ -271,4 +287,5 @@ public class PlayerMovement2 : MonoBehaviour
     {
         jumpPressedRemember = jumpPressedRememberTime;
     }
+
 }

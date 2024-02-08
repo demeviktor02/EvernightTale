@@ -521,61 +521,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 79188443}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &164917112
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 164917114}
-  - component: {fileID: 164917113}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: GameController
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &164917113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164917112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a02e83282a93fd54ca864187b02cfded, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lastLevelIndex: 0
-  lastCheckPointSceneName: Proba
-  lastCheckPointPos: {x: -167.35, y: -5.03}
-  switchedScenePosition: {x: 0, y: 0}
-  inGame: 0
-  joystick: {fileID: 0}
-  jumpButton: {fileID: 0}
-  pauseButton: {fileID: 0}
-  changeWeaponButton: {fileID: 0}
-  switchedScene: 0
-  transition: {fileID: 0}
---- !u!4 &164917114
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164917112}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &193921201
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,7 +841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &457454699
 Transform:
   m_ObjectHideFlags: 0
@@ -1135,7 +1080,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 98.95383, y: -0.9328352, z: 13.761124}
+  m_LocalPosition: {x: 98.95154, y: -0.9328419, z: 13.761124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1437,53 +1382,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedWeapon: 0
   changeWeaponButton: {fileID: 0}
---- !u!1 &594023041
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 594023043}
-  - component: {fileID: 594023042}
-  m_Layer: 0
-  m_Name: LocalManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &594023042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 594023041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ae42aeac90cda4a97bfaab0010d9bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Save1: {fileID: 0}
-  Save2: {fileID: 0}
-  Save3: {fileID: 0}
---- !u!4 &594023043
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 594023041}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &638277591
 GameObject:
   m_ObjectHideFlags: 0
@@ -3219,6 +3117,7 @@ MonoBehaviour:
   joystick: {fileID: 0}
   jumpButton: {fileID: 0}
   pauseButton: {fileID: 0}
+  isWalking: 0
 --- !u!1 &1545945756
 GameObject:
   m_ObjectHideFlags: 0
@@ -4661,8 +4560,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 458097494}
-  - {fileID: 164917114}
-  - {fileID: 594023043}
   - {fileID: 1137718119}
   - {fileID: 205593407}
   - {fileID: 1442379876}
