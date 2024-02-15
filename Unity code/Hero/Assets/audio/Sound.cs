@@ -15,9 +15,17 @@ public class Sound
     [Range(.1f,3f)]
     public float pitch;
 
+    public bool asd;
+
     public bool loop;
+
+    public float volumeVariance;
+
+    public float pitchVariance;
 
     [HideInInspector]
     public AudioSource source;
+
+    
 
 }

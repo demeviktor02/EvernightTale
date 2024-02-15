@@ -13,6 +13,9 @@ public class OnCollideChangeScene : MonoBehaviour
 
     public float transitionTime = 3f;
 
+    public Animator heroAnimator;
+    public GameObject hero;
+    public bool IsDying;
     private void Start()
     {
         transition = GameManager.instance.transition;
@@ -21,6 +24,11 @@ public class OnCollideChangeScene : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (IsDying == true)
+        {
+            hero.GetComponent<PlayerMovement2>().enabled = false;
+            heroAnimator.SetTrigger("IsDying");
+        }
         gm.switchedScene = true;
         gm.switchedScenePosition = otherSide;
         StartCoroutine(LoadLevel());

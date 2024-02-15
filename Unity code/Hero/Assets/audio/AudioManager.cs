@@ -32,11 +32,13 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.outputAudioMixerGroup = s.audioSource;
         }
+
+       
     }
 
     void Start()
     {
-        Play("Theme");
+       // Play("Theme");
     }
 
     public void Play (string name)
@@ -48,5 +50,31 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
+
+        GameManager.instance.currentMusicName = s.name;
     }
+
+    public void Stop() //string sound
+    {
+        foreach (Sound s in sounds)
+        {
+            //s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
+            //s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+            s.source.Stop();
+        }
+
+        //Sound s = Array.Find(sounds, item => item.name == sound);
+        //if (s == null)
+        //{
+        //    Debug.LogWarning("Sound: " + name + " not found!");
+        //    return;
+        //}
+
+        //s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
+        //s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+
+        //s.source.Stop();
+    }
+
+    //just call it like this (AudioManagerReferenceGoeshere).StopPlaying("sound string name");
 }

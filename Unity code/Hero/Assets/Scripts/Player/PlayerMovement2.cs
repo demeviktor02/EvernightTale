@@ -13,15 +13,15 @@ public class PlayerMovement2 : MonoBehaviour
     public bool WasCrourch = false;
     private bool isFacingRight = true;
 
-    private bool isWallSliding;
-    private float wallSlidingSpeed = 2f;
+    //private bool isWallSliding;
+    //private float wallSlidingSpeed = 2f;
 
-    public bool isWallJumping;
-    private float wallJumpingDirection;
-    private float wallJumpingTime = 0.2f;
-    private float wallJumpingCounter;
-    private float wallJumpingDuration = 0.4f;
-    private Vector2 wallJumpingPower = new Vector2(8f, 16f);
+    //public bool isWallJumping;
+    //private float wallJumpingDirection;
+    //private float wallJumpingTime = 0.2f;
+    //private float wallJumpingCounter;
+    //private float wallJumpingDuration = 0.4f;
+    //private Vector2 wallJumpingPower = new Vector2(8f, 16f);
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -81,20 +81,24 @@ public class PlayerMovement2 : MonoBehaviour
             }
         }
 
-        if (IsWalled() || isWallJumping)
-        {
-            animator.enabled = false;
-        }
-        else
-        {
-            animator.enabled = true;
-        }
+        //if (IsWalled() || isWallJumping)
+        //{
+        //    animator.enabled = false;
+        //}
+        //else
+        //{
+        //    animator.enabled = true;
+        //}
         
 
         GroundedRemember -= Time.deltaTime;
         if (IsGrounded())
         {
             GroundedRemember = GroundedRememberTime;
+        }
+        else
+        {
+            animator.SetBool("IsLanding", false);
         }
 
         if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
@@ -116,27 +120,32 @@ public class PlayerMovement2 : MonoBehaviour
         if (Input.GetButtonDown("Jump") && !WasCrourch) 
         {
             jumpPressedRemember = jumpPressedRememberTime;
-            
+
         }
 
         jumpPressedRemember -= Time.deltaTime;    
         if ((jumpPressedRemember > 0) && (GroundedRemember > 0))
         {
-             animator.SetBool("IsJumping", true);
-             GroundedRemember = 0f;
+            
+            isJumping = true;
+             Debug.Log("asd");
+            animator.SetTrigger("IsJumping");
+            GroundedRemember = 0f;
              jumpPressedRemember = 0f;
              rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
              doubleJump = true;
-             OnLandig();
+             //OnLandig();
         }
-        else if (Input.GetButtonDown("Jump") && doubleJump && !IsWalled() && !isWallJumping)
+        else if (Input.GetButtonDown("Jump") && doubleJump) //&& !IsWalled() && !isWallJumping
         {
-            animator.SetBool("IsJumping", true);
+            isJumping = true;
+            Debug.Log("asd2");
+            animator.SetTrigger("IsJumping");
             GroundedRemember = 0f;
             jumpPressedRemember = 0f;
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             doubleJump = false;
-            OnLandig();
+            //OnLandig();
         }
 
 
@@ -173,30 +182,31 @@ public class PlayerMovement2 : MonoBehaviour
             WasCrourch = false;
         }
 
-        WallSlide();
-        WallJump();
+        //WallSlide();
+        //WallJump();
 
-        if (!isWallJumping)
-        {
+        //if (!isWallJumping)
+        //{
             Flip();
-        }
+        //}
     }
 
     private void FixedUpdate()
     {
-        if (!isWallJumping)
-        {
+        //if (!isWallJumping)
+        //{
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        }
+        //}
     }
 
     public void OnLandig()
     {
-        animator.SetBool("IsJumping", isJumping);
+        animator.SetBool("IsLanding",true);
     }
 
     private bool IsGrounded()
     {
+        animator.SetBool("IsLanding", true);
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
@@ -206,56 +216,56 @@ public class PlayerMovement2 : MonoBehaviour
         return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
     }
 
-    private void WallSlide()
-    {
-        if (IsWalled() && !IsGrounded() && horizontal != 0f)
-        {
-            isWallSliding = true;
-            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
-        }
-        else
-        {
-            isWallSliding = false;
-        }
-    }
+    //private void WallSlide()
+    //{
+    //    if (IsWalled() && !IsGrounded() && horizontal != 0f)
+    //    {
+    //        isWallSliding = true;
+    //        rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
+    //    }
+    //    else
+    //    {
+    //        isWallSliding = false;
+    //    }
+    //}
 
-    private void WallJump()
-    {
-        if (isWallSliding)
-        {
-            isWallJumping = false;
-            wallJumpingDirection = -transform.localScale.x;
-            wallJumpingCounter = wallJumpingTime;
+    //private void WallJump()
+    //{
+    //    if (isWallSliding)
+    //    {
+    //        isWallJumping = false;
+    //        wallJumpingDirection = -transform.localScale.x;
+    //        wallJumpingCounter = wallJumpingTime;
 
-            CancelInvoke(nameof(StopWallJumping));
-        }
-        else
-        {
-            wallJumpingCounter -= Time.deltaTime;
-        }
+    //        CancelInvoke(nameof(StopWallJumping));
+    //    }
+    //    else
+    //    {
+    //        wallJumpingCounter -= Time.deltaTime;
+    //    }
 
-        if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0f)
-        {
-            isWallJumping = true;
-            rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
-            wallJumpingCounter = 0f;
+    //    if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0f)
+    //    {
+    //        isWallJumping =  true;
+    //        rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+    //        wallJumpingCounter = 0f;
 
-            if (transform.localScale.x != wallJumpingDirection)
-            {
-                isFacingRight = !isFacingRight;
-                Vector3 localScale = transform.localScale;
-                localScale.x *= -1f;
-                transform.localScale = localScale;
-            }
+    //        if (transform.localScale.x != wallJumpingDirection)
+    //        {
+    //            isFacingRight = !isFacingRight;
+    //            Vector3 localScale = transform.localScale;
+    //            localScale.x *= -1f;
+    //            transform.localScale = localScale;
+    //        }
 
-            Invoke(nameof(StopWallJumping), wallJumpingDuration);
-        }
-    }
+    //        Invoke(nameof(StopWallJumping), wallJumpingDuration);
+    //    }
+    //}
 
-    private void StopWallJumping()
-    {
-        isWallJumping = false;
-    }
+    //private void StopWallJumping()
+    //{
+    //    isWallJumping = false;
+    //}
 
     private void Flip()
     {
