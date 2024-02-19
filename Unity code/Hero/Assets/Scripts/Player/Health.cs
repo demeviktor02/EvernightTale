@@ -15,6 +15,9 @@ public class Health : MonoBehaviour
 
     private GameManager gm;
 
+    public Animator animator;
+    public ParticleSystem dieParticle;
+
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
@@ -75,9 +78,12 @@ public class Health : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameObject.GetComponent<PlayerMovement2>().enabled = false;
+        animator.SetTrigger("IsDying");
+        dieParticle.Play();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void TakeDamage(int damage)
