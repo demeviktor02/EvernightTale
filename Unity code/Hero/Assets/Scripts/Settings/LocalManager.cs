@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
+using System;
 
 
 public class LocalManager : MonoBehaviour
@@ -10,6 +11,14 @@ public class LocalManager : MonoBehaviour
     public TMPro.TMP_Text Save1;
     public TMPro.TMP_Text Save2;
     public TMPro.TMP_Text Save3;
+
+    public TMPro.TMP_Text SaveNumber;
+    public TMPro.TMP_Text GamePercent;
+    public TMPro.TMP_Text Jumps;
+    public TMPro.TMP_Text Enemies;
+    public TMPro.TMP_Text Deaths;
+    public TMPro.TMP_Text GameTime;
+    public GameObject LoadingScreen;
 
     private void Start()
     {
@@ -49,32 +58,33 @@ public class LocalManager : MonoBehaviour
         SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
     }
 
+    public void LoadFromSaveFilePath(string saveNumber)
+    {
+        SaveNumber.text = saveNumber;
+
+        //Mentés útjának megadása
+        SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
+
+        //Beolvasás
+        string loadPlayerData = File.ReadAllText(SaveData.instance.saveFilePath);
+
+        //Értékadás
+        SaveData.instance.playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData);
+
+        SetValue();
+    }
+
     public void LoadGame()
     {
-
-        if (File.Exists(SaveData.instance.saveFilePath))
-        {
-            string loadPlayerData = File.ReadAllText(SaveData.instance.saveFilePath);
-            SaveData.instance.playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData);
-
-            Debug.Log("Load game complete!");
-
-            SetValue();
-
-            
-        }
-        else
-        {
-            SaveData.instance.playerData.LevelIndex = 1;
-            Debug.Log("There is no save files to load!");
-        }
-
-        GameManager.instance.inGame = true;
-        SceneManager.LoadScene(SaveData.instance.playerData.LevelIndex);
+        StartCoroutine(LoadSceneAsync());
     }
 
     public void SetValue()
     {
+        GamePercent.text = (SaveData.instance.playerData.LevelIndex * 16.66).ToString() ;
+        Jumps.text = SaveData.instance.playerData.Jumps.ToString();
+        Enemies.text = SaveData.instance.playerData.SlayedEnemies.ToString();
+        Deaths.text = SaveData.instance.playerData.Defeats.ToString();
         GameManager.instance.lastLevelIndex = SaveData.instance.playerData.LevelIndex;
     }
 
@@ -90,6 +100,51 @@ public class LocalManager : MonoBehaviour
         else
         {
             Debug.Log("There is nothing to delete!");
+        }
+    }
+
+    IEnumerator LoadSceneAsync()
+    {
+        try
+        {
+            string loadPlayerData = File.ReadAllText(SaveData.instance.saveFilePath);
+            SaveData.instance.playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData);
+            SetValue();
+        }
+        catch 
+        {
+            Debug.Log("There is no save files to load!");
+            SaveData.instance.playerData.LevelIndex = 1;
+        }
+
+
+        //if (File.Exists(SaveData.instance.saveFilePath))
+        //{
+        //    Debug.Log("Save file exists");
+        //    string loadPlayerData = File.ReadAllText(SaveData.instance.saveFilePath);
+        //    SaveData.instance.playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData);
+
+        //    Debug.Log("Load game complete!");
+
+        //    SetValue();
+
+
+        //}
+        //else
+        //{
+        //    SaveData.instance.playerData.LevelIndex = 1;
+        //    Debug.Log("There is no save files to load!");
+        //}
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(SaveData.instance.playerData.LevelIndex);
+
+        GameManager.instance.inGame = true;
+
+        LoadingScreen.SetActive(true);
+
+        while (!operation.isDone)
+        {           
+            yield return null;
         }
     }
 }

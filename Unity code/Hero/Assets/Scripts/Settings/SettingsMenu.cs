@@ -35,7 +35,7 @@ public class SettingsMenu : MonoBehaviour
     void OnLoadCallback(Scene scene, LoadSceneMode sceneMode)
     {
         Start();
-        Debug.Log("Whoohhoooo");
+        //Debug.Log("Whoohhoooo");
     }
 
 
@@ -54,7 +54,7 @@ public class SettingsMenu : MonoBehaviour
         }
 
         string SessionNumber = PlayerPrefs.GetString("unity.player_session_count");
-        Debug.Log(SessionNumber);
+        //Debug.Log(SessionNumber);
         text.text = SessionNumber;
 
         resolutions = Screen.resolutions;
@@ -134,7 +134,6 @@ public class SettingsMenu : MonoBehaviour
 
         settingsData.languageData = languageIndex;
 
-        SaveOptions();
     }
 
     public void SetResolution(int resolutionIndex)
@@ -145,7 +144,6 @@ public class SettingsMenu : MonoBehaviour
 
         settingsData.resolutionData = resolutionIndex;
 
-        SaveOptions();
     }
 
     public void SetVolume(float volume)
@@ -156,7 +154,6 @@ public class SettingsMenu : MonoBehaviour
 
         settingsData.volumeData = volume;
 
-        SaveOptions();
     }
 
     public void SetQuality(int qualityIndex)
@@ -167,19 +164,16 @@ public class SettingsMenu : MonoBehaviour
 
         settingsData.graphicsData = qualityIndex;
 
-        SaveOptions();
     }
 
     public void SetFullScreen(bool isFullscreen)
     {
-        //Screen.SetResolution(resolutions[resolutionData].width, resolutions[resolutionData].height, isFullscreen);
         Screen.SetResolution(Screen.width, Screen.height, isFullscreen);
 
         FullScreentoggle.isOn = isFullscreen;
 
         settingsData.isFullScreenData = isFullscreen;
 
-        SaveOptions();
     }
 
     public void SaveOptions()
@@ -201,7 +195,7 @@ public class SettingsMenu : MonoBehaviour
             string loadPlayerData = File.ReadAllText(saveFilePath);
             settingsData = JsonUtility.FromJson<SettingsData>(loadPlayerData);
 
-            Debug.Log("Load game complete!");
+            //Debug.Log("Load game complete!");
 
 
         }

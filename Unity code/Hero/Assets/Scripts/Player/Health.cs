@@ -81,7 +81,18 @@ public class Health : MonoBehaviour
     public void Die()
     {
         gameObject.GetComponent<PlayerMovement2>().enabled = false;
-        animator.SetTrigger("IsDying");
+
+        float randomNumer = Random.Range(0, 2);
+        if (randomNumer == 0)
+        {
+            animator.SetTrigger("IsDying");
+        }
+        else
+        {
+            animator.SetTrigger("IsDying2");
+
+        }
+        
         dieParticle.Play();
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

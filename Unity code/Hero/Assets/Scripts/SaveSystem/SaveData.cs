@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -59,5 +60,9 @@ public class SaveData : MonoBehaviour
 public class PlayerData
 {
     public int LevelIndex;
-
+    public int Jumps;
+    public int SlayedEnemies;
+    public int Defeats;
+    public DateTime playTime;
+    //picture;
 }
