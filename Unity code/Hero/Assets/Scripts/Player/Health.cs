@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static System.TimeZoneInfo;
 
 public class Health : MonoBehaviour
 {
@@ -13,19 +14,32 @@ public class Health : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
-    private GameManager gm;
-
     public Animator animator;
     public ParticleSystem dieParticle;
 
+
+    public Vector2 otherSide;
+    public float transitionTime = 3f;
+
     void Start()
     {
-        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-
-        if (gm.switchedScene == true)
+        if (GameManager.instance.difficulty == 0)
         {
-            gm.switchedScene = false;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = gm.switchedScenePosition;
+            numOfHearts = 5;
+        }
+        else if (GameManager.instance.difficulty == 1)
+        {
+            numOfHearts = 4;
+        }
+        else if (GameManager.instance.difficulty == 2)
+        {
+            numOfHearts = 3;
+        }
+
+        if (GameManager.instance.switchedScene == true)
+        {
+            GameManager.instance.switchedScene = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = GameManager.instance.switchedScenePosition;
         }
         else
         {
@@ -50,7 +64,7 @@ public class Health : MonoBehaviour
             health = numOfHearts;
         }
 
-        if (health <= 0 || Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             Die();
         }
@@ -80,26 +94,48 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
+        health = 0;
+        SaveData.instance.playerData.Defeats++;
         gameObject.GetComponent<PlayerMovement2>().enabled = false;
 
         float randomNumer = Random.Range(0, 2);
         if (randomNumer == 0)
         {
+            Debug.Log("ASD");
             animator.SetTrigger("IsDying");
         }
         else
         {
+            Debug.Log("BSD");
             animator.SetTrigger("IsDying2");
 
         }
         
         dieParticle.Play();
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        GameManager.instance.switchedScene = true;
+        GameManager.instance.switchedScenePosition = otherSide;
+        StartCoroutine(LoadLevel());
     }
+
+    IEnumerator LoadLevel()
+    {
+        GameManager.instance.transition.Play("LevelLoaderStart");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 
     public void TakeDamage(int damage)
     {
         health -= damage;
+
+        if (health <= 0)
+        {
+            Die();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

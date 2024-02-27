@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,9 @@ public class GameManager : MonoBehaviour
 
     public string currentMusicName;
 
+    public float sessionTime;
+
+    public int difficulty;
 
     void Awake()
     {
@@ -40,11 +44,15 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        
     }
 
-    //public void FindSaveManager()
-    //{
-    //    GameObject.FindWithTag("SaveManager").GetComponent<SaveData>().SaveGame();
-    //}
+    private void Update()
+    {
+
+        if (inGame)
+        {
+            sessionTime += Time.deltaTime;
+        }        
+    }
+
 }

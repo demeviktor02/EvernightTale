@@ -12,6 +12,7 @@ public class SaveData : MonoBehaviour
     public PlayerData playerData;
     [SerializeField]
     public string saveFilePath;
+    public string imageSaveFilePath;
     
 
     void Awake()
@@ -51,6 +52,7 @@ public class SaveData : MonoBehaviour
     public void GetValue()
     {
         playerData.LevelIndex = SceneManager.GetActiveScene().buildIndex;
+        playerData.PlayTime += GameManager.instance.sessionTime;
     }
    
 
@@ -63,6 +65,6 @@ public class PlayerData
     public int Jumps;
     public int SlayedEnemies;
     public int Defeats;
-    public DateTime playTime;
-    //picture;
+    public float PlayTime;
+    public int Difficulty;
 }

@@ -4,6 +4,9 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
 using System;
+using Unity.Mathematics;
+using UnityEngine.UI;
+using TMPro;
 
 
 public class LocalManager : MonoBehaviour
@@ -18,7 +21,10 @@ public class LocalManager : MonoBehaviour
     public TMPro.TMP_Text Enemies;
     public TMPro.TMP_Text Deaths;
     public TMPro.TMP_Text GameTime;
+    public TMPro.TMP_Text Difficulty;
+    public Image image;
     public GameObject LoadingScreen;
+    public Animator animator;
 
     private void Start()
     {
@@ -53,9 +59,42 @@ public class LocalManager : MonoBehaviour
         }
     }
 
-    public void setSaveFilePath(string saveNumber)
+    public void ContinueOrNewGameNext(int saveNumber)
     {
-        SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
+        if (saveNumber == 1)
+        {
+            if (Save1.text == "NEW GAME")
+            {
+                animator.Play("SelectDifficultyOpen");
+            }
+            else
+            {
+                animator.Play("ContinueOpen");
+            }
+        }
+        else if (saveNumber == 2)
+        {
+            if (Save2.text == "NEW GAME")
+            {
+                animator.Play("SelectDifficultyOpen");
+            }
+            else
+            {
+                animator.Play("ContinueOpen");
+            }
+        }
+        else if (saveNumber == 3)
+        {
+            if (Save3.text == "NEW GAME")
+            {
+                animator.Play("SelectDifficultyOpen");
+            }
+            else
+            {
+                animator.Play("ContinueOpen");
+            }
+        }
+        
     }
 
     public void LoadFromSaveFilePath(string saveNumber)
@@ -64,6 +103,7 @@ public class LocalManager : MonoBehaviour
 
         //Mentés útjának megadása
         SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
+        SaveData.instance.imageSaveFilePath = Application.persistentDataPath + "/SaveImage" + saveNumber + ".png";
 
         //Beolvasás
         string loadPlayerData = File.ReadAllText(SaveData.instance.saveFilePath);
@@ -74,18 +114,53 @@ public class LocalManager : MonoBehaviour
         SetValue();
     }
 
-    public void LoadGame()
+    public void LoadGame(int difficulty)
     {
-        StartCoroutine(LoadSceneAsync());
+        StartCoroutine(LoadSceneAsync(difficulty));
     }
 
     public void SetValue()
     {
-        GamePercent.text = (SaveData.instance.playerData.LevelIndex * 16.66).ToString() ;
+        GamePercent.text = math.round(SaveData.instance.playerData.LevelIndex * 16.66).ToString() + "%";
         Jumps.text = SaveData.instance.playerData.Jumps.ToString();
         Enemies.text = SaveData.instance.playerData.SlayedEnemies.ToString();
         Deaths.text = SaveData.instance.playerData.Defeats.ToString();
+
+        if (SaveData.instance.playerData.Difficulty == 0)
+        {
+            Difficulty.text = "Easy";
+        }
+        else if (SaveData.instance.playerData.Difficulty == 1)
+        {
+            Difficulty.text = "Normal";
+        }
+        else if (SaveData.instance.playerData.Difficulty == 2)
+        {
+            Difficulty.text = "Hard";
+        }
+        
+
+        TimeSpan time = TimeSpan.FromSeconds(SaveData.instance.playerData.PlayTime);
+        GameTime.text = time.ToString(@"hh\:mm\:ss");
+        Sprite loadImage = LoadSprite(SaveData.instance.imageSaveFilePath);
+        image.sprite = loadImage;
+
         GameManager.instance.lastLevelIndex = SaveData.instance.playerData.LevelIndex;
+        GameManager.instance.difficulty = SaveData.instance.playerData.Difficulty;
+    }
+
+    private Sprite LoadSprite(string path)
+    {
+        if (string.IsNullOrEmpty(path)) return null;
+        if (System.IO.File.Exists(path))
+        {
+            byte[] bytes = System.IO.File.ReadAllBytes(path);
+            Texture2D texture = new Texture2D(1, 1);
+            texture.LoadImage(bytes);
+            Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+            return sprite;
+        }
+        return null;
     }
 
     public void DeleteSaveFile(string saveNumber)
@@ -103,7 +178,7 @@ public class LocalManager : MonoBehaviour
         }
     }
 
-    IEnumerator LoadSceneAsync()
+    IEnumerator LoadSceneAsync(int difficulty)
     {
         try
         {
@@ -115,6 +190,7 @@ public class LocalManager : MonoBehaviour
         {
             Debug.Log("There is no save files to load!");
             SaveData.instance.playerData.LevelIndex = 1;
+            SaveData.instance.playerData.Difficulty = difficulty;
         }
 
 

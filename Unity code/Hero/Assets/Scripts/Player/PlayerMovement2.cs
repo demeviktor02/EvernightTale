@@ -120,7 +120,7 @@ public class PlayerMovement2 : MonoBehaviour
         if (Input.GetButtonDown("Jump") && !WasCrourch) 
         {
             jumpPressedRemember = jumpPressedRememberTime;
-
+            SaveData.instance.playerData.Jumps++;
         }
 
         jumpPressedRemember -= Time.deltaTime;    
@@ -128,7 +128,6 @@ public class PlayerMovement2 : MonoBehaviour
         {
             
             isJumping = true;
-             Debug.Log("asd");
             animator.SetTrigger("IsJumping");
             GroundedRemember = 0f;
              jumpPressedRemember = 0f;
@@ -139,7 +138,6 @@ public class PlayerMovement2 : MonoBehaviour
         else if (Input.GetButtonDown("Jump") && doubleJump) //&& !IsWalled() && !isWallJumping
         {
             isJumping = true;
-            Debug.Log("asd2");
             animator.SetTrigger("IsJumping");
             GroundedRemember = 0f;
             jumpPressedRemember = 0f;

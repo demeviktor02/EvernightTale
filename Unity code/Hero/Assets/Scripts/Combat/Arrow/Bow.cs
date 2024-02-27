@@ -45,7 +45,6 @@ public class Bow : MonoBehaviour
         {
             if (Input.GetMouseButton(0) && launchForce <= maxLaunchForce)
             {
-                Debug.Log("Hold");
                 launchForce += Time.deltaTime * LaunchForceTime;
 
             }
@@ -55,7 +54,6 @@ public class Bow : MonoBehaviour
                 Shoot();
                 launchForce = startLaunchForce;
                 timeBtwShots = startTimeBtwShots;
-                Debug.Log("Hold end");
             }
         }
         else

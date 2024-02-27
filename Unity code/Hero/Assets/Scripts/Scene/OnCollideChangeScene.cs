@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class OnCollideChangeScene : MonoBehaviour
 {
     public string SceneName;
-    public GameManager gm;
     public Vector2 otherSide;
 
     public Animator transition;
@@ -15,21 +14,19 @@ public class OnCollideChangeScene : MonoBehaviour
 
     public GameObject hero;
     public bool IsDying;
-    private void Start()
-    {
-        transition = GameManager.instance.transition;
-        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-    }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (IsDying == true)
+        if (IsDying == true && collision.tag == "Player")
         {
-            hero.GetComponent<Health>().Die();
+            gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+            hero.GetComponent<Health>().TakeDamage(10);
 
         }
-        gm.switchedScene = true;
-        gm.switchedScenePosition = otherSide;
+        GameManager.instance.switchedScene = true;
+        GameManager.instance.switchedScenePosition = otherSide;
         StartCoroutine(LoadLevel());
     }
 
