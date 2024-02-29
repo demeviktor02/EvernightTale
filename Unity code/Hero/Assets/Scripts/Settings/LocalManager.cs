@@ -100,6 +100,7 @@ public class LocalManager : MonoBehaviour
     public void LoadFromSaveFilePath(string saveNumber)
     {
         SaveNumber.text = saveNumber;
+        SaveData.instance.lastSaveData.LastSaveNumber = Convert.ToInt32(saveNumber);
 
         //Mentés útjának megadása
         SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
@@ -112,6 +113,36 @@ public class LocalManager : MonoBehaviour
         SaveData.instance.playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData);
 
         SetValue();
+    }
+
+    public void ContinueFromSaveFilePathMethod()
+    {
+        StartCoroutine(ContinueFromSaveFilePath());
+    }
+
+    public IEnumerator ContinueFromSaveFilePath()
+    {
+        yield return new WaitForSeconds(2);
+
+        string saveNumber = SaveData.instance.lastSaveData.LastSaveNumber.ToString();
+        SaveNumber.text = saveNumber;
+        SaveData.instance.lastSaveData.LastSaveNumber = Convert.ToInt32(saveNumber);
+
+        //Mentés útjának megadása
+        SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
+        SaveData.instance.imageSaveFilePath = Application.persistentDataPath + "/SaveImage" + saveNumber + ".png";
+
+        //Beolvasás
+        string loadPlayerData = File.ReadAllText(SaveData.instance.saveFilePath);
+
+        //Értékadás
+        SaveData.instance.playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData);
+
+        SetValue();
+
+        LoadGame(SaveData.instance.playerData.Difficulty);
+
+        yield return null;
     }
 
     public void LoadGame(int difficulty)
@@ -180,6 +211,7 @@ public class LocalManager : MonoBehaviour
 
     IEnumerator LoadSceneAsync(int difficulty)
     {
+
         try
         {
             string loadPlayerData = File.ReadAllText(SaveData.instance.saveFilePath);
@@ -192,25 +224,6 @@ public class LocalManager : MonoBehaviour
             SaveData.instance.playerData.LevelIndex = 1;
             SaveData.instance.playerData.Difficulty = difficulty;
         }
-
-
-        //if (File.Exists(SaveData.instance.saveFilePath))
-        //{
-        //    Debug.Log("Save file exists");
-        //    string loadPlayerData = File.ReadAllText(SaveData.instance.saveFilePath);
-        //    SaveData.instance.playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData);
-
-        //    Debug.Log("Load game complete!");
-
-        //    SetValue();
-
-
-        //}
-        //else
-        //{
-        //    SaveData.instance.playerData.LevelIndex = 1;
-        //    Debug.Log("There is no save files to load!");
-        //}
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(SaveData.instance.playerData.LevelIndex);
 

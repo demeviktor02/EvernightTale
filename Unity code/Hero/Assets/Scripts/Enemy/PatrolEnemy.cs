@@ -39,6 +39,8 @@ public class PatrolEnemy : Enemy
             {
                 animator.SetBool("IsWalking", true);
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+                LookAtTarget();
+
             }
             else
             {
@@ -55,6 +57,7 @@ public class PatrolEnemy : Enemy
                 {
                     animator.SetBool("IsWalking", true);
                     transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPointIndex].position, speed * Time.deltaTime);
+                    LookAtTarget();
                 }
 
             }
@@ -72,7 +75,6 @@ public class PatrolEnemy : Enemy
             }
         }
 
-        LookAtTarget();
     }
 
     IEnumerator Wait()
@@ -112,20 +114,25 @@ public class PatrolEnemy : Enemy
 
         if (transform.position.x > target.position.x && isFlipped)
         {
-            //animator.SetTrigger("Turn");
+            animator.SetTrigger("Turn");
             transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
             isFlipped = false;
 
         }
         else if (transform.position.x < target.position.x && !isFlipped)
         {
-            //animator.SetTrigger("Turn");
+            animator.SetTrigger("Turn");
             transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
         }
     }
+
+    public void LookAtTargetTrigger()
+    {
+        transform.Rotate(0f, 180f, 0f);
+    }
+
+
 
     public void Attack()
     {

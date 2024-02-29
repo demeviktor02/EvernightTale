@@ -14894,14 +14894,14 @@ MonoBehaviour:
           m_StringArgument: Continue
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 835796828}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayLevel
-        m_Mode: 3
+      - m_Target: {fileID: 691304688}
+        m_TargetAssemblyTypeName: LocalManager, Assembly-CSharp
+        m_MethodName: ContinueFromSaveFilePathMethod
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -15130,8 +15130,11 @@ MonoBehaviour:
     Defeats: 0
     PlayTime: 0
     Difficulty: 0
+  lastSaveData:
+    LastSaveNumber: 0
   saveFilePath: 
   imageSaveFilePath: 
+  LastSaveSaveFilePath: 
 --- !u!4 &1052066150
 Transform:
   m_ObjectHideFlags: 0
