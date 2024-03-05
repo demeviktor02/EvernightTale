@@ -7,6 +7,7 @@ using UnityEngine.Timeline;
 public class PatrolEnemy : Enemy
 {
     public float speed;
+    public float attackSpeed;
     public Transform[] patrolPoints;
     public float waitTime;
     public float distance;
@@ -38,7 +39,7 @@ public class PatrolEnemy : Enemy
             if (Mathf.Abs(transform.position.x - player.transform.position.x) > attackDistance)
             {
                 animator.SetBool("IsWalking", true);
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, attackSpeed * Time.deltaTime);
                 LookAtTarget();
 
             }
@@ -74,6 +75,8 @@ public class PatrolEnemy : Enemy
 
             }
         }
+
+        LookAtTarget();
 
     }
 

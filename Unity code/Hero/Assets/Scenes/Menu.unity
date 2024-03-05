@@ -27779,7 +27779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Slayed Enemyies:'
+  m_text: 'Slayed Enemies:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 290dded1528529f42b349c550dc1a94a, type: 2}
   m_sharedMaterial: {fileID: -5053595878971556666, guid: 290dded1528529f42b349c550dc1a94a, type: 2}

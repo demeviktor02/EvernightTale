@@ -1,83 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using UnityEngine;
-
-public class FollowEnemy : Enemy
+public class FollowEnemy : MonoBehaviour
 {
     public float speed;
     public Transform target;
-    public float minimumDistance;
-    public float seeDistance;
-
-    public bool seePlayer = true;
-    public bool isFlipped = false;
+    public Animator animator;
 
     public Vector3 attackOffset;
     public float attackRange = 1f;
-    public LayerMask attackMask;
+    public LayerMask obstacleMask;
+    public LayerMask playerMask;
 
+    Collider2D obstacleColInfo;
+    Collider2D playerColInfo;
+
+    private void Start()
+    {
+        Debug.Log("asd");
+    }
     void Update()
     {
-        SeePlayer();
-        LookAtPlayer();
-
-        if (seePlayer == true)
-        {
-            if (Vector2.Distance(transform.position, target.position) > minimumDistance)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-            }
-            else
-            {
-                animator.SetTrigger("Attack");
-            }
-        }
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         
-    }
 
-    public void Attack()
-    {
         Vector3 pos = transform.position;
         pos += transform.right * attackOffset.x;
         pos += transform.up * attackOffset.y;
 
-        Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-        if (colInfo != null)
+        obstacleColInfo = Physics2D.OverlapCircle(pos, attackRange, obstacleMask);
+        if (obstacleColInfo != null)
         {
-            colInfo.GetComponent<Health>().TakeDamage(1);
+            animator.SetTrigger("Attack");
         }
+
+
+        playerColInfo = Physics2D.OverlapCircle(pos, attackRange, playerMask);
+        if (playerColInfo != null)
+        {
+            animator.SetTrigger("Attack");
+        }
+
     }
 
-    public void SeePlayer()
-    {
-        if (Vector2.Distance(transform.position, target.position) < seeDistance)
-        {
-            animator.SetBool("IsSeePlayer", true);
-            seePlayer = true;
-        }
-        else
-        {
-            animator.SetBool("IsSeePlayer", false);
-            seePlayer = false;
-        }
-    }
 
-    public void LookAtPlayer()
+    public void Attack()
     {
-        Vector3 flipped = transform.localScale;
-        flipped.z *= -1f;
-
-        if (transform.position.x > target.position.x && isFlipped)
+        if (obstacleColInfo != null)
         {
-            transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
-            isFlipped = false;
+            Destroy(obstacleColInfo.gameObject);
         }
-        else if (transform.position.x < target.position.x && !isFlipped)
+
+
+        if (playerColInfo != null)
         {
-            transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
-            isFlipped = true;
+            playerColInfo.GetComponent<Health>().TakeDamage(5);
         }
     }
 
