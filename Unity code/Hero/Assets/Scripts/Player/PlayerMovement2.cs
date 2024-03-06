@@ -13,16 +13,6 @@ public class PlayerMovement2 : MonoBehaviour
     public bool WasCrourch = false;
     private bool isFacingRight = true;
 
-    //private bool isWallSliding;
-    //private float wallSlidingSpeed = 2f;
-
-    //public bool isWallJumping;
-    //private float wallJumpingDirection;
-    //private float wallJumpingTime = 0.2f;
-    //private float wallJumpingCounter;
-    //private float wallJumpingDuration = 0.4f;
-    //private Vector2 wallJumpingPower = new Vector2(8f, 16f);
-
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -81,23 +71,18 @@ public class PlayerMovement2 : MonoBehaviour
             }
         }
 
-        //if (IsWalled() || isWallJumping)
-        //{
-        //    animator.enabled = false;
-        //}
-        //else
-        //{
-        //    animator.enabled = true;
-        //}
+        
         
 
         GroundedRemember -= Time.deltaTime;
         if (IsGrounded())
         {
+            //isJumping = false;
             GroundedRemember = GroundedRememberTime;
         }
         else
         {
+            //isJumping = true;
             animator.SetBool("IsLanding", false);
         }
 
@@ -135,7 +120,7 @@ public class PlayerMovement2 : MonoBehaviour
              doubleJump = true;
              //OnLandig();
         }
-        else if (Input.GetButtonDown("Jump") && doubleJump) //&& !IsWalled() && !isWallJumping
+        else if (Input.GetButtonDown("Jump") && doubleJump)
         {
             isJumping = true;
             animator.SetTrigger("IsJumping");
@@ -180,27 +165,19 @@ public class PlayerMovement2 : MonoBehaviour
             WasCrourch = false;
         }
 
-        //WallSlide();
-        //WallJump();
-
-        //if (!isWallJumping)
-        //{
-            Flip();
-        //}
+        
+         Flip();
     }
 
     private void FixedUpdate()
     {
-        //if (!isWallJumping)
-        //{
-            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        //}
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
-    public void OnLandig()
-    {
-        animator.SetBool("IsLanding",true);
-    }
+    //public void OnLandig()
+    //{
+    //    animator.SetBool("IsLanding",true);
+    //}
 
     private bool IsGrounded()
     {
@@ -208,82 +185,53 @@ public class PlayerMovement2 : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
-    private bool IsWalled()
+    public void IsJumpingFalse()
     {
-        
-        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+        isJumping = false;
     }
+    
 
-    //private void WallSlide()
-    //{
-    //    if (IsWalled() && !IsGrounded() && horizontal != 0f)
-    //    {
-    //        isWallSliding = true;
-    //        rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
-    //    }
-    //    else
-    //    {
-    //        isWallSliding = false;
-    //    }
-    //}
-
-    //private void WallJump()
-    //{
-    //    if (isWallSliding)
-    //    {
-    //        isWallJumping = false;
-    //        wallJumpingDirection = -transform.localScale.x;
-    //        wallJumpingCounter = wallJumpingTime;
-
-    //        CancelInvoke(nameof(StopWallJumping));
-    //    }
-    //    else
-    //    {
-    //        wallJumpingCounter -= Time.deltaTime;
-    //    }
-
-    //    if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0f)
-    //    {
-    //        isWallJumping =  true;
-    //        rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
-    //        wallJumpingCounter = 0f;
-
-    //        if (transform.localScale.x != wallJumpingDirection)
-    //        {
-    //            isFacingRight = !isFacingRight;
-    //            Vector3 localScale = transform.localScale;
-    //            localScale.x *= -1f;
-    //            transform.localScale = localScale;
-    //        }
-
-    //        Invoke(nameof(StopWallJumping), wallJumpingDuration);
-    //    }
-    //}
-
-    //private void StopWallJumping()
-    //{
-    //    isWallJumping = false;
-    //}
+    
 
     private void Flip()
     {
-        if (isFacingRight && horizontal < 0f) //|| !isFacingRight && horizontal > 0f
+        if (isFacingRight && horizontal < 0f) 
         {
             isFacingRight = !isFacingRight;
-            Quaternion theScale = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);
-            transform.localRotation = theScale;
 
-            
-            //Vector3 localScale = transform.localScale;
-            //localScale.x *= -1f;
-            //transform.localScale = localScale;
+            if (isJumping == true)
+            {
+                Quaternion theScale = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);
+                transform.localRotation = theScale;
+            }
+            else
+            {
+                animator.SetTrigger("Turn");
+            }
+
+
+
         }
-        else if (!isFacingRight && horizontal > 0f) //||! isFacingRight && horizontal < 0f
+        else if (!isFacingRight && horizontal > 0f) 
         {
             isFacingRight = !isFacingRight;
-            Quaternion theScale = Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z);
-            transform.localRotation = theScale;
+
+            if (isJumping == true)
+            {
+                Quaternion theScale = Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z);
+                transform.localRotation = theScale;
+            }
+            else
+            {
+                animator.SetTrigger("Turn");
+            }
+
         }
+    }
+
+    public void LookAtTargetTrigger()
+    {
+        transform.Rotate(0f, 180f, 0f);
     }
 
     public void MobileJump()
