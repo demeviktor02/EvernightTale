@@ -11,7 +11,7 @@ public class PlayerMovement2 : MonoBehaviour
     public float jumpingPower = 16f;
     public float CrouchSpeed = 0.4f;
     public bool WasCrourch = false;
-    private bool isFacingRight = true;
+    public bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -37,6 +37,7 @@ public class PlayerMovement2 : MonoBehaviour
 
     public bool isWalking = false;
 
+    public float fHorizontalDamping;
     private void Start()
     {
         GameManager.instance.transition.Play("LevelLoaderEnd");
@@ -171,6 +172,10 @@ public class PlayerMovement2 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //float fHorizontalVelocity = rb.velocity.x;
+        //fHorizontalVelocity += Input.GetAxisRaw("Horizontal");
+        //fHorizontalVelocity *= Mathf.Pow(1f - fHorizontalDamping, Time.deltaTime * 10f);
+        //rb.velocity = new Vector2(fHorizontalVelocity, rb.velocity.y);
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
@@ -231,6 +236,15 @@ public class PlayerMovement2 : MonoBehaviour
 
     public void LookAtTargetTrigger()
     {
+        //if (isFacingRight)
+        //{
+        //    transform.position += Vector3.right * Time.deltaTime * turnSpeed;
+        //}
+        //else
+        //{
+        //    transform.position += Vector3.left * Time.deltaTime * turnSpeed;
+        //}
+        
         transform.Rotate(0f, 180f, 0f);
     }
 
