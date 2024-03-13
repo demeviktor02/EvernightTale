@@ -41,6 +41,7 @@ public class PlayerMovement2 : MonoBehaviour
     public float decceleration;
     public float velPower;
 
+    public bool once = true;
 
     private void Start()
     {
@@ -169,6 +170,7 @@ public class PlayerMovement2 : MonoBehaviour
             WasCrourch = false;
         }
 
+        IsFacingRight();
         Jumpflip();
         Flip();
 
@@ -176,6 +178,7 @@ public class PlayerMovement2 : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         float targetSpeed = horizontal * speed;
 
         float speedDif = targetSpeed - rb.velocity.x;
@@ -186,7 +189,6 @@ public class PlayerMovement2 : MonoBehaviour
 
         rb.AddForce(movement * Vector2.right);
 
-        
 
         //rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
@@ -203,18 +205,20 @@ public class PlayerMovement2 : MonoBehaviour
     {
         isJumping = false;
     }
-    
+
 
     private void Jumpflip()
     {
-        if (isJumping && isFacingRight && horizontal < 0f) 
+        if (isJumping && isFacingRight && horizontal < 0f)
         {
+            once = false;
             isFacingRight = false;
             Quaternion theScale = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);
             transform.localRotation = theScale;
         }
         else if (isJumping && !isFacingRight && horizontal > 0f)
         {
+            once = true;
             isFacingRight = true;
             Quaternion theScale = Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z);
             transform.localRotation = theScale;
@@ -224,52 +228,35 @@ public class PlayerMovement2 : MonoBehaviour
     private void Flip()
     {
 
-        if (isFacingRight && horizontal < 0f) 
+        if (!isJumping && isFacingRight && horizontal < 0f && once == true) 
         {
-
-            if (isJumping)
-            {
-                isFacingRight = false;
-                Quaternion theScale = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);
-                transform.localRotation = theScale;
-            }
-            else
-            {
-                isFacingRight = false;
-                animator.SetTrigger("Turn");
-            }
-
+            once = false;
+            animator.SetTrigger("Turn");
         }
-        else if (!isFacingRight && horizontal > 0f) 
+        else if (!isJumping && !isFacingRight && horizontal > 0f && once == false) 
         {
-
-            if (isJumping)
-            {
-                isFacingRight = true;
-                Quaternion theScale = Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z);
-                transform.localRotation = theScale;
-            }
-            else
-            {
-                isFacingRight = true;
-                animator.SetTrigger("Turn");
-            }
-
+            once = true;
+            animator.SetTrigger("Turn");
         }
     }
 
     public void LookAtTargetTrigger()
     {
+        transform.Rotate(0f, 180f, 0f);
+    }
+
+    public void IsFacingRight()
+    {
         Quaternion playerRotation = transform.rotation;
 
-        if (!isFacingRight && playerRotation == Quaternion.Euler(0, 0, 0) || 
-            isFacingRight && playerRotation == Quaternion.Euler(0, -180, 0) && 
-            isJumping == false)
+        if (playerRotation == Quaternion.Euler(0, 0, 0)) 
         {
-            transform.Rotate(0f, 180f, 0f);
+            isFacingRight = true;
         }
-        
-        
+        if (playerRotation == Quaternion.Euler(0, -180, 0))
+        {
+            isFacingRight = false;
+        }
     }
 
     public void MobileJump()
