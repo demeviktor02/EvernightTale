@@ -37,7 +37,11 @@ public class PlayerMovement2 : MonoBehaviour
 
     public bool isWalking = false;
 
-    public float fHorizontalDamping;
+    public float acceleration;
+    public float decceleration;
+    public float velPower;
+
+
     private void Start()
     {
         GameManager.instance.transition.Play("LevelLoaderEnd");
@@ -58,6 +62,9 @@ public class PlayerMovement2 : MonoBehaviour
 
     private void Update()
     {
+        
+
+
         if (Input.GetKeyDown(KeyCode.C))
         {
             isWalking = !isWalking;
@@ -78,12 +85,10 @@ public class PlayerMovement2 : MonoBehaviour
         GroundedRemember -= Time.deltaTime;
         if (IsGrounded())
         {
-            //isJumping = false;
             GroundedRemember = GroundedRememberTime;
         }
         else
         {
-            //isJumping = true;
             animator.SetBool("IsLanding", false);
         }
 
@@ -96,9 +101,9 @@ public class PlayerMovement2 : MonoBehaviour
             horizontal = Input.GetAxisRaw("Horizontal");
         }
 
-        
 
-        
+
+
 
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
@@ -119,7 +124,6 @@ public class PlayerMovement2 : MonoBehaviour
              jumpPressedRemember = 0f;
              rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
              doubleJump = true;
-             //OnLandig();
         }
         else if (Input.GetButtonDown("Jump") && doubleJump)
         {
@@ -129,7 +133,6 @@ public class PlayerMovement2 : MonoBehaviour
             jumpPressedRemember = 0f;
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             doubleJump = false;
-            //OnLandig();
         }
 
 
@@ -166,23 +169,29 @@ public class PlayerMovement2 : MonoBehaviour
             WasCrourch = false;
         }
 
-        
-         Flip();
+        Jumpflip();
+        Flip();
+
     }
 
     private void FixedUpdate()
     {
-        //float fHorizontalVelocity = rb.velocity.x;
-        //fHorizontalVelocity += Input.GetAxisRaw("Horizontal");
-        //fHorizontalVelocity *= Mathf.Pow(1f - fHorizontalDamping, Time.deltaTime * 10f);
-        //rb.velocity = new Vector2(fHorizontalVelocity, rb.velocity.y);
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        float targetSpeed = horizontal * speed;
+
+        float speedDif = targetSpeed - rb.velocity.x;
+
+        float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration : decceleration;
+
+        float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelRate, velPower) * Mathf.Sign(speedDif);
+
+        rb.AddForce(movement * Vector2.right);
+
+        
+
+        //rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
-    //public void OnLandig()
-    //{
-    //    animator.SetBool("IsLanding",true);
-    //}
+
 
     private bool IsGrounded()
     {
@@ -196,38 +205,53 @@ public class PlayerMovement2 : MonoBehaviour
     }
     
 
-    
+    private void Jumpflip()
+    {
+        if (isJumping && isFacingRight && horizontal < 0f) 
+        {
+            isFacingRight = false;
+            Quaternion theScale = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);
+            transform.localRotation = theScale;
+        }
+        else if (isJumping && !isFacingRight && horizontal > 0f)
+        {
+            isFacingRight = true;
+            Quaternion theScale = Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z);
+            transform.localRotation = theScale;
+        }
+    }
 
     private void Flip()
     {
+
         if (isFacingRight && horizontal < 0f) 
         {
-            isFacingRight = !isFacingRight;
 
-            if (isJumping == true)
+            if (isJumping)
             {
+                isFacingRight = false;
                 Quaternion theScale = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);
                 transform.localRotation = theScale;
             }
             else
             {
+                isFacingRight = false;
                 animator.SetTrigger("Turn");
             }
-
-
 
         }
         else if (!isFacingRight && horizontal > 0f) 
         {
-            isFacingRight = !isFacingRight;
 
-            if (isJumping == true)
+            if (isJumping)
             {
+                isFacingRight = true;
                 Quaternion theScale = Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z);
                 transform.localRotation = theScale;
             }
             else
             {
+                isFacingRight = true;
                 animator.SetTrigger("Turn");
             }
 
@@ -236,16 +260,16 @@ public class PlayerMovement2 : MonoBehaviour
 
     public void LookAtTargetTrigger()
     {
-        //if (isFacingRight)
-        //{
-        //    transform.position += Vector3.right * Time.deltaTime * turnSpeed;
-        //}
-        //else
-        //{
-        //    transform.position += Vector3.left * Time.deltaTime * turnSpeed;
-        //}
+        Quaternion playerRotation = transform.rotation;
+
+        if (!isFacingRight && playerRotation == Quaternion.Euler(0, 0, 0) || 
+            isFacingRight && playerRotation == Quaternion.Euler(0, -180, 0) && 
+            isJumping == false)
+        {
+            transform.Rotate(0f, 180f, 0f);
+        }
         
-        transform.Rotate(0f, 180f, 0f);
+        
     }
 
     public void MobileJump()
