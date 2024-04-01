@@ -1845,7 +1845,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 387.07947, y: -11.121241, z: -10}
+  m_LocalPosition: {x: 384.16287, y: -11.148661, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1957,7 +1957,9 @@ MonoBehaviour:
     m_Bits: 128
   attackRange: 0.5
   attackDamage: 40
-  attackRate: 2
+  startAttackRate: 2
+  timeBtwAttack: 0
+  doubleAttack: 0
 --- !u!1 &548218072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,10 +1992,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: Demo
-  gm: {fileID: 0}
   otherSide: {x: 447.57, y: -15.93}
   transition: {fileID: 0}
   transitionTime: 3
+  hero: {fileID: 0}
+  IsDying: 0
 --- !u!61 &548218074
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4396,7 +4399,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 6200000, guid: b7c56fac895ee2e4cb686c3e289a0725, type: 2}
+  m_Material: {fileID: 6200000, guid: b5b5f9b8ba4152c4e94a345239ee00c5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4416,7 +4419,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1442379874}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b5b5f9b8ba4152c4e94a345239ee00c5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4461,7 +4464,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1442379874}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b5b5f9b8ba4152c4e94a345239ee00c5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4535,6 +4538,10 @@ MonoBehaviour:
   - {fileID: 2040235737}
   fullHeart: {fileID: 21300000, guid: ce7198dd2d182644ca910069fe066e01, type: 3}
   emptyHeart: {fileID: 21300000, guid: 411f9c73af67afd4bb6f32c5a0e8ff1b, type: 3}
+  animator: {fileID: 0}
+  dieParticle: {fileID: 0}
+  otherSide: {x: 0, y: 0}
+  transitionTime: 3
 --- !u!114 &1442379884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4553,7 +4560,7 @@ MonoBehaviour:
   jumpingPower: 16
   CrouchSpeed: 0.4
   WasCrourch: 0
-  isWallJumping: 0
+  isFacingRight: 1
   rb: {fileID: 1442379877}
   groundCheck: {fileID: 431506652}
   groundLayer:
@@ -4573,6 +4580,11 @@ MonoBehaviour:
   joystick: {fileID: 0}
   jumpButton: {fileID: 0}
   pauseButton: {fileID: 0}
+  isWalking: 0
+  acceleration: 10
+  decceleration: 2
+  velPower: 1.4
+  once: 1
 --- !u!1001 &1459658298
 PrefabInstance:
   m_ObjectHideFlags: 0

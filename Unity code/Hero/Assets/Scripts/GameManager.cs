@@ -52,7 +52,8 @@ public class GameManager : MonoBehaviour
         if (inGame)
         {
             sessionTime += Time.deltaTime;
-        }        
+        }
+
     }
 
 }
