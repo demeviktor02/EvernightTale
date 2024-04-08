@@ -24,12 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3354393657195656913}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3354393657195656942
 MonoBehaviour:
@@ -44,15 +45,219 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: PlayerHit
-    clip: {fileID: 8300000, guid: 119ee0feedc1a284ea36aa006b7cadb6, type: 3}
-    volume: 0.536
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Theme
-    clip: {fileID: 8300000, guid: d5ba823a5a3e1724cb662725594e8a80, type: 3}
+  - name: PlayerRun
+    clip: {fileID: 8300000, guid: cfc1561930af37147815f37ade823fe0, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
     volume: 0.517
     pitch: 1
     loop: 1
+    volumeVariance: 0.2
+    pitchVariance: 0.2
+    source: {fileID: 0}
+  - name: PlayerJump
+    clip: {fileID: 8300000, guid: 70ccf36193ca5f84e925117ec9afade0, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.536
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: PlayerHit
+    clip: {fileID: 8300000, guid: 119ee0feedc1a284ea36aa006b7cadb6, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.536
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: Theme
+    clip: {fileID: 8300000, guid: d5ba823a5a3e1724cb662725594e8a80, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: MenuTheme
+    clip: {fileID: 8300000, guid: 7fc296f668972f14ba5570b1e91f24d9, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: GameTheme
+    clip: {fileID: 8300000, guid: 5df26be41c9bfc64893f1d9726e98568, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: PlayerSigh
+    clip: {fileID: 8300000, guid: d1d74f730b397cd44ab663c5771bdb20, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: PlayerLand
+    clip: {fileID: 8300000, guid: cd7ec7a0d6e72054ca8ee0f1a8703cbf, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: PlayerHit1
+    clip: {fileID: 8300000, guid: da5def7c237472245ba4d746be890739, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: PlayerHit2
+    clip: {fileID: 8300000, guid: 48fa0e168bd80294ab0573d72ea1a197, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: PlayerMiss1
+    clip: {fileID: 8300000, guid: e5ab36d21cfabed4894675cdbf2aecfe, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: PlayerMiss2
+    clip: {fileID: 8300000, guid: d010284c00fa6294c975a5786a924c34, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: PlayerMiss3
+    clip: {fileID: 8300000, guid: a097f48ae9924a1448687f58d07caf17, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: ForestEnvironment1
+    clip: {fileID: 8300000, guid: 9982740202aa74645b3d4ce9368780a9, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: ForestEnvironment2
+    clip: {fileID: 8300000, guid: 5500d11a4c632e84e8f13026193bc31f, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: ForestOwl
+    clip: {fileID: 8300000, guid: dd16fd208494b0845ae382fe539e15ca, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.728
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: ForestWolf
+    clip: {fileID: 8300000, guid: 43c7eb226b428fd45b6a4458ca2b6f4b, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.37
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: VillageSheep
+    clip: {fileID: 8300000, guid: 6d88387a8d4cf57488d3bf1475a10b12, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: VillageChicken
+    clip: {fileID: 8300000, guid: 471819bf6baa78a43ab482830f6ff241, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: VillagePig
+    clip: {fileID: 8300000, guid: 71ac9e7567b52ef4cba7664461eaf5ad, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: VillageDog1
+    clip: {fileID: 8300000, guid: 10985ddabc5c59349846ab8c5df937ba, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: VillageDog2
+    clip: {fileID: 8300000, guid: 3618a8e77fa18eb4f8d96dd856d24f0c, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.37
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: VillageBlacksmith1
+    clip: {fileID: 8300000, guid: 43c7eb226b428fd45b6a4458ca2b6f4b, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
+    source: {fileID: 0}
+  - name: VillageBlacksmith2
+    clip: {fileID: 8300000, guid: e8cf14f9961e85941b4ffaa8481483db, type: 3}
+    audioSource: {fileID: 24300002, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    volumeVariance: 0
+    pitchVariance: 0
     source: {fileID: 0}

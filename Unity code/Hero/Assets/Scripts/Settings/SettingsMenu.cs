@@ -93,7 +93,7 @@ public class SettingsMenu : MonoBehaviour
             if (PlayerPrefs.GetString("unity.player_session_count") == "1")
             {
                 settingsData.volumeData = 0;
-                settingsData.graphicsData = 2;
+                settingsData.graphicsData = 1;
                 settingsData.isFullScreenData = true;
                 settingsData.resolutionData = firstResolutionData;
 

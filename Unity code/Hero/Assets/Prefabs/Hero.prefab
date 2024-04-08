@@ -622,6 +622,8 @@ MonoBehaviour:
   once: 1
   timer: 0
   isRunning: 0
+  isRunningOnce: 0
+  sighTime: 200
 --- !u!50 &3387325603570313900
 Rigidbody2D:
   serializedVersion: 4

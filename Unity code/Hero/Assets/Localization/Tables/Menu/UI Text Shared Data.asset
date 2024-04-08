@@ -27,10 +27,6 @@ MonoBehaviour:
     m_Key: UIExit
     m_Metadata:
       m_Items: []
-  - m_Id: 17426502609969152
-    m_Key: UIContinue
-    m_Metadata:
-      m_Items: []
   - m_Id: 17760336597655552
     m_Key: UISelectYourSave
     m_Metadata:
@@ -54,10 +50,11 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    id: 0
+    rid: 0
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1697792925896

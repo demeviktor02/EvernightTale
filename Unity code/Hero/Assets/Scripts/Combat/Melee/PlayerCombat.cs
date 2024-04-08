@@ -59,10 +59,23 @@ public class PlayerCombat : MonoBehaviour
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        foreach (Collider2D enemy in hitEnemies)
+        if (hitEnemies.Length == 0)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            Debug.Log(Random.Range(1, 4));
+            AudioManager.instance.Play("PlayerMiss" + Random.Range(1,4));            
         }
+        else
+        {
+            foreach (Collider2D enemy in hitEnemies)
+            {
+
+                AudioManager.instance.Play("PlayerHit1");
+                enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            }
+        }
+
+
+        
     }
 
     void DoubleAttack()
@@ -71,10 +84,18 @@ public class PlayerCombat : MonoBehaviour
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        foreach (Collider2D enemy in hitEnemies)
+        if (hitEnemies.Length == 0)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            AudioManager.instance.Play("PlayerMiss" + Random.Range(1,4));
         }
+        else
+        {
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                AudioManager.instance.Play("PlayerHit2");
+                enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            }
+        }       
     }
 
     private void OnDrawGizmosSelected()

@@ -40,6 +40,10 @@ public class PlayerMovement2 : MonoBehaviour
     public bool once = true;
     public float timer;
     public bool isRunning;
+    public bool isRunningOnce;
+
+    public float sighTime;
+    public float runtime;
 
     private void Start()
     {
@@ -61,21 +65,42 @@ public class PlayerMovement2 : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        runtime -= Time.deltaTime;
+        if (runtime < 0)
         {
-            isWalking = !isWalking;
-            animator.SetBool("IsWalking", isWalking);
-            if (isWalking)
-            {
-                speed = 4f;
-            }
-            else
-            {
-                speed = 8f;
-            }
+            AudioManager.instance.sounds[0].source.pitch = Random.Range(0.8f, 1.1f);
+            AudioManager.instance.sounds[0].source.volume = Random.Range(0.3f, 0.5f);
+            runtime = 1;
         }
 
+        sighTime -= Time.deltaTime;
 
+        if (isRunning == false && sighTime > 100f)
+        {
+            sighTime = Random.Range(15, 25);
+        }
+        else if (isRunning == true || isJumping == true)
+        {
+            sighTime = 200f;
+        }  
+
+        if (sighTime <= 0)
+        {
+            Debug.Log("sigh");
+            AudioManager.instance.Play("PlayerSigh");
+            sighTime = Random.Range(15, 25);
+        }
+
+        if (isRunning == true && isRunningOnce == false)
+        {
+            AudioManager.instance.Play("PlayerRun");
+            isRunningOnce = true;
+        }
+        else if (isRunning == false && isRunningOnce == true)
+        {
+            AudioManager.instance.StopSound("PlayerRun");
+            isRunningOnce = false;
+        }
 
 
         GroundedRemember -= Time.deltaTime;
@@ -128,6 +153,11 @@ public class PlayerMovement2 : MonoBehaviour
     {
         if ((jumpPressedRemember > 0) && (GroundedRemember > 0))
         {
+            int random = Random.Range(0, 4);
+            if (random == 0)
+            {
+                AudioManager.instance.Play("PlayerJump");
+            }
             isJumping = true;
             animator.SetTrigger("IsJumping");
             GroundedRemember = 0f;
@@ -137,6 +167,11 @@ public class PlayerMovement2 : MonoBehaviour
         }
         else if (Input.GetButtonDown("Jump") && doubleJump)
         {
+            int random = Random.Range(0, 4);
+            if (random == 0)
+            {
+                AudioManager.instance.Play("PlayerJump");
+            }
             animator.SetTrigger("IsJumping");
             GroundedRemember = 0f;
             jumpPressedRemember = 0f;
@@ -167,7 +202,13 @@ public class PlayerMovement2 : MonoBehaviour
 
     public void IsJumpingFalse()
     {
+        AudioManager.instance.Play("PlayerLand");
         isJumping = false;
+    }
+
+    public void LandSound()
+    {
+        AudioManager.instance.Play("PlayerLand");
     }
 
 
@@ -235,12 +276,13 @@ public class PlayerMovement2 : MonoBehaviour
 
     public void IsRunning()
     {
-        if (horizontal == 0 && isRunning == true)
+
+        if (horizontal == 0 && isRunning == true || isJumping == true)
         {
             timer = 0f;
             isRunning = false;
         }
-        if (horizontal != 0 && isRunning == false)
+        if (horizontal != 0 && isRunning == false && isJumping == false)
         {
             timer = 0f;
             isRunning = true;
