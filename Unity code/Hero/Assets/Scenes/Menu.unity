@@ -28201,6 +28201,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6148284326082385247, guid: 261cff41cfa3ba248ae1c005396c8af0, type: 3}
+      propertyPath: m_Name
+      value: Music Source
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36539,7 +36543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8784480705686908177, guid: 963e7855921f24a40a09ea0f3fb2359e, type: 3}
       propertyPath: musicToStart
-      value: MenuTheme
+      value: Menu
       objectReference: {fileID: 0}
     - target: {fileID: 8784480705686908177, guid: 963e7855921f24a40a09ea0f3fb2359e, type: 3}
       propertyPath: musicToStop.Array.data[0]

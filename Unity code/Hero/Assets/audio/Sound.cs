@@ -17,11 +17,6 @@ public class Sound
 
     public bool loop;
 
-    public float volumeVariance;
-
-    public float pitchVariance;
-
-    [HideInInspector]
     public AudioSource source;
 
     

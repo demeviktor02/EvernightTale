@@ -16,7 +16,7 @@ public class EnvironmentAudioManager : MonoBehaviour
         {
             if (environmentSounds[i].Islooping)
             {
-                AudioManager.instance.Play(environmentSounds[i].name);
+                AudioManager.instance.PlayEnvironmentSound(environmentSounds[i].name);
                 environmentSounds[i].time = -1;
             }
             else
@@ -35,7 +35,7 @@ public class EnvironmentAudioManager : MonoBehaviour
         {
             if (sounds.time == timer)
             {
-                AudioManager.instance.Play(sounds.name);
+                AudioManager.instance.PlaySFX(sounds.name);
             }
         }
 

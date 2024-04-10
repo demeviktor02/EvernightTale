@@ -62,14 +62,14 @@ public class PlayerCombat : MonoBehaviour
         if (hitEnemies.Length == 0)
         {
             Debug.Log(Random.Range(1, 4));
-            AudioManager.instance.Play("PlayerMiss" + Random.Range(1,4));            
+            AudioManager.instance.PlaySFX("PlayerMiss" + Random.Range(1,4));            
         }
         else
         {
             foreach (Collider2D enemy in hitEnemies)
             {
 
-                AudioManager.instance.Play("PlayerHit1");
+                AudioManager.instance.PlaySFX("PlayerHit1");
                 enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
             }
         }
@@ -86,13 +86,13 @@ public class PlayerCombat : MonoBehaviour
 
         if (hitEnemies.Length == 0)
         {
-            AudioManager.instance.Play("PlayerMiss" + Random.Range(1,4));
+            AudioManager.instance.PlaySFX("PlayerMiss" + Random.Range(1,4));
         }
         else
         {
             foreach (Collider2D enemy in hitEnemies)
             {
-                AudioManager.instance.Play("PlayerHit2");
+                AudioManager.instance.PlaySFX("PlayerHit2");
                 enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
             }
         }       

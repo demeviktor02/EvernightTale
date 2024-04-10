@@ -294,16 +294,16 @@ MonoBehaviour:
   - name: VillagePig
     Islooping: 1
     time: -1
-  - name: ForestDog1
+  - name: VillageDog1
     Islooping: 0
     time: 0
-  - name: ForestDog2
+  - name: VillageDog2
     Islooping: 0
     time: 0
-  - name: ForestBlacksmith1
+  - name: VillageBlacksmith1
     Islooping: 0
     time: 0
-  - name: ForestBlacksmith2
+  - name: VillageBlacksmith2
     Islooping: 0
     time: 0
   timer: 0

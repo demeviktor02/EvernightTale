@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,21 +6,16 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     public string musicToStart;
-    //public List<string> musicToStop;
     void Start()
     {
 
-        if (GameManager.instance.currentMusicName != musicToStart)
+        if (AudioManager.instance.CurrentMusicPlay != musicToStart)
         {
 
-            AudioManager.instance.Stop();
+            //AudioManager.instance.Stop();
 
-            AudioManager.instance.Play(musicToStart);
+            AudioManager.instance.PlayMusic(musicToStart);
         }      
 
-        //for (int i = 0; i < musicToStop.Count; i++)
-        //{
-        //    AudioManager.instance.Stop(musicToStop[i]);
-        //}
     }
 }
