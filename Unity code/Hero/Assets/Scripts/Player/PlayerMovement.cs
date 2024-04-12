@@ -91,20 +91,17 @@ public class PlayerMovement2 : MonoBehaviour
 
         if (sighTime <= 0)
         {
-            Debug.Log("sigh");
             AudioManager.instance.PlaySFX("PlayerSigh");
             sighTime = Random.Range(15, 25);
         }
 
         if (isRunning == true && isRunningOnce == false)
         {
-            Debug.Log("yes");
             AudioManager.instance.PlaySFX("PlayerRun");
             isRunningOnce = true;
         }
         else if (isRunning == false && isRunningOnce == true)
         {
-            Debug.Log("no");
             AudioManager.instance.StopSFX("PlayerRun");
             isRunningOnce = false;
         }

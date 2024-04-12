@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: BlackHeartRose
+  companyName: Evernight Tale
   productName: Evernight Tale
   defaultCursor: {fileID: 2800000, guid: 2fabe4e54bbc443428c10ffdc02b6aa8, type: 3}
   cursorHotspot: {x: 0, y: 0}
@@ -163,7 +163,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.BlackHeartRose.EvernightTale
-    Standalone: com.BlackHeartRose.Evernight-Tale
+    Standalone: com.Evernight-Tale.Evernight-Tale
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -288,7 +288,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 1b2db699e9d23204c8b9af298b1423e8, type: 3}
+      m_Icon: {fileID: 2800000, guid: 975b1e5217ab8ef4eae714c386c8a196, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

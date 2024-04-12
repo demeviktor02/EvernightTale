@@ -16,10 +16,6 @@ public class FollowEnemy : MonoBehaviour
     Collider2D obstacleColInfo;
     Collider2D playerColInfo;
 
-    private void Start()
-    {
-        Debug.Log("asd");
-    }
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
