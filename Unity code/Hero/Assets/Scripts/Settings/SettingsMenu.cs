@@ -10,7 +10,7 @@ using System.IO;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public AudioMixer audioMixer;   
+    public AudioMixer audioMixer;
 
     Resolution[] resolutions;
 
@@ -24,7 +24,8 @@ public class SettingsMenu : MonoBehaviour
 
     public TMPro.TMP_Dropdown languageDropdown;
 
-    public Slider volumeSlider;
+    public Slider musicVolumeSlider;
+    public Slider environmentVolumeSlider;
 
 
     public TMPro.TMP_Text text;
@@ -92,13 +93,15 @@ public class SettingsMenu : MonoBehaviour
 
             if (PlayerPrefs.GetString("unity.player_session_count") == "1")
             {
-                settingsData.volumeData = 0;
+                settingsData.environmentVolumeData = 0;
+                settingsData.musicVolumeData = 0;
                 settingsData.graphicsData = 1;
                 settingsData.isFullScreenData = true;
                 settingsData.resolutionData = firstResolutionData;
 
 
-                SetVolume(settingsData.volumeData);
+                SetEnvironmentVolume(settingsData.environmentVolumeData);
+                SetMusicVolume(settingsData.musicVolumeData);
                 SetQuality(settingsData.graphicsData);
                 SetFullScreen(settingsData.isFullScreenData);
                 SetResolution(settingsData.resolutionData);
@@ -110,7 +113,8 @@ public class SettingsMenu : MonoBehaviour
             {
                 LoadOptions();
 
-                SetVolume(settingsData.volumeData);
+                SetEnvironmentVolume(settingsData.environmentVolumeData);
+                SetMusicVolume(settingsData.musicVolumeData);
                 SetQuality(settingsData.graphicsData);
                 SetFullScreen(settingsData.isFullScreenData);
                 SetResolution(settingsData.resolutionData);
@@ -146,13 +150,25 @@ public class SettingsMenu : MonoBehaviour
 
     }
 
-    public void SetVolume(float volume)
+    public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("volume", volume);
 
-        volumeSlider.value = volume;
+        audioMixer.SetFloat("musicVolume", volume);
 
-        settingsData.volumeData = volume;
+        musicVolumeSlider.value = volume;
+
+        settingsData.musicVolumeData = volume;
+
+    }
+
+    public void SetEnvironmentVolume(float volume)
+    {
+
+        audioMixer.SetFloat("environmentVolume", volume);
+
+        environmentVolumeSlider.value = volume;
+
+        settingsData.environmentVolumeData = volume;
 
     }
 
@@ -212,7 +228,8 @@ public class SettingsMenu : MonoBehaviour
 [System.Serializable]
 public class SettingsData
 {
-    public float volumeData;
+    public float musicVolumeData;
+    public float environmentVolumeData;
     public int graphicsData;
     public bool isFullScreenData;
     public int resolutionData;

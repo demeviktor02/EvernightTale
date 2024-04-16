@@ -19,6 +19,6 @@ public class Room : MonoBehaviour
         if (other.CompareTag("Player") && !other.isTrigger)
         {
             virtualCam.SetActive(false);
-        }
+}
     }
 }

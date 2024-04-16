@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Timeline;
 
 public class PatrolEnemy : Enemy
 {
@@ -27,14 +24,23 @@ public class PatrolEnemy : Enemy
     public float attackRange = 1f;
     public LayerMask attackMask;
 
+    public bool onlyOnce;
+
     // Update is called once per frame
     void Update()
     {
+
         
         distance = Mathf.Abs(transform.position.x - patrolPoints[currentPointIndex].position.x);
 
         if (SeePlayer())
         {
+            if (onlyOnce == false)
+            {
+                AudioManager.instance.PlayAudio("Rat", "RatDetect");
+                onlyOnce = true;
+            }
+
             target = player.transform;
             if (Mathf.Abs(transform.position.x - player.transform.position.x) > attackDistance)
             {
@@ -51,6 +57,7 @@ public class PatrolEnemy : Enemy
         }        
         else
         {
+            onlyOnce = false;
             target = patrolPoints[currentPointIndex];
             if (Mathf.Abs(transform.position.x - patrolPoints[currentPointIndex].position.x) > minimumDistance)  //Vector2.Distance(transform.position, patrolPoints[currentPointIndex].position) > minimumDistance
             {
@@ -139,6 +146,7 @@ public class PatrolEnemy : Enemy
 
     public void Attack()
     {
+        AudioManager.instance.PlayAudio("Rat", "RatBite");
         Vector3 pos = transform.position;
         pos += transform.right * attackOffset.x;
         pos += transform.up * attackOffset.y;
@@ -163,6 +171,7 @@ public class PatrolEnemy : Enemy
     {
         SaveData.instance.playerData.SlayedEnemies++;
         deathParticles.Play();
+        AudioManager.instance.PlayAudio("Rat", "RatDie");
         Destroy(gameObject);
     }
 }

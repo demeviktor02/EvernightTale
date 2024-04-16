@@ -606,7 +606,7 @@ MonoBehaviour:
   groundCheck: {fileID: 7625662974899980768}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 264
   groundCheckSize: {x: 0, y: 0}
   jumpPressedRemember: 0
   jumpPressedRememberTime: 0.2

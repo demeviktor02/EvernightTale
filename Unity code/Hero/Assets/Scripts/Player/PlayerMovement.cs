@@ -6,7 +6,7 @@ public class PlayerMovement2 : MonoBehaviour
 {
     public Animator animator;
 
-    private float horizontal;
+    public float horizontal;
     public float speed = 8f;
 
     public bool isJumping = false;
@@ -27,7 +27,7 @@ public class PlayerMovement2 : MonoBehaviour
 
     private bool doubleJump;
 
-    public Joystick joystick;
+    //public Joystick joystick;
     public Button jumpButton;
     public Button pauseButton;
 
@@ -47,27 +47,27 @@ public class PlayerMovement2 : MonoBehaviour
 
     private void Start()
     {
-        GameManager.instance.transition.Play("LevelLoaderEnd");
+        //GameManager.instance.transition.Play("LevelLoaderEnd");
 
-        joystick = GameManager.instance.joystick;
-        jumpButton = GameManager.instance.jumpButton;
-        pauseButton = GameManager.instance.pauseButton;
+        //joystick = GameManager.instance.joystick;
+        //jumpButton = GameManager.instance.jumpButton;
+        //pauseButton = GameManager.instance.pauseButton;
 
-        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
-        {
-            joystick.gameObject.SetActive(true);
-            jumpButton.gameObject.SetActive(true);
-            pauseButton.gameObject.SetActive(true);
-        }
+        //if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        //{
+            //joystick.gameObject.SetActive(true);
+            //jumpButton.gameObject.SetActive(true);
+            //pauseButton.gameObject.SetActive(true);
+        //}
 
-        jumpButton.onClick.AddListener(jumpButtonTaskOnClick);
+        //jumpButton.onClick.AddListener(jumpButtonTaskOnClick);
     }
 
     private void Update()
     {
         if (Input.GetKey(KeyCode.V))
         {
-            AudioManager.instance.PlaySFX("PlayerRun");
+            //AudioManager.instance.PlaySFX("PlayerRun");
         }
 
         runtime -= Time.deltaTime;
@@ -91,18 +91,18 @@ public class PlayerMovement2 : MonoBehaviour
 
         if (sighTime <= 0)
         {
-            AudioManager.instance.PlaySFX("PlayerSigh");
+            AudioManager.instance.PlayAudio("Player", "PlayerSigh");
             sighTime = Random.Range(15, 25);
         }
 
         if (isRunning == true && isRunningOnce == false)
         {
-            AudioManager.instance.PlaySFX("PlayerRun");
+            AudioManager.instance.PlayAudio("PlayerRun", "PlayerRun");
             isRunningOnce = true;
         }
         else if (isRunning == false && isRunningOnce == true)
         {
-            AudioManager.instance.StopSFX("PlayerRun");
+            AudioManager.instance.StopAudio("PlayerRun", "PlayerRun");
             isRunningOnce = false;
         }
 
@@ -119,7 +119,7 @@ public class PlayerMovement2 : MonoBehaviour
 
         if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
         {
-            horizontal = joystick.Horizontal;
+            //horizontal = joystick.Horizontal;
         }
         else
         {
@@ -132,7 +132,7 @@ public class PlayerMovement2 : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jumpPressedRemember = jumpPressedRememberTime;
-            //SaveData.instance.playerData.Jumps++;
+            SaveData.instance.playerData.Jumps++;
         }
 
         jumpPressedRemember -= Time.deltaTime;
@@ -141,6 +141,11 @@ public class PlayerMovement2 : MonoBehaviour
 
 
 
+    }
+
+    public void JumpTest()
+    {
+        jumpPressedRemember = jumpPressedRememberTime;
     }
 
     private void FixedUpdate()
@@ -160,7 +165,7 @@ public class PlayerMovement2 : MonoBehaviour
             int random = Random.Range(0, 4);
             if (random == 0)
             {
-                AudioManager.instance.PlaySFX("PlayerJump");
+                AudioManager.instance.PlayAudio("Player", "PlayerJump");
             }
             isJumping = true;
             animator.SetTrigger("IsJumping");
@@ -174,7 +179,7 @@ public class PlayerMovement2 : MonoBehaviour
             int random = Random.Range(0, 4);
             if (random == 0)
             {
-                AudioManager.instance.PlaySFX("PlayerJump");
+                AudioManager.instance.PlayAudio("Player", "PlayerJump");
             }
             animator.SetTrigger("IsJumping");
             GroundedRemember = 0f;
@@ -206,13 +211,13 @@ public class PlayerMovement2 : MonoBehaviour
 
     public void IsJumpingFalse()
     {
-        AudioManager.instance.PlaySFX("PlayerLand");
+        AudioManager.instance.PlayAudio("Player", "PlayerLand");
         isJumping = false;
     }
 
     public void LandSound()
     {
-        AudioManager.instance.PlaySFX("PlayerLand");
+        AudioManager.instance.PlayAudio("Player", "PlayerLand");
     }
 
 

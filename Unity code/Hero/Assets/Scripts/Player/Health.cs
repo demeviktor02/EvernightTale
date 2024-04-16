@@ -23,6 +23,8 @@ public class Health : MonoBehaviour
 
     void Start()
     {
+        GameManager.instance.transition.Play("LevelLoaderEnd");
+
         if (GameManager.instance.difficulty == 0)
         {
             numOfHearts = 5;
@@ -40,14 +42,6 @@ public class Health : MonoBehaviour
         {
             GameManager.instance.switchedScene = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = GameManager.instance.switchedScenePosition;
-        }
-        else
-        {
-            //if (gm.lastCheckPointSceneName != SceneManager.GetActiveScene().name)
-            //{
-            //    SceneManager.LoadScene(gm.lastCheckPointSceneName);
-            //}
-            //transform.position = gm.lastCheckPointPos;
         }
 
 

@@ -4,9 +4,9 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
 using System;
-using Unity.Mathematics;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Mathematics;
 
 
 public class LocalManager : MonoBehaviour

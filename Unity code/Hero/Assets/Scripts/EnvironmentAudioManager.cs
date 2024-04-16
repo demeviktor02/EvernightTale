@@ -7,6 +7,8 @@ public class EnvironmentAudioManager : MonoBehaviour
 {
     public List<EnvironmentSounds> environmentSounds;
     public float timer;
+    public string AudioName;
+    public string AudioLoopName;
 
 
     // Start is called before the first frame update
@@ -16,7 +18,7 @@ public class EnvironmentAudioManager : MonoBehaviour
         {
             if (environmentSounds[i].Islooping)
             {
-                AudioManager.instance.PlayEnvironmentSound(environmentSounds[i].name);
+                AudioManager.instance.PlayAudio(AudioLoopName, environmentSounds[i].name);
                 environmentSounds[i].time = -1;
             }
             else
@@ -35,7 +37,7 @@ public class EnvironmentAudioManager : MonoBehaviour
         {
             if (sounds.time == timer)
             {
-                AudioManager.instance.PlaySFX(sounds.name);
+                AudioManager.instance.PlayAudio(AudioName, sounds.name);
             }
         }
 

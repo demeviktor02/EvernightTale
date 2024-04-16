@@ -14,7 +14,7 @@ public class MusicManager : MonoBehaviour
 
             //AudioManager.instance.Stop();
 
-            AudioManager.instance.PlayMusic(musicToStart);
+            AudioManager.instance.PlayAudio("Music", musicToStart);
         }      
 
     }

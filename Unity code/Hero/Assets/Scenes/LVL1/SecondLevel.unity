@@ -294,19 +294,21 @@ MonoBehaviour:
   - name: VillagePig
     Islooping: 1
     time: -1
-  - name: VillageDog1
+  - name: Dog1
     Islooping: 0
     time: 0
-  - name: VillageDog2
+  - name: Dog2
     Islooping: 0
     time: 0
-  - name: VillageBlacksmith1
+  - name: Blacksmith1
     Islooping: 0
     time: 0
-  - name: VillageBlacksmith2
+  - name: Blacksmith2
     Islooping: 0
     time: 0
   timer: 0
+  AudioName: Village
+  AudioLoopName: VillageLoop
 --- !u!1 &98560381
 GameObject:
   m_ObjectHideFlags: 3
@@ -673,7 +675,6 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
-  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -833,18 +834,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c14d8aa8a00714ab119da4fb00c20b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &523816023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1607,7 +1596,6 @@ MonoBehaviour:
   lastCheckPointPos: {x: 0, y: 0}
   switchedScenePosition: {x: 0, y: 0}
   inGame: 0
-  joystick: {fileID: 0}
   jumpButton: {fileID: 0}
   pauseButton: {fileID: 0}
   changeWeaponButton: {fileID: 0}
@@ -2367,7 +2355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8784480705686908177, guid: 963e7855921f24a40a09ea0f3fb2359e, type: 3}
       propertyPath: musicToStart
-      value: GameThemeNO
+      value: Game
       objectReference: {fileID: 0}
     - target: {fileID: 8784480705686908177, guid: 963e7855921f24a40a09ea0f3fb2359e, type: 3}
       propertyPath: musicToStop.Array.data[0]
@@ -2740,7 +2728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b757a13ec37704fa37a593e9c47b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxCamera: {fileID: 519420034}
+  parallaxCamera: {fileID: 0}
 --- !u!1 &1945298015
 GameObject:
   m_ObjectHideFlags: 0
@@ -3050,6 +3038,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3354393657195656942, guid: 261cff41cfa3ba248ae1c005396c8af0, type: 3}
+      propertyPath: soundLists.Array.data[4].source
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3354393657195656943, guid: 261cff41cfa3ba248ae1c005396c8af0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 76.23349
@@ -3089,6 +3081,10 @@ PrefabInstance:
     - target: {fileID: 3354393657195656943, guid: 261cff41cfa3ba248ae1c005396c8af0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148284326082385247, guid: 261cff41cfa3ba248ae1c005396c8af0, type: 3}
+      propertyPath: m_Name
+      value: Music Source
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3412,7 +3408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c202398e965f2dd4fa10b8a11d793964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Proba
+  SceneName: FirstLevel
   otherSide: {x: 220, y: 17}
   transition: {fileID: 0}
   transitionTime: 3

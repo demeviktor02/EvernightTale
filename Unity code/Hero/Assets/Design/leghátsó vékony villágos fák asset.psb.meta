@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6b1065d8d860d5542adb40dedfd32976
+guid: ec0926565866a9145a1da52104339725
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,7 +94,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: blur2
+  - name: "bg v\xE9kony fa 7"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -103,9 +103,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 3840
-      height: 2160
-    spriteID: 3c3df33fef310b74199a8f47e6b701ce
+      width: 1583
+      height: 997
+    spriteID: aa5636376d5d67747ad70c249478f37a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -114,19 +114,19 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 0, y: 0}
-  - name: blur1
+    spritePosition: {x: 4549, y: 3}
+  - name: "bg v\xE9kony fa 6"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 2172
-      width: 3840
-      height: 2160
-    spriteID: ec76fe717ad82d6479637952861d99e3
+      x: 561
+      y: 1009
+      width: 124
+      height: 912
+    spriteID: d2e7afd68e9539546a0b7d51b7a85fd6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -134,41 +134,20 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 2172}
-    spritePosition: {x: 0, y: 0}
-  - name: "bal fels\u0151"
+    uvTransform: {x: 561, y: 1009}
+    spritePosition: {x: 5675, y: 88}
+  - name: "bg v\xE9kony fa 5"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1841
-      y: 6508
-      width: 1505
-      height: 1003
-    spriteID: 8c575ffebcf97bc488b0e7ce67cd092f
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 1841, y: 6508}
-    spritePosition: {x: 0, y: 1157}
-  - name: "bal als\xF3"
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4785
+      x: 1814
       y: 4
-      width: 1226
-      height: 786
-    spriteID: 6b518bff66a6a00438b26ae0d88f08c6
+      width: 206
+      height: 932
+    spriteID: 0883aabfb087daf428024f438ad2d14b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -176,20 +155,83 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4785, y: 4}
-    spritePosition: {x: 0, y: 0}
-  - name: "jobb als\xF3"
+    uvTransform: {x: 1814, y: 4}
+    spritePosition: {x: 5258, y: 68}
+  - name: "bg v\xE9kony fa 4"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 3852
+      x: 4
+      y: 1009
+      width: 191
+      height: 944
+    spriteID: a38ffc55152513344acbd764d5b543c8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1009}
+    spritePosition: {x: 4907, y: 56}
+  - name: "bg v\xE9kony fa 3"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 395
+      y: 1009
+      width: 158
+      height: 873
+    spriteID: c1a095c98b75197448951ef4649177c3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 395, y: 1009}
+    spritePosition: {x: 4569, y: 113}
+  - name: "bg v\xE9kony fa 2"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 1009
+      width: 184
+      height: 948
+    spriteID: dfea1aa98d63fcc479b8b09788619b4a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 1009}
+    spritePosition: {x: 4221, y: 52}
+  - name: "bg v\xE9kony fa 1"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1595
       y: 4
-      width: 925
-      height: 1130
-    spriteID: 54784fd56a174634683a1b6c33ea927b
+      width: 211
+      height: 924
+    spriteID: bbf83bbf53126b444bd12abb28461922
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -197,50 +239,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 3852, y: 4}
-    spritePosition: {x: 2915, y: 0}
-  - name: "jobb fels\u0151"
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 6508
-      width: 1829
-      height: 911
-    spriteID: 81d563c4443358345b24749e3636ef82
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 6508}
-    spritePosition: {x: 2011, y: 1249}
-  - name: egyben
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4340
-      width: 3840
-      height: 2160
-    spriteID: 29c116b178393824fbab8bbf1f26019e
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 4340}
-    spritePosition: {x: 0, y: 0}
+    uvTransform: {x: 1595, y: 4}
+    spritePosition: {x: 3837, y: 73}
   characterData:
     bones: []
     parts: []
@@ -333,7 +333,7 @@ ScriptedImporter:
   characterMode: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
-  importHiddenLayers: 1
+  importHiddenLayers: 0
   layerMappingOption: 2
   generatePhysicsShape: 0
   paperDollMode: 0
@@ -347,90 +347,80 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: Artboard 1
-    spriteName: 
-    isGroup: 1
-    parentIndex: -1
-    spriteID: 77a3eb2e6f93d1a44b29e63940a9c160
-    layerID: 3
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: blur2
-    spriteName: blur2
+  - name: "bg v\xE9kony fa 7"
+    spriteName: "bg v\xE9kony fa 7"
     isGroup: 0
-    parentIndex: 0
-    spriteID: 3c3df33fef310b74199a8f47e6b701ce
-    layerID: 16
+    parentIndex: -1
+    spriteID: aa5636376d5d67747ad70c249478f37a
+    layerID: 72
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
-    isVisible: 0
-  - name: blur1
-    spriteName: blur1
+    isVisible: 1
+  - name: "bg v\xE9kony fa 6"
+    spriteName: "bg v\xE9kony fa 6"
     isGroup: 0
-    parentIndex: 0
-    spriteID: ec76fe717ad82d6479637952861d99e3
-    layerID: 14
-    mosaicPosition: {x: 4, y: 2172}
-    flatten: 0
-    isImported: 1
-    isVisible: 0
-  - name: "bal fels\u0151"
-    spriteName: "bal fels\u0151"
-    isGroup: 0
-    parentIndex: 0
-    spriteID: 8c575ffebcf97bc488b0e7ce67cd092f
-    layerID: 17
-    mosaicPosition: {x: 1841, y: 6508}
+    parentIndex: -1
+    spriteID: d2e7afd68e9539546a0b7d51b7a85fd6
+    layerID: 71
+    mosaicPosition: {x: 561, y: 1009}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: "bal als\xF3"
-    spriteName: "bal als\xF3"
+  - name: "bg v\xE9kony fa 5"
+    spriteName: "bg v\xE9kony fa 5"
     isGroup: 0
-    parentIndex: 0
-    spriteID: 6b518bff66a6a00438b26ae0d88f08c6
-    layerID: 18
-    mosaicPosition: {x: 4785, y: 4}
+    parentIndex: -1
+    spriteID: 0883aabfb087daf428024f438ad2d14b
+    layerID: 70
+    mosaicPosition: {x: 1814, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: "jobb als\xF3"
-    spriteName: "jobb als\xF3"
+  - name: "bg v\xE9kony fa 4"
+    spriteName: "bg v\xE9kony fa 4"
     isGroup: 0
-    parentIndex: 0
-    spriteID: 54784fd56a174634683a1b6c33ea927b
-    layerID: 19
-    mosaicPosition: {x: 3852, y: 4}
+    parentIndex: -1
+    spriteID: a38ffc55152513344acbd764d5b543c8
+    layerID: 69
+    mosaicPosition: {x: 4, y: 1009}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: "jobb fels\u0151"
-    spriteName: "jobb fels\u0151"
+  - name: "bg v\xE9kony fa 3"
+    spriteName: "bg v\xE9kony fa 3"
     isGroup: 0
-    parentIndex: 0
-    spriteID: 81d563c4443358345b24749e3636ef82
-    layerID: 20
-    mosaicPosition: {x: 4, y: 6508}
+    parentIndex: -1
+    spriteID: c1a095c98b75197448951ef4649177c3
+    layerID: 68
+    mosaicPosition: {x: 395, y: 1009}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: egyben
-    spriteName: egyben
+  - name: "bg v\xE9kony fa 2"
+    spriteName: "bg v\xE9kony fa 2"
     isGroup: 0
-    parentIndex: 0
-    spriteID: 29c116b178393824fbab8bbf1f26019e
-    layerID: 10
-    mosaicPosition: {x: 4, y: 4340}
+    parentIndex: -1
+    spriteID: dfea1aa98d63fcc479b8b09788619b4a
+    layerID: 67
+    mosaicPosition: {x: 203, y: 1009}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "bg v\xE9kony fa 1"
+    spriteName: "bg v\xE9kony fa 1"
+    isGroup: 0
+    parentIndex: -1
+    spriteID: bbf83bbf53126b444bd12abb28461922
+    layerID: 66
+    mosaicPosition: {x: 1595, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638486476150369474
+  platformSettingsDirtyTick: 638488259954057383
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 

@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public Vector2 switchedScenePosition;
     public bool inGame;
 
-    public Joystick joystick;
+    //public Joystick joystick;
     public Button jumpButton;
     public Button pauseButton;
     public Button changeWeaponButton;
