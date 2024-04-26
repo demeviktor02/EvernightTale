@@ -12,23 +12,21 @@ public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
-    Resolution[] resolutions;
+    public List<string> resoulutionsList;
+   
+    List<Resolution> resolutionsNew = new List<Resolution>();
+    public TMPro.TMP_Text resoultionText;
 
-    public Toggle FullScreentoggle;
+    public List<string> languages;
+    public TMPro.TMP_Text languageText;
 
-    public TMPro.TMP_Dropdown qualityDropdonw;
-
-    public TMPro.TMP_Text resolutionText;
-
-    public TMPro.TMP_Dropdown resolutionDropdown;
-
-    public TMPro.TMP_Dropdown languageDropdown;
+    public List<string> qualityes;
+    public TMPro.TMP_Text qualityText;
 
     public Slider musicVolumeSlider;
     public Slider environmentVolumeSlider;
 
-
-    public TMPro.TMP_Text text;
+    public TMPro.TMP_Text playerSessionCountText;
 
     public string saveFilePath;
     public SettingsData settingsData;
@@ -36,7 +34,6 @@ public class SettingsMenu : MonoBehaviour
     void OnLoadCallback(Scene scene, LoadSceneMode sceneMode)
     {
         Start();
-        //Debug.Log("Whoohhoooo");
     }
 
 
@@ -46,45 +43,34 @@ public class SettingsMenu : MonoBehaviour
 
         saveFilePath = Application.persistentDataPath + "/PlayerData" + "Settings" + ".json";
 
-        if (Application.platform == RuntimePlatform.WebGLPlayer || Application.platform == RuntimePlatform.Android ||
-            Application.platform == RuntimePlatform.IPhonePlayer)
-        {
-            FullScreentoggle.gameObject.SetActive(false);
-            resolutionText.gameObject.SetActive(false);
-            resolutionDropdown.gameObject.SetActive(false);
-        }
 
         string SessionNumber = PlayerPrefs.GetString("unity.player_session_count");
-        //Debug.Log(SessionNumber);
-        text.text = SessionNumber;
+        playerSessionCountText.text = SessionNumber;
 
-        resolutions = Screen.resolutions;
-
-        resolutionDropdown.ClearOptions();
-
-        List<string> options = new List<string>();
+        Resolution[] resolutionsFirst = Screen.resolutions;
 
         int firstResolutionData = 0;
-        for (int i = 0; i < resolutions.Length; i++)
+
+        for (int i = 0; i < resolutionsFirst.Length; i++)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height + " @" + resolutions[i].refreshRate;
-            options.Add(option);
-            
-            
+            string option = resolutionsFirst[i].width + " x " + resolutionsFirst[i].height + " @" + resolutionsFirst[i].refreshRate;
+            if (resolutionsFirst[i].refreshRate == Screen.currentResolution.refreshRate)
+            {
+                resoulutionsList.Add(option);
+                resolutionsNew.Add(resolutionsFirst[i]);
+            }
 
-            
-                if (resolutions[i].width == Screen.currentResolution.width &&
-                resolutions[i].height == Screen.currentResolution.height &&
-                resolutions[i].refreshRate == Screen.currentResolution.refreshRate)
-                {
-                    firstResolutionData = i;
-                }
-                      
+
+
+
+
+            if (resolutionsFirst[i].width == Screen.currentResolution.width &&
+            resolutionsFirst[i].height == Screen.currentResolution.height)
+            {
+                firstResolutionData = resolutionsNew.Count-1;
+            }
+
         }
-
-
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.RefreshShownValue();
 
         if (Application.platform != RuntimePlatform.Android &&
             Application.platform != RuntimePlatform.IPhonePlayer)
@@ -95,15 +81,13 @@ public class SettingsMenu : MonoBehaviour
             {
                 settingsData.environmentVolumeData = 0;
                 settingsData.musicVolumeData = 0;
-                settingsData.graphicsData = 1;
-                settingsData.isFullScreenData = true;
+                settingsData.qualityData = 2;
                 settingsData.resolutionData = firstResolutionData;
 
 
                 SetEnvironmentVolume(settingsData.environmentVolumeData);
                 SetMusicVolume(settingsData.musicVolumeData);
-                SetQuality(settingsData.graphicsData);
-                SetFullScreen(settingsData.isFullScreenData);
+                SetQuality(settingsData.qualityData);
                 SetResolution(settingsData.resolutionData);
                 SetLanguage(settingsData.languageData);
 
@@ -115,8 +99,7 @@ public class SettingsMenu : MonoBehaviour
 
                 SetEnvironmentVolume(settingsData.environmentVolumeData);
                 SetMusicVolume(settingsData.musicVolumeData);
-                SetQuality(settingsData.graphicsData);
-                SetFullScreen(settingsData.isFullScreenData);
+                SetQuality(settingsData.qualityData);
                 SetResolution(settingsData.resolutionData);
                 SetLanguage(settingsData.languageData);
             }
@@ -127,26 +110,62 @@ public class SettingsMenu : MonoBehaviour
     public void SetPlayerSessionCountToZero()
     {
         PlayerPrefs.SetString("unity.player_session_count", "0");
-        text.text = PlayerPrefs.GetString("unity.player_session_count");
+        playerSessionCountText.text = PlayerPrefs.GetString("unity.player_session_count");
     }
 
     public void SetLanguage(int languageIndex)
     {
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[languageIndex];
 
-        languageDropdown.value = languageIndex;
+        languageText.text = languages[languageIndex];
 
-        settingsData.languageData = languageIndex;
+    }
+
+    public void SwitchLanguage(bool IsNext)
+    {
+        if (IsNext == true && settingsData.languageData +1 != languages.Count)
+        {
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[settingsData.languageData + 1];
+            settingsData.languageData += 1;
+        }
+        else if (IsNext == false && settingsData.languageData - 1 != -1)
+        {
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[settingsData.languageData - 1];
+            settingsData.languageData -= 1;
+        }
+
+        languageText.text = languages[settingsData.languageData];
+
+
 
     }
 
     public void SetResolution(int resolutionIndex)
     {
-        Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, settingsData.isFullScreenData);
-        resolutionDropdown.value = resolutionIndex;
+        Resolution resolution = resolutionsNew[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen, Screen.currentResolution.refreshRate);
 
-        settingsData.resolutionData = resolutionIndex;
+        resoultionText.text = resoulutionsList[resolutionIndex];
+    }
+
+    public void SwitchResolution(bool IsNext)
+    {
+        if (IsNext == true && settingsData.resolutionData + 1 != resoulutionsList.Count)
+        {
+            Resolution resolution = resolutionsNew[settingsData.resolutionData + 1];
+            Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen, Screen.currentResolution.refreshRate);
+            settingsData.resolutionData += 1;
+        }
+        else if (IsNext == false && settingsData.resolutionData - 1 != -1)
+        {
+            Resolution resolution = resolutionsNew[settingsData.resolutionData - 1];
+            Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen, Screen.currentResolution.refreshRate);
+            settingsData.resolutionData -= 1;
+        }
+
+        resoultionText.text = resoulutionsList[settingsData.resolutionData];
+
+
 
     }
 
@@ -176,19 +195,26 @@ public class SettingsMenu : MonoBehaviour
     {
         QualitySettings.SetQualityLevel(qualityIndex);
 
-        qualityDropdonw.value = qualityIndex;
-
-        settingsData.graphicsData = qualityIndex;
+        qualityText.text = qualityes[qualityIndex];
 
     }
 
-    public void SetFullScreen(bool isFullscreen)
+    public void SwitchQuality(bool IsNext)
     {
-        Screen.SetResolution(Screen.width, Screen.height, isFullscreen);
+        if (IsNext == true && settingsData.qualityData + 1 != qualityes.Count)
+        {
+            QualitySettings.SetQualityLevel(settingsData.qualityData + 1);
+            settingsData.qualityData += 1;
+        }
+        else if (IsNext == false && settingsData.qualityData - 1 != -1)
+        {
+            QualitySettings.SetQualityLevel(settingsData.qualityData - 1);
+            settingsData.qualityData -= 1;
+        }
 
-        FullScreentoggle.isOn = isFullscreen;
+        qualityText.text = qualityes[settingsData.qualityData];
 
-        settingsData.isFullScreenData = isFullscreen;
+
 
     }
 
@@ -230,8 +256,7 @@ public class SettingsData
 {
     public float musicVolumeData;
     public float environmentVolumeData;
-    public int graphicsData;
-    public bool isFullScreenData;
+    public int qualityData;
     public int resolutionData;
     public int languageData;
 }

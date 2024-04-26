@@ -1,13 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject mainMenuFirst;
+    public bool once;
+
+    private void Update()
+    {
+        if (Gamepad.current != null && once == false)
+        {
+            EventSystem.current.SetSelectedGameObject(mainMenuFirst);
+            Cursor.visible = false;
+            once = true;
+        }
+        else if (Gamepad.current == null && once == true)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            Cursor.visible = true;
+            once = false;
+        }
+    }
+
     //private void Start()
     //{
-    //    AudioManager.instance.PlayMusic("Menu");
+    //    EventSystem.current.SetSelectedGameObject(mainMenuFirst);
     //}
 
     public void PlayGame()

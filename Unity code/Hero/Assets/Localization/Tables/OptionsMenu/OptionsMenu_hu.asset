@@ -55,7 +55,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 64984972084736000
-    m_Localized: "K\xD6RNYEZET"
+    m_Localized: SOUNDS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68284515618484224
+    m_Localized: CONTROLS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68284789242294272
+    m_Localized: BACK
     m_Metadata:
       m_Items: []
   references:

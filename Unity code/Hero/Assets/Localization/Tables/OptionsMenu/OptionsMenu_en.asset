@@ -55,7 +55,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 64984972084736000
-    m_Localized: ENVIRONMENT
+    m_Localized: HANGOK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68284515618484224
+    m_Localized: "IR\xC1NY\xCDT\xC1S"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68284789242294272
+    m_Localized: VISSZA
     m_Metadata:
       m_Items: []
   references:
