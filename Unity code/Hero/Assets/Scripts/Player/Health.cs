@@ -15,15 +15,18 @@ public class Health : MonoBehaviour
     public Sprite emptyHeart;
 
     public Animator animator;
+
+    public Animator transition;
+    public float transitionTime = 3f;
+
     public ParticleSystem dieParticle;
 
 
     public Vector2 otherSide;
-    public float transitionTime = 3f;
 
     void Start()
     {
-        GameManager.instance.transition.Play("LevelLoaderEnd");
+        transition.Play("Out");
 
         if (GameManager.instance.difficulty == 0)
         {
@@ -113,7 +116,7 @@ public class Health : MonoBehaviour
 
     IEnumerator LoadLevel()
     {
-        GameManager.instance.transition.Play("LevelLoaderStart");
+        transition.Play("In");
 
         yield return new WaitForSeconds(transitionTime);
 

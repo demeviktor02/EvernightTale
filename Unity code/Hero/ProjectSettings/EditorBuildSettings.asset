@@ -12,20 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/LVL1/FirstLevel.unity
     guid: 82c9ffa52ae7c354b9930a3ea911d2c1
   - enabled: 1
-    path: Assets/Scenes/LVL1/Spider.unity
-    guid: 99a06a14fe0af114cae1484685037ee2
-  - enabled: 1
     path: Assets/Scenes/LVL1/SecondLevel.unity
     guid: 924d48c0d4df4d142b792799c5ffd5f3
-  - enabled: 1
-    path: Assets/OG/Demo.unity
-    guid: e9a2056fc71c0134f95cee1bf64a24bb
-  - enabled: 1
-    path: Assets/OG/Inside.unity
-    guid: f40c1fe17a1af0c4cb6eb361897d3d77
-  - enabled: 1
-    path: Assets/OG/ChangedScene.unity
-    guid: 835d2e3e7356f974097a1e3ac59f4b51
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 68a9ce12c140af649ae9fc0dbcdb571f, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 8903e70d65cee2d4c90383b8cc2a5741, type: 2}

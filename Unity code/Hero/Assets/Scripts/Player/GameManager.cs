@@ -22,8 +22,6 @@ public class GameManager : MonoBehaviour
 
     public bool switchedScene = false;
 
-    public Animator transition;
-
     public string currentMusicName;
 
     public float sessionTime;

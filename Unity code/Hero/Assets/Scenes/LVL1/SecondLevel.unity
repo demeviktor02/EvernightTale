@@ -1414,6 +1414,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0327627863a600942aac865803ef278a, type: 3}
+--- !u!95 &663083074 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 418223782278037121, guid: 0327627863a600942aac865803ef278a, type: 3}
+  m_PrefabInstance: {fileID: 663083073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &690520297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7847880875544295185, guid: 0327627863a600942aac865803ef278a, type: 3}
@@ -1616,7 +1621,6 @@ MonoBehaviour:
   pauseButton: {fileID: 0}
   changeWeaponButton: {fileID: 0}
   switchedScene: 0
-  transition: {fileID: 0}
   currentMusicName: 
   sessionTime: 0
   difficulty: 0
@@ -2216,7 +2220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName: Demo
   otherSide: {x: -11.67, y: -30.21}
-  transition: {fileID: 0}
+  transition: {fileID: 663083074}
   transitionTime: 3
   hero: {fileID: 0}
   IsDying: 0
@@ -3426,7 +3430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName: FirstLevel
   otherSide: {x: 257.3452, y: 9.31}
-  transition: {fileID: 0}
+  transition: {fileID: 663083074}
   transitionTime: 3
   hero: {fileID: 0}
   IsDying: 0

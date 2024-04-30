@@ -33,7 +33,7 @@ public class OnCollideChangeScene : MonoBehaviour
 
     IEnumerator LoadLevel()
     {
-        GameManager.instance.transition.Play("LevelLoaderStart");
+        transition.Play("In");
 
         yield return new WaitForSeconds(transitionTime);
 
