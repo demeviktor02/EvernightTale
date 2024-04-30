@@ -44,7 +44,7 @@ public class PlayerMovementTest
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-        Assert.AreEqual(targetSpeed,player.GetComponent<PlayerMovement2>().speed);
+        Assert.AreEqual(targetSpeed,player.GetComponent<PlayerMovement2>().playerSpeed);
 
         yield return null;
     }

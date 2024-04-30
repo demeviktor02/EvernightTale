@@ -5,24 +5,32 @@ using System.IO;
 using UnityEngine.SceneManagement;
 using System;
 using UnityEngine.UI;
-using TMPro;
 using Unity.Mathematics;
 
 
 public class LocalManager : MonoBehaviour
 {
-    public TMPro.TMP_Text Save1;
-    public TMPro.TMP_Text Save2;
-    public TMPro.TMP_Text Save3;
+    public TMPro.TMP_Text Save1;  
+    public TMPro.TMP_Text GamePercent1;
+    public TMPro.TMP_Text GameTime1;
+    public TMPro.TMP_Text Difficulty1;
+    public TMPro.TMP_Text StartTime1;
+    public Image Image1;
 
-    public TMPro.TMP_Text SaveNumber;
-    public TMPro.TMP_Text GamePercent;
-    public TMPro.TMP_Text Jumps;
-    public TMPro.TMP_Text Enemies;
-    public TMPro.TMP_Text Deaths;
-    public TMPro.TMP_Text GameTime;
-    public TMPro.TMP_Text Difficulty;
-    public Image image;
+    public TMPro.TMP_Text Save2;
+    public TMPro.TMP_Text GamePercent2;
+    public TMPro.TMP_Text GameTime2;
+    public TMPro.TMP_Text Difficulty2;
+    public TMPro.TMP_Text StartTime2;
+    public Image Image2;
+
+    public TMPro.TMP_Text Save3;
+    public TMPro.TMP_Text GamePercent3;
+    public TMPro.TMP_Text GameTime3;
+    public TMPro.TMP_Text Difficulty3;
+    public TMPro.TMP_Text StartTime3;
+    public Image Image3;
+
     public GameObject LoadingScreen;
     public Animator animator;
 
@@ -36,27 +44,79 @@ public class LocalManager : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/PlayerData" + 1 + ".json"))
         {
             Save1.text = "CONTINUE";
+
+            //Mentés útjának megadása
+            SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + 1 + ".json";
+            SaveData.instance.imageSaveFilePath = Application.persistentDataPath + "/SaveImage" + 1 + ".png";
+
+            //Beolvasás
+            string loadPlayerData1 = File.ReadAllText(SaveData.instance.saveFilePath);
+
+            //Értékadás
+            SaveData.instance.playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData1);
+
+            SetValue1();
         }
         else
         {
             Save1.text = "NEW GAME";
+            GamePercent1.text = "0%";
+            GameTime1.text = "00:00:00";
+            Difficulty1.text = "-";
+            StartTime1.text = "-";
+            Image1 = null;
         }
         if (File.Exists(Application.persistentDataPath + "/PlayerData" + 2 + ".json"))
         {
             Save2.text = "CONTINUE";
+
+            //Mentés útjának megadása
+            SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + 2 + ".json";
+            SaveData.instance.imageSaveFilePath = Application.persistentDataPath + "/SaveImage" + 2 + ".png";
+
+            //Beolvasás
+            string loadPlayerData2 = File.ReadAllText(SaveData.instance.saveFilePath);
+
+            //Értékadás
+            SaveData.instance.playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData2);
+
+            SetValue2();
         }
         else
         {
             Save2.text = "NEW GAME";
+            GamePercent2.text = "0%";
+            GameTime2.text = "00:00:00";
+            Difficulty2.text = "-";
+            StartTime2.text = "-";
+            Image2 = null;
         }
         if (File.Exists(Application.persistentDataPath + "/PlayerData" + 3 + ".json"))
         {
             Save3.text = "CONTINUE";
+
+            //Mentés útjának megadása
+            SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + 3 + ".json";
+            SaveData.instance.imageSaveFilePath = Application.persistentDataPath + "/SaveImage" + 3 + ".png";
+
+            //Beolvasás
+            string loadPlayerData3 = File.ReadAllText(SaveData.instance.saveFilePath);
+
+            //Értékadás
+            SaveData.instance.playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData3);
+
+            SetValue3();
         }
         else
         {
             Save3.text = "NEW GAME";
+            GamePercent3.text = "0%";
+            GameTime3.text = "00:00:00";
+            Difficulty3.text = "-";
+            StartTime3.text = "-";
+            Image3 = null;
         }
+
     }
 
     public void ContinueOrNewGameNext(int saveNumber)
@@ -97,53 +157,44 @@ public class LocalManager : MonoBehaviour
         
     }
 
+
     public void LoadFromSaveFilePath(string saveNumber)
     {
-        SaveNumber.text = saveNumber;
-        SaveData.instance.lastSaveData.LastSaveNumber = Convert.ToInt32(saveNumber);
-
         //Mentés útjának megadása
         SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
         SaveData.instance.imageSaveFilePath = Application.persistentDataPath + "/SaveImage" + saveNumber + ".png";
 
         //Beolvasás
-        string loadPlayerData = File.ReadAllText(SaveData.instance.saveFilePath);
+        //string loadPlayerData = File.ReadAllText(SaveData.instance.saveFilePath);
 
         //Értékadás
-        SaveData.instance.playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData);
+        //SaveData.instance.playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData);
 
-        SetValue();
+        if (saveNumber == "1")
+        {
+            if (File.Exists(Application.persistentDataPath + "/PlayerData" + 1 + ".json"))
+            {
+                SetValue1();
+            }
+            
+        }
+        else if (saveNumber == "2")
+        {
+            if (File.Exists(Application.persistentDataPath + "/PlayerData" + 2 + ".json"))
+            {
+                SetValue2();
+            }
+        }
+        else if (saveNumber == "3")
+        {
+            if (File.Exists(Application.persistentDataPath + "/PlayerData" + 3 + ".json"))
+            {
+                SetValue3();
+            }
+        }
+        
     }
 
-    public void ContinueFromSaveFilePathMethod()
-    {
-        StartCoroutine(ContinueFromSaveFilePath());
-    }
-
-    public IEnumerator ContinueFromSaveFilePath()
-    {
-        yield return new WaitForSeconds(2);
-
-        string saveNumber = SaveData.instance.lastSaveData.LastSaveNumber.ToString();
-        SaveNumber.text = saveNumber;
-        SaveData.instance.lastSaveData.LastSaveNumber = Convert.ToInt32(saveNumber);
-
-        //Mentés útjának megadása
-        SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
-        SaveData.instance.imageSaveFilePath = Application.persistentDataPath + "/SaveImage" + saveNumber + ".png";
-
-        //Beolvasás
-        string loadPlayerData = File.ReadAllText(SaveData.instance.saveFilePath);
-
-        //Értékadás
-        SaveData.instance.playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData);
-
-        SetValue();
-
-        LoadGame(SaveData.instance.playerData.Difficulty);
-
-        yield return null;
-    }
 
     public void LoadGame(int difficulty)
     {
@@ -151,31 +202,113 @@ public class LocalManager : MonoBehaviour
         StartCoroutine(LoadSceneAsync(difficulty));
     }
 
-    public void SetValue()
+    //public void SetValue()
+    //{
+    //    GamePercent1.text = math.round(SaveData.instance.playerData.LevelIndex * 16.66).ToString() + "%";
+
+
+    //    if (SaveData.instance.playerData.Difficulty == 0)
+    //    {
+    //        Difficulty1.text = "Easy";
+    //    }
+    //    else if (SaveData.instance.playerData.Difficulty == 1)
+    //    {
+    //        Difficulty1.text = "Normal";
+    //    }
+    //    else if (SaveData.instance.playerData.Difficulty == 2)
+    //    {
+    //        Difficulty1.text = "Hard";
+    //    }
+
+
+    //    TimeSpan time = TimeSpan.FromSeconds(SaveData.instance.playerData.PlayTime);
+    //    GameTime1.text = time.ToString(@"hh\:mm\:ss");
+    //    Sprite loadImage = LoadSprite(SaveData.instance.imageSaveFilePath);
+    //    Image1.sprite = loadImage;
+
+    //    GameManager.instance.lastLevelIndex = SaveData.instance.playerData.LevelIndex;
+    //    GameManager.instance.difficulty = SaveData.instance.playerData.Difficulty;
+    //}
+
+    public void SetValue1()
     {
-        GamePercent.text = math.round(SaveData.instance.playerData.LevelIndex * 16.66).ToString() + "%";
-        Jumps.text = SaveData.instance.playerData.Jumps.ToString();
-        Enemies.text = SaveData.instance.playerData.SlayedEnemies.ToString();
-        Deaths.text = SaveData.instance.playerData.Defeats.ToString();
+        GamePercent1.text = math.round(SaveData.instance.playerData.LevelIndex * 16.66).ToString() + "%";
+
 
         if (SaveData.instance.playerData.Difficulty == 0)
         {
-            Difficulty.text = "Easy";
+            Difficulty1.text = "Easy";
         }
         else if (SaveData.instance.playerData.Difficulty == 1)
         {
-            Difficulty.text = "Normal";
+            Difficulty1.text = "Normal";
         }
         else if (SaveData.instance.playerData.Difficulty == 2)
         {
-            Difficulty.text = "Hard";
+            Difficulty1.text = "Hard";
         }
         
 
         TimeSpan time = TimeSpan.FromSeconds(SaveData.instance.playerData.PlayTime);
-        GameTime.text = time.ToString(@"hh\:mm\:ss");
+        GameTime1.text = time.ToString(@"hh\:mm\:ss");
         Sprite loadImage = LoadSprite(SaveData.instance.imageSaveFilePath);
-        image.sprite = loadImage;
+        Image1.sprite = loadImage;
+
+        GameManager.instance.lastLevelIndex = SaveData.instance.playerData.LevelIndex;
+        GameManager.instance.difficulty = SaveData.instance.playerData.Difficulty;
+    }
+
+    public void SetValue2()
+    {
+        GamePercent2.text = math.round(SaveData.instance.playerData.LevelIndex * 16.66).ToString() + "%";
+
+
+        if (SaveData.instance.playerData.Difficulty == 0)
+        {
+            Difficulty2.text = "Easy";
+        }
+        else if (SaveData.instance.playerData.Difficulty == 1)
+        {
+            Difficulty2.text = "Normal";
+        }
+        else if (SaveData.instance.playerData.Difficulty == 2)
+        {
+            Difficulty2.text = "Hard";
+        }
+
+
+        TimeSpan time = TimeSpan.FromSeconds(SaveData.instance.playerData.PlayTime);
+        GameTime2.text = time.ToString(@"hh\:mm\:ss");
+        Sprite loadImage = LoadSprite(SaveData.instance.imageSaveFilePath);
+        Image2.sprite = loadImage;
+
+        GameManager.instance.lastLevelIndex = SaveData.instance.playerData.LevelIndex;
+        GameManager.instance.difficulty = SaveData.instance.playerData.Difficulty;
+    }
+
+    public void SetValue3()
+    {
+        GamePercent3.text = math.round(SaveData.instance.playerData.LevelIndex * 16.66).ToString() + "%";
+
+
+        if (SaveData.instance.playerData.Difficulty == 0)
+        {
+            Difficulty3.text = "Easy";
+        }
+        else if (SaveData.instance.playerData.Difficulty == 1)
+        {
+            Difficulty3.text = "Normal";
+        }
+        else if (SaveData.instance.playerData.Difficulty == 2)
+        {
+            Difficulty3.text = "Hard";
+        }
+
+
+        TimeSpan time = TimeSpan.FromSeconds(SaveData.instance.playerData.PlayTime);
+        GameTime3.text = time.ToString(@"hh\:mm\:ss");
+        Sprite loadImage = LoadSprite(SaveData.instance.imageSaveFilePath);
+        Image3.sprite = loadImage;
 
         GameManager.instance.lastLevelIndex = SaveData.instance.playerData.LevelIndex;
         GameManager.instance.difficulty = SaveData.instance.playerData.Difficulty;
@@ -217,7 +350,6 @@ public class LocalManager : MonoBehaviour
         {
             string loadPlayerData = File.ReadAllText(SaveData.instance.saveFilePath);
             SaveData.instance.playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData);
-            SetValue();
         }
         catch 
         {

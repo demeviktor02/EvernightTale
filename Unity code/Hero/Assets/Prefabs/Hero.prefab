@@ -451,6 +451,9 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
+  treeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   attackRange: 0.5
   attackDamage: 40
   startAttackRate: 2
@@ -522,7 +525,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -75.12, y: 17.78, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.16000001, y: 0.16000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 240645135628503634}
@@ -574,7 +577,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 65
-  m_Sprite: {fileID: 21300000, guid: 975b1e5217ab8ef4eae714c386c8a196, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ab58bdfc062ecb746bd39ccfff7cf3b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -598,25 +601,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6599016443873207027}
-  speed: 8
+  horizontal: 0
+  playerSpeed: 0
   isJumping: 0
-  jumpingPower: 14
+  jumpingPower: 11.5
   isFacingRight: 1
   rb: {fileID: 3387325603570313900}
   groundCheck: {fileID: 7625662974899980768}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 264
+    m_Bits: 4360
   groundCheckSize: {x: 0, y: 0}
   jumpPressedRemember: 0
   jumpPressedRememberTime: 0.2
   GroundedRemember: 0
   GroundedRememberTime: 0.2
-  joystick: {fileID: 0}
   jumpButton: {fileID: 0}
   pauseButton: {fileID: 0}
-  isWalking: 0
-  acceleration: 10
+  isWalking: 1
+  acceleration: 6.3
   decceleration: 2
   velPower: 1.4
   once: 1
@@ -684,9 +687,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.86101246}
+  m_Offset: {x: -0.3696084, y: -4.5}
   serializedVersion: 2
-  m_Radius: 0.3934927
+  m_Radius: 1.8224835
 --- !u!61 &9061095565896634105
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -719,18 +722,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09043825, y: 0.13859463}
+  m_Offset: {x: -0.022866726, y: -1.4959164}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.4521737, y: 4.4521737}
+    oldSize: {x: 20.48, y: 20.48}
     newSize: {x: 4.4521737, y: 4.4521737}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1593945, y: 1.5777607}
+  m_Size: {x: 8.127999, y: 12.075954}
   m_EdgeRadius: 0
 --- !u!114 &3215881881417299843
 MonoBehaviour:
@@ -796,6 +799,9 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
+  treeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   attackRange: 0.5
   attackDamage: 40
   startAttackRate: 3
@@ -833,8 +839,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.052337646, y: -0.0011758804}
-  m_Size: {x: 1.668457, y: 2.0357342}
+  m_Offset: {x: -0.032031536, y: -0.75991005}
+  m_Size: {x: 7.991767, y: 10.444596}
   m_Direction: 0
 --- !u!1 &5821817543395521525
 GameObject:

@@ -36,9 +36,6 @@ public class Enemy : MonoBehaviour
 
     public virtual void Die()
     {
-        SaveData.instance.playerData.SlayedEnemies++;
-        Debug.Log("Enemy died!");
-
         animator.SetBool("IsDead", true);
         deathParticles.Play();
 

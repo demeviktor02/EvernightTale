@@ -51,6 +51,12 @@ MonoBehaviour:
     m_Key: CONTROLLER
     m_Metadata:
       m_Items: []
+  - m_Id: 72785159876608
+    m_Key: 'SWITCH
+
+      WEAPON'
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

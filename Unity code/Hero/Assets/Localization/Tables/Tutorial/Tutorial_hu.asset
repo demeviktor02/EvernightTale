@@ -23,7 +23,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 280766619648
-    m_Localized: "Nyomj (A) - (D)-t a mozg\xE1shoz"
+    m_Localized: "Nyomj (A) - (D)-t \na mozg\xE1shoz"
     m_Metadata:
       m_Items: []
   - m_Id: 430310334464
@@ -42,5 +42,15 @@ MonoBehaviour:
     m_Localized: "Nyomk (1)-t, hogy el\u0151vedd a kardodat"
     m_Metadata:
       m_Items: []
+  - m_Id: 69068080727814144
+    m_Localized: "Nyomj (SPACE)-t az \xFCt\xE9shez"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69432193756786688
+    m_Localized: "    M\xE1trai Nikolett\n       \t   \xE9s                         
+      bemutatja: \n    Deme Viktor"
+    m_Metadata:
+      m_Items: []
   references:
-    version: 1
+    version: 2
+    RefIds: []

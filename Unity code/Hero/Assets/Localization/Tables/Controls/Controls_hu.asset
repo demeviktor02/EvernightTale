@@ -54,6 +54,10 @@ MonoBehaviour:
     m_Localized: KONTROLLER
     m_Metadata:
       m_Items: []
+  - m_Id: 72785159876608
+    m_Localized: "FEGYVER\nV\xC1LT\xC1S"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -54,6 +54,12 @@ MonoBehaviour:
     m_Localized: CONTROLLER
     m_Metadata:
       m_Items: []
+  - m_Id: 72785159876608
+    m_Localized: 'SWITCH
+
+      WEAPON'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -7,7 +7,7 @@ public class PlayerMovement2 : MonoBehaviour
     public Animator animator;
 
     public float horizontal;
-    public float speed = 8f;
+    public float playerSpeed;
 
     public bool isJumping = false;
     public float jumpingPower = 16f;
@@ -47,6 +47,13 @@ public class PlayerMovement2 : MonoBehaviour
 
     private void Start()
     {
+
+        if (isWalking == true)
+        {
+            playerSpeed = 4f;
+            animator.SetBool("IsWalking", true);
+        }
+
         //GameManager.instance.transition.Play("LevelLoaderEnd");
 
         //joystick = GameManager.instance.joystick;
@@ -55,9 +62,9 @@ public class PlayerMovement2 : MonoBehaviour
 
         //if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
         //{
-            //joystick.gameObject.SetActive(true);
-            //jumpButton.gameObject.SetActive(true);
-            //pauseButton.gameObject.SetActive(true);
+        //joystick.gameObject.SetActive(true);
+        //jumpButton.gameObject.SetActive(true);
+        //pauseButton.gameObject.SetActive(true);
         //}
 
         //jumpButton.onClick.AddListener(jumpButtonTaskOnClick);
@@ -65,10 +72,25 @@ public class PlayerMovement2 : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.V))
+        if (gameObject.GetComponent<PlayerCombat>().isAttack == true)
         {
-            //AudioManager.instance.PlaySFX("PlayerRun");
+            playerSpeed = 0;
         }
+        else
+        {
+            if (isWalking)
+            {
+                playerSpeed = 4f;
+            }
+            else
+            {
+                playerSpeed = 6.3f;
+            }
+            
+        }
+
+        
+
 
         runtime -= Time.deltaTime;
         if (runtime < 0)
@@ -95,12 +117,12 @@ public class PlayerMovement2 : MonoBehaviour
             sighTime = Random.Range(15, 25);
         }
 
-        if (isRunning == true && isRunningOnce == false)
+        if (isRunning == true && isRunningOnce == false && isWalking == false)
         {
             AudioManager.instance.PlayAudio("PlayerRun", "PlayerRun");
             isRunningOnce = true;
         }
-        else if (isRunning == false && isRunningOnce == true)
+        else if (isRunning == false && isRunningOnce == true && isWalking == false)
         {
             AudioManager.instance.StopAudio("PlayerRun", "PlayerRun");
             isRunningOnce = false;
@@ -132,7 +154,6 @@ public class PlayerMovement2 : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jumpPressedRemember = jumpPressedRememberTime;
-            SaveData.instance.playerData.Jumps++;
         }
 
         jumpPressedRemember -= Time.deltaTime;
@@ -142,6 +163,7 @@ public class PlayerMovement2 : MonoBehaviour
 
 
     }
+
 
     public void JumpTest()
     {
@@ -192,7 +214,7 @@ public class PlayerMovement2 : MonoBehaviour
 
     public void Run()
     {
-        float targetSpeed = horizontal * speed;
+        float targetSpeed = horizontal * playerSpeed;
 
         float speedDif = targetSpeed - rb.velocity.x;
 

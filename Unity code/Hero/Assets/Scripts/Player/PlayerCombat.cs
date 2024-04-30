@@ -9,6 +9,7 @@ public class PlayerCombat : MonoBehaviour
 
     public Transform attackPoint;
     public LayerMask enemyLayers;
+    public LayerMask treeLayers;
 
     public float attackRange = 0.5f;
     public int attackDamage = 40;
@@ -16,13 +17,15 @@ public class PlayerCombat : MonoBehaviour
     public float startAttackRate = 2f;
     public float timeBtwAttack = 0f;
 
+    public bool isAttack = false;
     public bool doubleAttack = false;
 
     // Update is called once per frame
     void Update()
     {
 
-        if (timeBtwAttack <= 0)
+        if (timeBtwAttack <= 0 && gameObject.GetComponent<PlayerMovement2>().isWalking == false
+            && gameObject.GetComponent<PlayerMovement2>().isJumping == false)
         {
             doubleAttack = false;
             if (Input.GetKeyDown(KeyCode.Space))
@@ -36,7 +39,7 @@ public class PlayerCombat : MonoBehaviour
             timeBtwAttack -= Time.deltaTime;
         }
 
-        if (timeBtwAttack <= 2.5f && timeBtwAttack > 1f && doubleAttack == false)
+        if (timeBtwAttack <= 2.5f && timeBtwAttack > 1f && doubleAttack == false && gameObject.GetComponent<PlayerMovement2>().isJumping == false)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -58,6 +61,7 @@ public class PlayerCombat : MonoBehaviour
         animator.SetTrigger("Attack");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        Collider2D[] hitTree = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, treeLayers);
 
         if (hitEnemies.Length == 0)
         {
@@ -74,8 +78,22 @@ public class PlayerCombat : MonoBehaviour
             }
         }
 
+        if (hitTree.Length == 0)
+        {
+            Debug.Log(Random.Range(1, 4));
+            AudioManager.instance.PlayAudio("Player", "PlayerMiss" + Random.Range(1, 4));
+        }
+        else
+        {
+            foreach (Collider2D tree in hitTree)
+            {
 
-        
+                AudioManager.instance.PlayAudio("Player", "PlayerHit1");
+                tree.GetComponent<Animator>().Play("Falling");
+                tree.GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("Ground");
+            }
+        }
+
     }
 
     void DoubleAttack()
@@ -96,6 +114,16 @@ public class PlayerCombat : MonoBehaviour
                 enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
             }
         }       
+    }
+
+    public void PlayerAttack()
+    {
+        isAttack = true;
+    }
+
+    public void PlayerNotAttack()
+    {
+        isAttack = false;
     }
 
     private void OnDrawGizmosSelected()

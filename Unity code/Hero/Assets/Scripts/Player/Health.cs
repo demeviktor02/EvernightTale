@@ -89,10 +89,9 @@ public class Health : MonoBehaviour
     public void Die()
     {
         health = 0;
-        SaveData.instance.playerData.Defeats++;
         gameObject.GetComponent<PlayerMovement2>().enabled = false;
 
-        float randomNumer = Random.Range(0, 2);
+        float randomNumer = Random.Range(1, 2);
         if (randomNumer == 0)
         {
             Debug.Log("ASD");

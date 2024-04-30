@@ -23,7 +23,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 280766619648
-    m_Localized: Press (A) - (D) to move
+    m_Localized: "Press (A) - (D) \nto move"
     m_Metadata:
       m_Items: []
   - m_Id: 430310334464
@@ -42,5 +42,15 @@ MonoBehaviour:
     m_Localized: Press (1) to equip your sword
     m_Metadata:
       m_Items: []
+  - m_Id: 69068080727814144
+    m_Localized: Press (SPACE) to attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69432193756786688
+    m_Localized: "    Nikolett M\xE1trai\n       \t   and                         
+      presents: \n    Viktor Deme"
+    m_Metadata:
+      m_Items: []
   references:
-    version: 1
+    version: 2
+    RefIds: []

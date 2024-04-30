@@ -53,7 +53,7 @@ public class SettingsMenu : MonoBehaviour
 
         for (int i = 0; i < resolutionsFirst.Length; i++)
         {
-            string option = resolutionsFirst[i].width + " x " + resolutionsFirst[i].height + " @" + resolutionsFirst[i].refreshRate;
+            string option = resolutionsFirst[i].width + " x " + resolutionsFirst[i].height; //+ " @" + resolutionsFirst[i].refreshRate;
             if (resolutionsFirst[i].refreshRate == Screen.currentResolution.refreshRate)
             {
                 resoulutionsList.Add(option);

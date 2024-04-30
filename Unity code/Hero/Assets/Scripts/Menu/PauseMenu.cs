@@ -50,6 +50,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        AudioManager.instance.PlayAudio("Music", "Game");
         Cursor.visible = false;
         optionsMenuUI.SetActive(false);
         pauseMenuUI.SetActive(false);
@@ -59,6 +60,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        AudioManager.instance.PlayAudio("Music", "Pause");
         Cursor.visible = true;
         StartCoroutine(IPause());       
     }

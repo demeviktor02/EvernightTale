@@ -1341,6 +1341,14 @@ PrefabInstance:
       propertyPath: hearts.Array.data[4]
       value: 
       objectReference: {fileID: 2144547816}
+    - target: {fileID: 5333965245821711823, guid: 0327627863a600942aac865803ef278a, type: 3}
+      propertyPath: isWalking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333965245821711823, guid: 0327627863a600942aac865803ef278a, type: 3}
+      propertyPath: playerSpeed
+      value: 6.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5693041370972786443, guid: 0327627863a600942aac865803ef278a, type: 3}
       propertyPath: m_Name
       value: Hero
@@ -1352,6 +1360,14 @@ PrefabInstance:
     - target: {fileID: 5787932175839598451, guid: 0327627863a600942aac865803ef278a, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847880875544295185, guid: 0327627863a600942aac865803ef278a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847880875544295185, guid: 0327627863a600942aac865803ef278a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7847880875544295185, guid: 0327627863a600942aac865803ef278a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3409,7 +3425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: FirstLevel
-  otherSide: {x: 220, y: 17}
+  otherSide: {x: 257.3452, y: 9.31}
   transition: {fileID: 0}
   transitionTime: 3
   hero: {fileID: 0}

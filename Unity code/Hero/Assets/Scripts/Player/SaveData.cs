@@ -10,11 +10,10 @@ public class SaveData : MonoBehaviour
     public static SaveData instance;
 
     public PlayerData playerData;
-    public LastSaveData lastSaveData;
     [SerializeField]
     public string saveFilePath;
     public string imageSaveFilePath;
-    public string LastSaveSaveFilePath;    
+
 
     void Awake()
     {
@@ -32,15 +31,8 @@ public class SaveData : MonoBehaviour
 
     void Start()
     {
-        LastSaveSaveFilePath = Application.persistentDataPath + "/LastSave.json";
-
         playerData = new PlayerData();
 
-        lastSaveData = new LastSaveData();
-
-        string loadLastSaveData = File.ReadAllText(LastSaveSaveFilePath);
-
-        lastSaveData = JsonUtility.FromJson<LastSaveData>(loadLastSaveData);
 
     }
 
@@ -56,12 +48,6 @@ public class SaveData : MonoBehaviour
 
         saveFilePath = "";
 
-
-        //
-        string saveLastSaveData = JsonUtility.ToJson(lastSaveData);
-        File.WriteAllText(LastSaveSaveFilePath, saveLastSaveData);
-
-        Debug.Log("Save file created at: " + LastSaveSaveFilePath);
     }
 
 
@@ -70,7 +56,6 @@ public class SaveData : MonoBehaviour
         playerData.LevelIndex = SceneManager.GetActiveScene().buildIndex;
         playerData.PlayTime += GameManager.instance.sessionTime;
 
-        //lastSaveData.LastSaveNumber = 
     }
    
 
@@ -80,15 +65,9 @@ public class SaveData : MonoBehaviour
 public class PlayerData
 {
     public int LevelIndex;
-    public int Jumps;
-    public int SlayedEnemies;
-    public int Defeats;
     public float PlayTime;
     public int Difficulty;
+    public int StartDate;
 }
 
-[System.Serializable]
-public class LastSaveData
-{
-    public int LastSaveNumber;
-}
+

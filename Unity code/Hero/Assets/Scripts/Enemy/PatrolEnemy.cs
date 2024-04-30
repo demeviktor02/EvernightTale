@@ -169,7 +169,6 @@ public class PatrolEnemy : Enemy
 
     public override void Die()
     {
-        SaveData.instance.playerData.SlayedEnemies++;
         deathParticles.Play();
         AudioManager.instance.PlayAudio("Rat", "RatDie");
         Destroy(gameObject);
