@@ -50,6 +50,22 @@ MonoBehaviour:
     m_Localized: BACK
     m_Metadata:
       m_Items: []
+  - m_Id: 71207997146755072
+    m_Localized: ARE YOU SURE WANT TO PUT THE SWORD DOWN?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71208376492191744
+    m_Localized: YES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71208417705422848
+    m_Localized: NO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71208418628169728
+    m_Localized: CHOSE DIFFICULTY
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

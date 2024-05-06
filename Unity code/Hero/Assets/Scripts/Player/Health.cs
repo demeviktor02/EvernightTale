@@ -22,11 +22,16 @@ public class Health : MonoBehaviour
     public ParticleSystem dieParticle;
 
 
-    public Vector2 otherSide;
+    public Vector2 respawnPoint;
+
+    public Animator CanvasAnimator;
 
     void Start()
     {
+        transform.position = GameManager.instance.SpawnPoint;
+
         transition.Play("Out");
+ 
 
         if (GameManager.instance.difficulty == 0)
         {
@@ -41,30 +46,34 @@ public class Health : MonoBehaviour
             numOfHearts = 3;
         }
 
-        if (GameManager.instance.switchedScene == true)
-        {
-            GameManager.instance.switchedScene = false;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = GameManager.instance.switchedScenePosition;
-        }
-
-
-
     }
 
     void Update()
     {
-
+        if (health == 4)
+        {
+            CanvasAnimator.Play("Inda1");
+        }
+        if (health == 3)
+        {
+            CanvasAnimator.Play("Inda2");
+        }
+        if (health == 2)
+        {
+            CanvasAnimator.Play("Inda3");
+        }
+        if (health == 1)
+        {
+            //CanvasAnimator.Play("Inda4");
+            CanvasAnimator.Play("LastHealth");
+        }
 
 
         if (health > numOfHearts)
         {
             health = numOfHearts;
         }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Die();
-        }
+       
 
         for (int i = 0; i < hearts.Length; i++)
         {
@@ -109,8 +118,8 @@ public class Health : MonoBehaviour
         
         dieParticle.Play();
 
-        GameManager.instance.switchedScene = true;
-        GameManager.instance.switchedScenePosition = otherSide;
+        GameManager.instance.SpawnPoint = respawnPoint;
+        
         StartCoroutine(LoadLevel());
     }
 

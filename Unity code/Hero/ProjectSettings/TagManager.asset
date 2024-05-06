@@ -21,8 +21,8 @@ TagManager:
   - Wall
   - Blur
   - Tree
-  - 
-  - 
+  - Post
+  - No Post
   - 
   - 
   - 
@@ -43,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: First
+    uniqueID: 1050867977
+    locked: 0
+  - name: Second
+    uniqueID: 3311954503
     locked: 0

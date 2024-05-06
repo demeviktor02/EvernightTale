@@ -47,6 +47,22 @@ MonoBehaviour:
     m_Key: UIBack
     m_Metadata:
       m_Items: []
+  - m_Id: 71207997146755072
+    m_Key: QUITASK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71208376492191744
+    m_Key: YES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71208417705422848
+    m_Key: NO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71208418628169728
+    m_Key: CHOSE DIFFICULTY
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

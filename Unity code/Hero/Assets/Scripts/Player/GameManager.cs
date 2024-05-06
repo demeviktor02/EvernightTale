@@ -10,19 +10,13 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public int lastLevelIndex = 0;
-    public string lastCheckPointSceneName;
-    public Vector2 lastCheckPointPos;
-    public Vector2 switchedScenePosition;
+    public Vector2 SpawnPoint;
     public bool inGame;
 
     //public Joystick joystick;
     public Button jumpButton;
     public Button pauseButton;
     public Button changeWeaponButton;
-
-    public bool switchedScene = false;
-
-    public string currentMusicName;
 
     public float sessionTime;
 

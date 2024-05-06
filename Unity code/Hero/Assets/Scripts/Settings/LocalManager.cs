@@ -34,9 +34,11 @@ public class LocalManager : MonoBehaviour
     public GameObject LoadingScreen;
     public Animator animator;
 
+    public GameObject DifficultyPopUp;
+
     private void Start()
     {
-        ContinueOrNewGame();
+        //ContinueOrNewGame();
     }
 
     public void ContinueOrNewGame()
@@ -117,41 +119,49 @@ public class LocalManager : MonoBehaviour
             Image3 = null;
         }
 
+
+        Clear();
     }
 
-    public void ContinueOrNewGameNext(int saveNumber)
+    public void ContinueOrNewGameNext(string saveNumber)
     {
-        if (saveNumber == 1)
+        if (saveNumber == "1")
         {
-            if (Save1.text == "NEW GAME")
+            if (File.Exists(Application.persistentDataPath + "/PlayerData" + saveNumber + ".json"))
             {
-                animator.Play("SelectDifficultyOpen");
+                LoadFromSaveFilePath(saveNumber);
+                LoadGame(SaveData.instance.playerData.Difficulty);
             }
             else
             {
-                animator.Play("ContinueOpen");
+                SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
+                DifficultyPopUp.SetActive(true);
             }
         }
-        else if (saveNumber == 2)
+        else if (saveNumber == "2")
         {
-            if (Save2.text == "NEW GAME")
+            if (File.Exists(Application.persistentDataPath + "/PlayerData" + saveNumber + ".json"))
             {
-                animator.Play("SelectDifficultyOpen");
+                LoadFromSaveFilePath(saveNumber);
+                LoadGame(SaveData.instance.playerData.Difficulty);
             }
             else
             {
-                animator.Play("ContinueOpen");
+                SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
+                DifficultyPopUp.SetActive(true);
             }
         }
-        else if (saveNumber == 3)
+        else if (saveNumber == "3")
         {
-            if (Save3.text == "NEW GAME")
+            if (File.Exists(Application.persistentDataPath + "/PlayerData" + saveNumber + ".json"))
             {
-                animator.Play("SelectDifficultyOpen");
+                LoadFromSaveFilePath(saveNumber);
+                LoadGame(SaveData.instance.playerData.Difficulty);
             }
             else
             {
-                animator.Play("ContinueOpen");
+                SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
+                DifficultyPopUp.SetActive(true);
             }
         }
         
@@ -202,33 +212,6 @@ public class LocalManager : MonoBehaviour
         StartCoroutine(LoadSceneAsync(difficulty));
     }
 
-    //public void SetValue()
-    //{
-    //    GamePercent1.text = math.round(SaveData.instance.playerData.LevelIndex * 16.66).ToString() + "%";
-
-
-    //    if (SaveData.instance.playerData.Difficulty == 0)
-    //    {
-    //        Difficulty1.text = "Easy";
-    //    }
-    //    else if (SaveData.instance.playerData.Difficulty == 1)
-    //    {
-    //        Difficulty1.text = "Normal";
-    //    }
-    //    else if (SaveData.instance.playerData.Difficulty == 2)
-    //    {
-    //        Difficulty1.text = "Hard";
-    //    }
-
-
-    //    TimeSpan time = TimeSpan.FromSeconds(SaveData.instance.playerData.PlayTime);
-    //    GameTime1.text = time.ToString(@"hh\:mm\:ss");
-    //    Sprite loadImage = LoadSprite(SaveData.instance.imageSaveFilePath);
-    //    Image1.sprite = loadImage;
-
-    //    GameManager.instance.lastLevelIndex = SaveData.instance.playerData.LevelIndex;
-    //    GameManager.instance.difficulty = SaveData.instance.playerData.Difficulty;
-    //}
 
     public void SetValue1()
     {
@@ -237,17 +220,13 @@ public class LocalManager : MonoBehaviour
 
         if (SaveData.instance.playerData.Difficulty == 0)
         {
-            Difficulty1.text = "Easy";
+            Difficulty1.text = "Story";
         }
         else if (SaveData.instance.playerData.Difficulty == 1)
         {
-            Difficulty1.text = "Normal";
+            Difficulty1.text = "Challange";
         }
-        else if (SaveData.instance.playerData.Difficulty == 2)
-        {
-            Difficulty1.text = "Hard";
-        }
-        
+
 
         TimeSpan time = TimeSpan.FromSeconds(SaveData.instance.playerData.PlayTime);
         GameTime1.text = time.ToString(@"hh\:mm\:ss");
@@ -265,15 +244,11 @@ public class LocalManager : MonoBehaviour
 
         if (SaveData.instance.playerData.Difficulty == 0)
         {
-            Difficulty2.text = "Easy";
+            Difficulty2.text = "Story";
         }
         else if (SaveData.instance.playerData.Difficulty == 1)
         {
-            Difficulty2.text = "Normal";
-        }
-        else if (SaveData.instance.playerData.Difficulty == 2)
-        {
-            Difficulty2.text = "Hard";
+            Difficulty2.text = "Challange";
         }
 
 
@@ -293,15 +268,11 @@ public class LocalManager : MonoBehaviour
 
         if (SaveData.instance.playerData.Difficulty == 0)
         {
-            Difficulty3.text = "Easy";
+            Difficulty3.text = "Story";
         }
         else if (SaveData.instance.playerData.Difficulty == 1)
         {
-            Difficulty3.text = "Normal";
-        }
-        else if (SaveData.instance.playerData.Difficulty == 2)
-        {
-            Difficulty3.text = "Hard";
+            Difficulty3.text = "Challange";
         }
 
 
@@ -356,6 +327,9 @@ public class LocalManager : MonoBehaviour
             Debug.Log("There is no save files to load!");
             SaveData.instance.playerData.LevelIndex = 1;
             SaveData.instance.playerData.Difficulty = difficulty;
+            GameManager.instance.difficulty = difficulty;
+            DateTime StartTime = DateTime.Now;
+            SaveData.instance.playerData.StartDate = StartTime.ToString("yyyy-MM-dd");
         }
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(SaveData.instance.playerData.LevelIndex);
@@ -368,5 +342,15 @@ public class LocalManager : MonoBehaviour
         {           
             yield return null;
         }
+    }
+
+    public void Clear()
+    {
+        SaveData.instance.playerData.LevelIndex = 0;
+        SaveData.instance.playerData.PlayTime = 0;
+        SaveData.instance.playerData.Difficulty = 0;
+        SaveData.instance.playerData.StartDate = "";
+        SaveData.instance.saveFilePath = "";
+        SaveData.instance.imageSaveFilePath = "";
     }
 }

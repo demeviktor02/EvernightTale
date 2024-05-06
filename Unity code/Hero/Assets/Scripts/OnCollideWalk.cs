@@ -10,9 +10,17 @@ public class OnCollideWalk : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            animator.SetBool("IsWalking", false);
-            player.GetComponent<PlayerMovement2>().isWalking = false;
-            player.GetComponent<PlayerMovement2>().playerSpeed = 6.3f;
+            animator.SetBool("IsWalking", !player.GetComponent<PlayerMovement2>().isWalking);
+            player.GetComponent<PlayerMovement2>().isWalking = !player.GetComponent<PlayerMovement2>().isWalking;
+
+            if (player.GetComponent<PlayerMovement2>().isWalking == true)
+            {
+                player.GetComponent<PlayerMovement2>().playerSpeed = player.GetComponent<PlayerMovement2>().walkingSpeed;
+            }
+            else
+            {
+                player.GetComponent<PlayerMovement2>().playerSpeed = player.GetComponent<PlayerMovement2>().playerSpeed;
+            }
         }
         
     }

@@ -30,8 +30,6 @@ public class EnterToInside : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
-            gm.switchedScene = true;
-            gm.switchedScenePosition = otherDoor;
             SceneManager.LoadScene(SceneName);
         }
     }

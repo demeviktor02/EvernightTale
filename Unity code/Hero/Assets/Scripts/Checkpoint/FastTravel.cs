@@ -28,6 +28,5 @@ public class FastTravel : MonoBehaviour
     public void FastTravelToCheckpoint()
     {
         SceneManager.LoadScene(SceneName);
-        gm.lastCheckPointPos = position;
     }
 }

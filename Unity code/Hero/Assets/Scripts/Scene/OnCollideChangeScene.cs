@@ -25,8 +25,7 @@ public class OnCollideChangeScene : MonoBehaviour
             hero.GetComponent<Health>().TakeDamage(10);
 
         }
-        GameManager.instance.switchedScene = true;
-        GameManager.instance.switchedScenePosition = otherSide;
+        GameManager.instance.SpawnPoint = otherSide;
         StartCoroutine(LoadLevel());
     }
 

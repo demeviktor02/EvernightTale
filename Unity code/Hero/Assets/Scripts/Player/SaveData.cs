@@ -67,7 +67,7 @@ public class PlayerData
     public int LevelIndex;
     public float PlayTime;
     public int Difficulty;
-    public int StartDate;
+    public string StartDate;
 }
 
 

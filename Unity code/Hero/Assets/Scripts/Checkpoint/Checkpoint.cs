@@ -33,8 +33,6 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            gm.lastCheckPointSceneName = SceneManager.GetActiveScene().name;
-            gm.lastCheckPointPos = transform.position;
             GetComponent<SpriteRenderer>().color = Color.green;
             PressE.SetActive(true);
             playerIsClose = true;

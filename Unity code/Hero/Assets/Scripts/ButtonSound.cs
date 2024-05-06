@@ -29,4 +29,10 @@ public class ButtonSound : MonoBehaviour
         AudioManager.instance.PlayAudio("Menu", "Change");
         //EventSystem.current.SetSelectedGameObject(mainMenuFirst);
     }
+
+    public void PlayPlaySound()
+    {
+        AudioManager.instance.PlayAudio("Menu", "Play");
+        //EventSystem.current.SetSelectedGameObject(mainMenuFirst);
+    }
 }

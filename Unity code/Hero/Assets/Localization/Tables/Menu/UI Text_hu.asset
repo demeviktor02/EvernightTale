@@ -50,6 +50,22 @@ MonoBehaviour:
     m_Localized: VISSZA
     m_Metadata:
       m_Items: []
+  - m_Id: 71207997146755072
+    m_Localized: "BIZTOSAN LET\xC9SZED A KARDOT?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71208376492191744
+    m_Localized: IGEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71208417705422848
+    m_Localized: NEM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71208418628169728
+    m_Localized: "V\xC1LASSZ NEH\xC9ZS\xC9GET"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

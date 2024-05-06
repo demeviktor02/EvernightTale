@@ -8,6 +8,8 @@ public class PlayerMovement2 : MonoBehaviour
 
     public float horizontal;
     public float playerSpeed;
+    public float walkingSpeed = 4f;
+    public float runningSpeed = 4f;
 
     public bool isJumping = false;
     public float jumpingPower = 16f;

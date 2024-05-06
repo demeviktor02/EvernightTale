@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 17424127182675968
-    m_Localized: CREDITS
+    m_Localized: KREDITEK
     m_Metadata:
       m_Items: []
   - m_Id: 123949981696
@@ -55,15 +55,27 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 64984972084736000
-    m_Localized: SOUNDS
+    m_Localized: HANGOK
     m_Metadata:
       m_Items: []
   - m_Id: 68284515618484224
-    m_Localized: CONTROLS
+    m_Localized: "IR\xC1NY\xCDT\xC1S"
     m_Metadata:
       m_Items: []
   - m_Id: 68284789242294272
-    m_Localized: BACK
+    m_Localized: VISSZA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71198863886217216
+    m_Localized: ALACSONY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71198926138077184
+    m_Localized: "K\xD6ZEPES"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71198927987765248
+    m_Localized: MAGAS
     m_Metadata:
       m_Items: []
   references:
