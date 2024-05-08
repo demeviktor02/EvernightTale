@@ -3,21 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using static System.TimeZoneInfo;
 
 public class Health : MonoBehaviour
 {
     public int health;
-    public int numOfHearts;
-
-    public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite emptyHeart;
+    public bool takeDamage;
+    public float healthTimer = 0f;
 
     public Animator animator;
 
     public Animator transition;
-    public float transitionTime = 3f;
+    public float transitionTime = -1f;
 
     public ParticleSystem dieParticle;
 
@@ -35,67 +31,74 @@ public class Health : MonoBehaviour
 
         if (GameManager.instance.difficulty == 0)
         {
-            numOfHearts = 5;
+            
         }
         else if (GameManager.instance.difficulty == 1)
         {
-            numOfHearts = 4;
+            
         }
         else if (GameManager.instance.difficulty == 2)
         {
-            numOfHearts = 3;
+            
         }
 
     }
 
     void Update()
     {
-        if (health == 4)
+        if (healthTimer >= -1)
+        {
+            healthTimer -= Time.deltaTime;
+        }
+
+        if (health == 4 && takeDamage == true)
         {
             CanvasAnimator.Play("Inda1");
+            takeDamage = false;
         }
-        if (health == 3)
+        if (health == 3 && takeDamage == true)
         {
             CanvasAnimator.Play("Inda2");
+            takeDamage = false;
         }
-        if (health == 2)
+        if (health == 2 && takeDamage == true)
         {
             CanvasAnimator.Play("Inda3");
+            takeDamage = false;
         }
-        if (health == 1)
+        if (health == 1 && takeDamage == true)
         {
             //CanvasAnimator.Play("Inda4");
             CanvasAnimator.Play("LastHealth");
+            takeDamage = false;
         }
 
-
-        if (health > numOfHearts)
+        if (health == 1 && healthTimer < 0)
         {
-            health = numOfHearts;
+            CanvasAnimator.Play("Inda4Out");
+            healthTimer = 10f;
+            health = 2;
         }
-       
-
-        for (int i = 0; i < hearts.Length; i++)
+        if (health == 2 && healthTimer < 0)
         {
-            if (i < health)
-            {
-                hearts[i].sprite = fullHeart;
-            }
-            else
-            {
-                hearts[i].sprite = emptyHeart;
-            }
-
-
-            if (i < numOfHearts)
-            {
-                hearts[i].enabled = true;
-            }
-            else
-            {
-                hearts[i].enabled = false;
-            }
+            CanvasAnimator.Play("Inda3Out");
+            healthTimer = 10f;
+            health = 3;
         }
+        if (health == 3 && healthTimer < 0)
+        {
+            CanvasAnimator.Play("Inda2Out");
+            healthTimer = 10f;
+            health = 4;
+        }
+        if (health == 4 && healthTimer < 0)
+        {
+            CanvasAnimator.Play("Inda1Out");
+            health = 5;
+        }
+
+
+
     }
 
     public void Die()
@@ -135,6 +138,10 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        takeDamage = true;
+
+        healthTimer = 10f;
+
         health -= damage;
 
         if (health <= 0)

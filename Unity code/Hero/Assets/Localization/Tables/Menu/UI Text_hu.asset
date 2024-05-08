@@ -66,6 +66,22 @@ MonoBehaviour:
     m_Localized: "V\xC1LASSZ NEH\xC9ZS\xC9GET"
     m_Metadata:
       m_Items: []
+  - m_Id: 72683438655238144
+    m_Localized: "FOLYTAT\xC1S"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72683485639831552
+    m_Localized: "\xDAJ J\xC1T\xC9K"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72683579990700032
+    m_Localized: "BE\xC1LL\xCDT\xC1SOK"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72683697104056320
+    m_Localized: "KIL\xC9P\xC9S"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -17,6 +17,7 @@ public class PlayerMovement2 : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform landCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Vector2 groundCheckSize;
 
@@ -180,6 +181,11 @@ public class PlayerMovement2 : MonoBehaviour
         Jumpflip();
         Flip();       
         timer += Time.deltaTime;
+
+        if (IsLanding() == true)
+        {
+
+        }
     }
 
     public void Jump()
@@ -229,8 +235,14 @@ public class PlayerMovement2 : MonoBehaviour
 
     private bool IsGrounded()
     {
-        animator.SetBool("IsLanding", true);
+        
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    private bool IsLanding()
+    {
+        animator.SetBool("IsLanding", true);
+        return Physics2D.OverlapCircle(landCheck.position, 0.2f, groundLayer);
     }
 
     public void IsJumpingFalse()

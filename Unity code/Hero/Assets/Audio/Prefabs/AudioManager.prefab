@@ -128,6 +128,134 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &2172488003560315435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7594727483271972890}
+  - component: {fileID: 6992382811935990486}
+  m_Layer: 0
+  m_Name: TriggerSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7594727483271972890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2172488003560315435}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3354393657195656943}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &6992382811935990486
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2172488003560315435}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 2083971377044379120, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3151890055088530305
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,6 +546,7 @@ Transform:
   - {fileID: 7470259466525012299}
   - {fileID: 2083868827941241080}
   - {fileID: 6920708213643000477}
+  - {fileID: 7594727483271972890}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3354393657195656942
@@ -436,7 +565,7 @@ MonoBehaviour:
   - listName: Music
     list:
     - name: Menu
-      clip: {fileID: 8300000, guid: 7fc296f668972f14ba5570b1e91f24d9, type: 3}
+      clip: {fileID: 8300000, guid: 5df26be41c9bfc64893f1d9726e98568, type: 3}
       volume: 0
       pitch: 0
       loop: 0
@@ -517,6 +646,36 @@ MonoBehaviour:
       loop: 0
     - name: ForestWolf
       clip: {fileID: 8300000, guid: 43c7eb226b428fd45b6a4458ca2b6f4b, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 1
+    - name: ForestTree1
+      clip: {fileID: 8300000, guid: 22bb344c6a29e6c4ea4511dfce300d17, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 1
+    - name: ForestTree2
+      clip: {fileID: 8300000, guid: 6ad68c600793cf84c8e78344a1142c8a, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 1
+    - name: ForestTree3
+      clip: {fileID: 8300000, guid: e67a34c6d97af3e4a8c7578b4c44484b, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 1
+    - name: ForestTreeFall
+      clip: {fileID: 8300000, guid: 4ed0e1a9fb305f34b8515253544e48ee, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 1
+    - name: ForestCrow1
+      clip: {fileID: 8300000, guid: 4714170724f5ec244bde76aeb4ad8a95, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 1
+    - name: ForestCrow2
+      clip: {fileID: 8300000, guid: 277686eeaff24ca44a43b6b66999fbdb, type: 3}
       volume: 0
       pitch: 0
       loop: 1
@@ -615,9 +774,39 @@ MonoBehaviour:
       volume: 0
       pitch: 0
       loop: 0
+    - name: Play
+      clip: {fileID: 8300000, guid: df7e2c86ecf982a419caae9014803b13, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
     source: {fileID: 2053734134843192007}
     isMusic: 0
     isLooping: 0
+  - listName: Trigger
+    list:
+    - name: Frog
+      clip: {fileID: 8300000, guid: 136c09df0b4b22b468444675369517b1, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: HearthBeatSlow
+      clip: {fileID: 8300000, guid: ef34a01d089b61e42b13857855b9b908, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: HearthBeatNormal
+      clip: {fileID: 8300000, guid: 57d9c03759e9d3144895d474fa7705dc, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: HearthBeatFast
+      clip: {fileID: 8300000, guid: 9e5ec93db1df8914bac06c0066b58b5f, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    source: {fileID: 6992382811935990486}
+    isMusic: 0
+    isLooping: 1
   CurrentMusicPlay: 
 --- !u!1 &6148284326082385247
 GameObject:

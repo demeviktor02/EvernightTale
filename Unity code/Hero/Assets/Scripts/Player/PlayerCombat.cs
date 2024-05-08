@@ -88,8 +88,9 @@ public class PlayerCombat : MonoBehaviour
             foreach (Collider2D tree in hitTree)
             {
 
-                AudioManager.instance.PlayAudio("Player", "PlayerHit1");
+                AudioManager.instance.PlayAudio("Forest", "ForestTree" + Random.Range(1, 4));
                 tree.GetComponent<Animator>().Play("Falling");
+                AudioManager.instance.PlayAudio("Forest", "ForestTreeFall");
                 tree.GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("Ground");
             }
         }

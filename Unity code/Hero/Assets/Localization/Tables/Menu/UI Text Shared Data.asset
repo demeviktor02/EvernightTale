@@ -63,6 +63,22 @@ MonoBehaviour:
     m_Key: CHOSE DIFFICULTY
     m_Metadata:
       m_Items: []
+  - m_Id: 72683438655238144
+    m_Key: CONTINUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72683485639831552
+    m_Key: NEW GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72683579990700032
+    m_Key: OPTIONS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72683697104056320
+    m_Key: EXIT
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

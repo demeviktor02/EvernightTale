@@ -66,6 +66,22 @@ MonoBehaviour:
     m_Localized: CHOSE DIFFICULTY
     m_Metadata:
       m_Items: []
+  - m_Id: 72683438655238144
+    m_Localized: CONTINUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72683485639831552
+    m_Localized: NEW GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72683579990700032
+    m_Localized: OPTIONS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72683697104056320
+    m_Localized: EXIT
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

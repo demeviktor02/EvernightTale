@@ -11,6 +11,18 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
+    //public Animator playerAnimator;
+
+    void OnLoadCallback(Scene scene, LoadSceneMode sceneMode)
+    {
+        Debug.Log("Pause");
+       // playerAnimator = GameObject.FindWithTag("Player").GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        SceneManager.sceneLoaded += this.OnLoadCallback;
+    }
 
     void Awake()
     {
@@ -34,7 +46,10 @@ public class PauseMenu : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {           
+    
+
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
@@ -50,16 +65,18 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        GameIsPaused = false;
         AudioManager.instance.PlayAudio("Music", "Game");
         Cursor.visible = false;
         optionsMenuUI.SetActive(false);
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
+        Cursor.visible = false;
     }
 
     public void Pause()
     {
+        GameIsPaused = true;
         AudioManager.instance.PlayAudio("Music", "Pause");
         Cursor.visible = true;
         StartCoroutine(IPause());       
@@ -71,7 +88,9 @@ public class PauseMenu : MonoBehaviour
         {
             ScreenCapture.CaptureScreenshot(SaveData.instance.imageSaveFilePath);
             yield return new WaitForSeconds(0.1f);
+            //playerAnimator.Play("In");
             pauseMenuUI.SetActive(true);
+            //playerAnimator.Play("Out");
             Time.timeScale = 0f;
             GameIsPaused = true;
         }
@@ -81,7 +100,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-       
+        GameIsPaused = false;
         GameManager.instance.inGame = false;
         GameManager.instance.lastLevelIndex = SceneManager.GetActiveScene().buildIndex;
         Time.timeScale = 1f;

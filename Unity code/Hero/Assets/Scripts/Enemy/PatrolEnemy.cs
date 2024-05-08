@@ -171,6 +171,12 @@ public class PatrolEnemy : Enemy
     {
         deathParticles.Play();
         AudioManager.instance.PlayAudio("Rat", "RatDie");
+        animator.Play("Die");
+        
+    }
+
+    public void destroyGameObject()
+    {
         Destroy(gameObject);
     }
 }

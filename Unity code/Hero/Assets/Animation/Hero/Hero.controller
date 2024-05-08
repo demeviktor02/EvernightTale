@@ -240,7 +240,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Idle
-  m_Speed: 0.2
+  m_Speed: 0.15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4167686487311021136}
@@ -454,7 +454,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Run
-  m_Speed: 0.2
+  m_Speed: 0.15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4504955358028514700}
@@ -595,7 +595,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Walk
-  m_Speed: 0.2
+  m_Speed: 0.15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6130738423041960889}
@@ -623,7 +623,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: IdleTurn
-  m_Speed: 0.3
+  m_Speed: 0.25
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8368634149261779258}
@@ -1036,7 +1036,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Land
-  m_Speed: 0.35
+  m_Speed: 0.3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -7011490234690936708}

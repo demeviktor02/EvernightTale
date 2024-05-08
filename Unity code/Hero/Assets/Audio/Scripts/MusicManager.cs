@@ -12,8 +12,6 @@ public class MusicManager : MonoBehaviour
         if (AudioManager.instance.CurrentMusicPlay != musicToStart)
         {
 
-            //AudioManager.instance.Stop();
-
             AudioManager.instance.PlayAudio("Music", musicToStart);
         }      
 

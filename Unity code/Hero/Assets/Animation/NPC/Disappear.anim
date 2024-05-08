@@ -103,7 +103,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: "AppearCanvas/d\xEDsz bal sarok"
+    path: "AppearCanvas/d\xEDsz bal sarok copy"
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -133,7 +133,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: "AppearCanvas/d\xEDsz jobb sarok"
+    path: "AppearCanvas/d\xEDsz jobb sarok copy"
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -163,7 +163,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: "AppearCanvas/ny\xFAjthat\xF3 d\xEDsz k\xF6zepe"
+    path: "AppearCanvas/ny\xFAjthat\xF3 d\xEDsz k\xF6zepe copy"
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -194,7 +194,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2237833415
+      path: 1894048265
       attribute: 304273561
       script: {fileID: 0}
       typeID: 212
@@ -203,7 +203,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3001564167
+      path: 314731180
       attribute: 304273561
       script: {fileID: 0}
       typeID: 212
@@ -212,7 +212,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1594851778
+      path: 2605895876
       attribute: 304273561
       script: {fileID: 0}
       typeID: 212
@@ -328,7 +328,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: "AppearCanvas/d\xEDsz bal sarok"
+    path: "AppearCanvas/d\xEDsz bal sarok copy"
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -358,7 +358,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: "AppearCanvas/d\xEDsz jobb sarok"
+    path: "AppearCanvas/d\xEDsz jobb sarok copy"
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -388,7 +388,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: "AppearCanvas/ny\xFAjthat\xF3 d\xEDsz k\xF6zepe"
+    path: "AppearCanvas/ny\xFAjthat\xF3 d\xEDsz k\xF6zepe copy"
     classID: 212
     script: {fileID: 0}
     flags: 0
