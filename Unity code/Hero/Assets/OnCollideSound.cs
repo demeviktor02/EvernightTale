@@ -18,7 +18,7 @@ public class OnCollideSound : MonoBehaviour
             }
             else if (start == false)
             {
-                AudioManager.instance.StopAudio("Trigger", triggerSound);
+                AudioManager.instance.StopAudio("Trigger");//triggerSound
                 start = true;
             }
             

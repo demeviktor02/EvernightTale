@@ -32,6 +32,10 @@ MonoBehaviour:
     m_Localized: NEW GAME
     m_Metadata:
       m_Items: []
+  - m_Id: 221670633472
+    m_Localized: WHAT'S YOUR NAME CHILD?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

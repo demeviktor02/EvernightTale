@@ -11,18 +11,8 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
-    //public Animator playerAnimator;
-
-    void OnLoadCallback(Scene scene, LoadSceneMode sceneMode)
-    {
-        Debug.Log("Pause");
-       // playerAnimator = GameObject.FindWithTag("Player").GetComponent<Animator>();
-    }
-
-    private void Start()
-    {
-        SceneManager.sceneLoaded += this.OnLoadCallback;
-    }
+    public Animator transitionAnimator;
+    public Animator pauseMenuAnimator;
 
     void Awake()
     {
@@ -42,12 +32,9 @@ public class PauseMenu : MonoBehaviour
     }
 
 
-
-
     // Update is called once per frame
     void Update()
-    {           
-    
+    {
 
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -62,6 +49,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
+
 
     public void Resume()
     {
@@ -87,11 +75,13 @@ public class PauseMenu : MonoBehaviour
         if (GameManager.instance.inGame == true)
         {
             ScreenCapture.CaptureScreenshot(SaveData.instance.imageSaveFilePath);
-            yield return new WaitForSeconds(0.1f);
-            //playerAnimator.Play("In");
+            new WaitForSeconds(0.1f);
+            
+            //transitionAnimator.Play("In");
+            //yield return new WaitForSeconds(0.1f);           
             pauseMenuUI.SetActive(true);
-            //playerAnimator.Play("Out");
             Time.timeScale = 0f;
+            //pauseMenuAnimator.Play("Out");           
             GameIsPaused = true;
         }
 

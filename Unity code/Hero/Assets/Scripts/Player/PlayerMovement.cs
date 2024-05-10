@@ -127,7 +127,7 @@ public class PlayerMovement2 : MonoBehaviour
         }
         else if (isRunning == false && isRunningOnce == true && isWalking == false)
         {
-            AudioManager.instance.StopAudio("PlayerRun", "PlayerRun");
+            AudioManager.instance.StopAudio("PlayerRun");//"PlayerRun"
             isRunningOnce = false;
         }
 

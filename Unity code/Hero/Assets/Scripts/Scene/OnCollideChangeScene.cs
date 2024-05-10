@@ -14,14 +14,20 @@ public class OnCollideChangeScene : MonoBehaviour
 
     public GameObject hero;
     public bool IsDying;
-
+    public bool IsDyingFromWater;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (IsDying == true && collision.tag == "Player")
         {
-            gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
+            if (IsDyingFromWater)
+            {
+                hero.GetComponent<SpriteRenderer>().sortingOrder = 74;
+            }
+            
             hero.GetComponent<Health>().TakeDamage(10);
 
         }

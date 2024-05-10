@@ -103,6 +103,8 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
+        AudioManager.instance.StopAudio("PlayerRun");
+        AudioManager.instance.StopAudio("Trigger");
         health = 0;
         gameObject.GetComponent<PlayerMovement2>().enabled = false;
 
