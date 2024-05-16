@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,7 @@ public class PlayerMovement2 : MonoBehaviour
 
     public bool isJumping = false;
     public float jumpingPower = 16f;
+    public float cutJumpHeight;
     public bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
@@ -47,6 +49,9 @@ public class PlayerMovement2 : MonoBehaviour
 
     public float sighTime;
     public float runtime;
+
+    public ParticleSystem dust;
+    public float frictionAmount;
 
     private void Start()
     {
@@ -107,7 +112,7 @@ public class PlayerMovement2 : MonoBehaviour
 
         if (isRunning == false && sighTime > 100f)
         {
-            sighTime = Random.Range(15, 25);
+            sighTime = UnityEngine.Random.Range(15, 25);
         }
         else if (isRunning == true || isJumping == true)
         {
@@ -117,7 +122,7 @@ public class PlayerMovement2 : MonoBehaviour
         if (sighTime <= 0)
         {
             AudioManager.instance.PlayAudio("Player", "PlayerSigh");
-            sighTime = Random.Range(15, 25);
+            sighTime = UnityEngine.Random.Range(15, 25);
         }
 
         if (isRunning == true && isRunningOnce == false && isWalking == false)
@@ -184,15 +189,35 @@ public class PlayerMovement2 : MonoBehaviour
 
         if (IsLanding() == true)
         {
-
+               
         }
+
+        if (Input.GetButtonUp("Jump"))
+        {
+            if (rb.velocity.y > 0)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * cutJumpHeight);
+            }
+        }
+
+        if (GroundedRemember > 0 && Mathf.Abs(horizontal) < 0.01f)
+        {
+            float amount = Mathf.Min(Mathf.Abs(rb.velocity.x), Mathf.Abs(frictionAmount));
+
+            amount *= Mathf.Sign(rb.velocity.x);
+
+            rb.AddForce(Vector2.right * -amount, ForceMode2D.Impulse);
+        }
+
+
     }
 
     public void Jump()
     {
+
         if ((jumpPressedRemember > 0) && (GroundedRemember > 0))
         {
-            int random = Random.Range(0, 4);
+            int random = UnityEngine.Random.Range(0, 4);
             if (random == 0)
             {
                 AudioManager.instance.PlayAudio("Player", "PlayerJump");
@@ -206,7 +231,7 @@ public class PlayerMovement2 : MonoBehaviour
         }
         else if (Input.GetButtonDown("Jump") && doubleJump)
         {
-            int random = Random.Range(0, 4);
+            int random = UnityEngine.Random.Range(0, 4);
             if (random == 0)
             {
                 AudioManager.instance.PlayAudio("Player", "PlayerJump");
@@ -242,6 +267,7 @@ public class PlayerMovement2 : MonoBehaviour
     private bool IsLanding()
     {
         animator.SetBool("IsLanding", true);
+        
         return Physics2D.OverlapCircle(landCheck.position, 0.2f, groundLayer);
     }
 
@@ -341,6 +367,11 @@ public class PlayerMovement2 : MonoBehaviour
             animator.SetBool("IsRunning", false);
         }
 
+    }
+
+    public void PlayDust()
+    {
+        dust.Play();
     }
 
 }

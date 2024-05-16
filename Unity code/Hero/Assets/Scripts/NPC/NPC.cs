@@ -7,25 +7,34 @@ public class NPC : MonoBehaviour
 {
     public GameObject dialogePanel;
     public TMPro.TMP_Text dialogeText;
+    public TMPro.TMP_Text nameText;
     public string[] dialoge;
+    public string[] Names;
     private int index;
 
-    //public GameObject contButton;
+    public bool currentDialogEnd = false;
+
+    public GameObject contButton;
+    public GameObject EndButton;
     public float wordSpeed;
     public bool playerIsClose;
     public bool inDialoge = false;
-    //public bool dialogeEnd = false;
+    public bool dialogeEnd = false;
 
     public GameObject PressE;
 
     public Animator animator;
+
+    public GameObject NPCCam;
+
+    public GameObject player;
 
     // Update is called once per frame
     void Update()
     {
         //if (playerIsClose && inDialoge == false)
         //{
-            
+
         //}
         //else
         //{
@@ -33,34 +42,29 @@ public class NPC : MonoBehaviour
         //}
 
 
-        //if (Input.GetKeyDown(KeyCode.E) && inDialoge)
-        //{
-        //    NextLine();
-        //}
+        if (Input.GetKeyDown(KeyCode.E) && inDialoge && currentDialogEnd == true)
+        {
+            currentDialogEnd = false;
+            nameText.text = Names[index+1];
+            NextLine();
+        }
 
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose && inDialoge == false)
         {
+            player.GetComponent<Animator>().Play("Idle");
+            nameText.text = Names[0];
+            player.GetComponent<PlayerMovement2>().enabled = false;
+            NPCCam.SetActive(true);
             inDialoge = true;
             animator.Play("TextAppear");
             zeroText();
             StartCoroutine(Typing());
-
-            //if (dialogePanel.activeInHierarchy)
-            //{
-            //    zeroText();
-                
-            //}
-            //else
-            //{
-            //    dialogePanel.SetActive(true);
-            //    StartCoroutine(Typing());
-            //}
         }
 
-        //if (dialogeText.text == dialoge[index])
-        //{
-        //    contButton.SetActive(true);
-        //}
+        if (dialogeText.text == dialoge[index])
+        {
+            contButton.SetActive(true);
+        }
     }
 
     public void zeroText()
@@ -76,24 +80,27 @@ public class NPC : MonoBehaviour
             dialogeText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
         }
+        currentDialogEnd = true;
     }
 
-    //public void NextLine()
-    //{
-    //    contButton.SetActive(false);
+    public void NextLine()
+    {
+        contButton.SetActive(false);
 
-    //    if (index < dialoge.Length - 1)
-    //    {
-    //        index++;
-    //        dialogeText.text = "";
-    //        StartCoroutine(Typing());
-    //    }
-    //    else
-    //    {
-    //        zeroText();
-            
-    //    }
-    //}
+        if (index < dialoge.Length - 1)
+        {
+            index++;
+            dialogeText.text = "";
+            StartCoroutine(Typing());
+        }
+        else
+        {
+            animator.Play("TalkingEnd");
+            NPCCam.SetActive(false);
+            player.GetComponent<PlayerMovement2>().enabled = true;
+            zeroText();
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -108,17 +115,10 @@ public class NPC : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (inDialoge == true)
-            {
-                animator.Play("TextDisappear");
-            }
-            else
-            {
-                animator.Play("Disappear");
-            }                        
-            inDialoge = false;
+            animator.Play("Disappear");
             playerIsClose = false;
-            zeroText();
+            inDialoge = false;
+
         }
     }
 }

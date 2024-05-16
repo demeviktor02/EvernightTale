@@ -56,10 +56,22 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
         AudioManager.instance.PlayAudio("Music", "Game");
         Cursor.visible = false;
+        StartCoroutine(IResume());
+        
+    }
+
+    public IEnumerator IResume()
+    {
+        pauseMenuAnimator.Play("In");
+        yield return new WaitForSecondsRealtime(2f);
         optionsMenuUI.SetActive(false);
         pauseMenuUI.SetActive(false);
+
+        transitionAnimator.Play("Out");
+        yield return new WaitForSecondsRealtime(2f);
         Time.timeScale = 1f;
-        Cursor.visible = false;
+
+        yield return null;
     }
 
     public void Pause()
@@ -75,14 +87,16 @@ public class PauseMenu : MonoBehaviour
         if (GameManager.instance.inGame == true)
         {
             ScreenCapture.CaptureScreenshot(SaveData.instance.imageSaveFilePath);
-            new WaitForSeconds(0.1f);
-            
-            //transitionAnimator.Play("In");
-            //yield return new WaitForSeconds(0.1f);           
-            pauseMenuUI.SetActive(true);
+
+            //yield return new WaitForSecondsRealtime(0.1f);
+
             Time.timeScale = 0f;
-            //pauseMenuAnimator.Play("Out");           
-            GameIsPaused = true;
+            transitionAnimator.Play("In");
+
+            yield return new WaitForSecondsRealtime(3f);        
+            
+            pauseMenuUI.SetActive(true);
+            pauseMenuAnimator.Play("Out");           
         }
 
         yield return null;

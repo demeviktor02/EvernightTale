@@ -107,19 +107,7 @@ public class Health : MonoBehaviour
         AudioManager.instance.StopAudio("Trigger");
         health = 0;
         gameObject.GetComponent<PlayerMovement2>().enabled = false;
-
-        float randomNumer = Random.Range(1, 2);
-        if (randomNumer == 0)
-        {
-            Debug.Log("ASD");
-            animator.SetTrigger("IsDying");
-        }
-        else
-        {
-            Debug.Log("BSD");
-            animator.SetTrigger("IsDying2");
-
-        }
+        animator.SetTrigger("IsDying2");
         
         dieParticle.Play();
 

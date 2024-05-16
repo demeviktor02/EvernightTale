@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Kredits Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Kredits
+  m_TableCollectionNameGuidString: 211db1bd75735c147b140862014ef568
+  m_Entries:
+  - m_Id: 224032026624
+    m_Key: KREDITS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266272862208
+    m_Key: VISUAL DESIGN AND CHARACTER ANIMATIONS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 515682955264
+    m_Key: UNITY DEVELOPMENT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 647853862912
+    m_Key: "NIKOLETT RITA M\xC1TRAI"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 802908893184
+    m_Key: VIKTOR DEME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 854687576064
+    m_Key: CONSULTANTS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 973096972288
+    m_Key: "D\xC1NIEL GY\xD6NGY"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1067485589504
+    m_Key: "EDE M\xC1TY\xC1S TROLL"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1340551557120
+    m_Key: SPECIAL THANKS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1438228508672
+    m_Key: "P\xC1L ELEKES"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1501310840832
+    m_Key: "RUDOLF SZIL\xC1GYI"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1583552753664
+    m_Key: "SZEBASZTI\xC1N GELLE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1658010038272
+    m_Key: "MIH\xC1LY M\xC1TRAI"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1719481757696
+    m_Key: MADE1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2021207404544
+    m_Key: MADE2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2035128299520
+    m_Key: MADE3
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4397113401674825758
+  references:
+    version: 2
+    RefIds:
+    - rid: 4397113401674825758
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1715874448930

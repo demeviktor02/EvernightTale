@@ -19,7 +19,7 @@ public class OnCollideWalk : MonoBehaviour
             }
             else
             {
-                player.GetComponent<PlayerMovement2>().playerSpeed = player.GetComponent<PlayerMovement2>().playerSpeed;
+                player.GetComponent<PlayerMovement2>().playerSpeed = player.GetComponent<PlayerMovement2>().runningSpeed;
             }
         }
         

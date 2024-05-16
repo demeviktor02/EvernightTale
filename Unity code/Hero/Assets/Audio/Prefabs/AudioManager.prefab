@@ -630,7 +630,7 @@ MonoBehaviour:
   - listName: PlayerRun
     list:
     - name: PlayerRun
-      clip: {fileID: 8300000, guid: cfc1561930af37147815f37ade823fe0, type: 3}
+      clip: {fileID: 8300000, guid: 6578632a520f4e8488a6a488835b12f2, type: 3}
       volume: 0
       pitch: 0
       loop: 1

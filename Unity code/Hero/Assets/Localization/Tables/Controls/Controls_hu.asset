@@ -58,6 +58,34 @@ MonoBehaviour:
     m_Localized: "FEGYVER\nV\xC1LT\xC1S"
     m_Metadata:
       m_Items: []
+  - m_Id: 7280286536134656
+    m_Localized: "T\xD6RL\xC9S"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7280314507948032
+    m_Localized: "KIV\xC1LASZT\xC1S"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7289749561241600
+    m_Localized: "BILLENTY\u0170ZET\nIR\xC1NY\xCDT\xC1S"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7289832667181056
+    m_Localized: "KONTROLLER\nIR\xC1NY\xCDT\xC1S"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7301293716107264
+    m_Localized: "BESZ\xC9LGET\xC9S / T\xD6RL\xC9S"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7301877160570880
+    m_Localized: "FEGYVER V\xC1LT\xC1S / VISSZA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7302278140227584
+    m_Localized: "UGR\xC1S / KIV\xC1LASZT\xC1S"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

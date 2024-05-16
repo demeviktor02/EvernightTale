@@ -1,0 +1,1706 @@
+fileFormatVersion: 2
+guid: 7f6c5e5d54d86c443a4cf778912f9a01
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caf1adf013c9c334d9bd33c5322b1a9d
+      internalID: -1612386681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_1"
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ddc15b70b88c164e9639702514543e8
+      internalID: 1566902345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_2"
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbdde7429eb19f4e873c4f7dafaacfc
+      internalID: -837817413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_3"
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c66623bd0468a4478517631b38906c8
+      internalID: 2000491752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_4"
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b463e8caa294a43a587689437244b6
+      internalID: -1149598354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_5"
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54035acc2986caf4fadd4034e5632561
+      internalID: 774288678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_6"
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6476b75a187fec4b9052abe57582045
+      internalID: 1125432467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_7"
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9abdf9bbb76034eb0146a7f78d6ae5
+      internalID: -1880111265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_8"
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b780197725c5142b4a9a30bdc82c6d
+      internalID: 560652941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_9"
+      rect:
+        serializedVersion: 2
+        x: 9000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d194b5db6215b45a9711de96f0b40d
+      internalID: -165724713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_10"
+      rect:
+        serializedVersion: 2
+        x: 10000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd1dc7416b502c4408f59a204bb348fb
+      internalID: -750496098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_11"
+      rect:
+        serializedVersion: 2
+        x: 11000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5645afb9b6b10c4aabe622222506e90
+      internalID: -283249315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_12"
+      rect:
+        serializedVersion: 2
+        x: 12000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4208e1388b361478ca9aa4940b1c32
+      internalID: -1347415978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_13"
+      rect:
+        serializedVersion: 2
+        x: 13000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d816e6708acf7cb48b3451192b3d303b
+      internalID: -1111037309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_14"
+      rect:
+        serializedVersion: 2
+        x: 14000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c49a3cced4ad248a983545ea599562
+      internalID: 814619817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_15"
+      rect:
+        serializedVersion: 2
+        x: 15000
+        y: 4000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce96bcc45ac44e479f7cd6471ca6de4
+      internalID: -278492024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_16"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03dc7122016ea614a8281d064b2cb42b
+      internalID: 428580310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_17"
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d44613ddeb5c254ea11c987697d10d6
+      internalID: -1448865224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_18"
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b7b54fde41bf2e4680efb471db113dd
+      internalID: -1553831740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_19"
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07378c25cb3f66842bf46c7f3b40c16f
+      internalID: -514230811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_20"
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 312d9aa64dd8d09489cfbc2e326d5156
+      internalID: 224541552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_21"
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaf73f646a79d5443b4903d421e36321
+      internalID: -1798762935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_22"
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2179b2709cc44d2469455335e87771c7
+      internalID: 1422866323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_23"
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d31e750dece33a4b9c7340fc19ed493
+      internalID: 926979398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_24"
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c3c9106496d3e4b81db4695d545fef
+      internalID: 625780125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_25"
+      rect:
+        serializedVersion: 2
+        x: 9000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde16bff50217d8429b0f575298c6549
+      internalID: -463489719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_26"
+      rect:
+        serializedVersion: 2
+        x: 10000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29830aa80bc8e924ba29ac5563d880da
+      internalID: -1264437805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_27"
+      rect:
+        serializedVersion: 2
+        x: 11000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24afbbfa0a326c4e806452248584571
+      internalID: 2042796362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_28"
+      rect:
+        serializedVersion: 2
+        x: 12000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ddfed34a6a7514692c2fde79b1a81a
+      internalID: 632809093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_29"
+      rect:
+        serializedVersion: 2
+        x: 13000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c6d93704458f941873079fe7aa7302
+      internalID: 1687139084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_30"
+      rect:
+        serializedVersion: 2
+        x: 14000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0bb3ddf262dedb4e8ff3e3ef8b26e23
+      internalID: -1089810489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_31"
+      rect:
+        serializedVersion: 2
+        x: 15000
+        y: 3000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a5b4f513e3c4a498e4dfeba479b9c6
+      internalID: -1597364102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_32"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d7d2ec254feec648876e5acdf7d9c24
+      internalID: 48103099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_33"
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df99d7700ef84d438bf360cf898ae44
+      internalID: -363516412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_34"
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 828f5d1ed525af741972987574e2633f
+      internalID: 440147207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_35"
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f5036ee61c5b6479d35aaf7c8e1673
+      internalID: 592326363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_36"
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d77168550e6ff75469cb637ce84c65b7
+      internalID: -157887911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_37"
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e88c76a6947266140803917129745036
+      internalID: -107776315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_38"
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88334bb42197ded4f9f1e05ec2ceaf51
+      internalID: 603868645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_39"
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f871ed347e5a9b49ab43daa518fbf7c
+      internalID: 759002233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_40"
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32185f1e89092c746b85699a41215ec2
+      internalID: 972478133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_41"
+      rect:
+        serializedVersion: 2
+        x: 9000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8f4c736ba93bf498dc3d3db6e73330
+      internalID: 752020199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_42"
+      rect:
+        serializedVersion: 2
+        x: 10000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7899c0d56162bf046adf68d0f4b18db6
+      internalID: -462518196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_43"
+      rect:
+        serializedVersion: 2
+        x: 11000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5486e44acb0a93549ad39cad66b887d6
+      internalID: 803944086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_44"
+      rect:
+        serializedVersion: 2
+        x: 12000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00553d21eb8233a489f97702bb172b51
+      internalID: 381572509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_45"
+      rect:
+        serializedVersion: 2
+        x: 13000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e2234e653172e841b4c0b56abd60492
+      internalID: 915439218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_46"
+      rect:
+        serializedVersion: 2
+        x: 14000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b0b8b2997e98248beadc5e8b415821
+      internalID: -1811433406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_47"
+      rect:
+        serializedVersion: 2
+        x: 15000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f872e03266a1c874d99684184c7a99ea
+      internalID: -743663736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_48"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b6d40be25362842996a03607d5e5b3
+      internalID: 350909490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_49"
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c40257e0cd307fb408da19bd6e53b67f
+      internalID: 1380608102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_50"
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c774c1849686a7e4c9d8538817bf061b
+      internalID: 66140712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_51"
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b280503d99d3f4a8efb5d5412f9d6c
+      internalID: -1444395692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_52"
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87859ea156b49204d88303c813534860
+      internalID: 253328757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_53"
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20b0a2b90408214b94ab67fb0610b1f
+      internalID: 1745036201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_54"
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ab6ec44745d4843b6ae9896efd82bf
+      internalID: 1063879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_55"
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a36b346c10d28b40b0c4bb14ec3f167
+      internalID: 13580907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_56"
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 138c4f5934f56274787371f61a5f6827
+      internalID: -569052788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_57"
+      rect:
+        serializedVersion: 2
+        x: 9000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc787132c8555c49943963b83d814a9
+      internalID: -707742035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_58"
+      rect:
+        serializedVersion: 2
+        x: 10000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c800dc3e9438c9b46b5ee438a457b36b
+      internalID: 1613806321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_59"
+      rect:
+        serializedVersion: 2
+        x: 11000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf52ec6248cf6cd498b5a679d48401a9
+      internalID: -60126112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_60"
+      rect:
+        serializedVersion: 2
+        x: 12000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf913a2cc0270d4d98543e6e17aa9a9
+      internalID: 1348429545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_61"
+      rect:
+        serializedVersion: 2
+        x: 13000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aad60136d2868d14285a1c0ed11f800e
+      internalID: 1520797136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_62"
+      rect:
+        serializedVersion: 2
+        x: 14000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f14c6377be820a4fbda234e73a02e3e
+      internalID: -731012453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_63"
+      rect:
+        serializedVersion: 2
+        x: 15000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b230cca1594c842b8da9f63bd156fd
+      internalID: 1711493306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_64"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a6fcd85c0f7dd4eb7f22e2fbc0d6b6
+      internalID: 926505339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_65"
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7dbedec6a5476a4bb42e81d6d400ccf
+      internalID: -1838431618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_66"
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f65a4f45758db4a4597ca3a50d88ea54
+      internalID: 890183405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_67"
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97788417f44dedf4c90c50aa6543090e
+      internalID: -373800144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_68"
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb0e0e1c1c2371641925ce3ca2405f61
+      internalID: -1403365707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "e\u0301letjelze\u0301s2_sprite sheet_69"
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ed918cff0295a419b983660ec7c3cf
+      internalID: -1132016929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "e\u0301letjelze\u0301s2_sprite sheet_0": -1612386681
+      "e\u0301letjelze\u0301s2_sprite sheet_1": 1566902345
+      "e\u0301letjelze\u0301s2_sprite sheet_10": -750496098
+      "e\u0301letjelze\u0301s2_sprite sheet_11": -283249315
+      "e\u0301letjelze\u0301s2_sprite sheet_12": -1347415978
+      "e\u0301letjelze\u0301s2_sprite sheet_13": -1111037309
+      "e\u0301letjelze\u0301s2_sprite sheet_14": 814619817
+      "e\u0301letjelze\u0301s2_sprite sheet_15": -278492024
+      "e\u0301letjelze\u0301s2_sprite sheet_16": 428580310
+      "e\u0301letjelze\u0301s2_sprite sheet_17": -1448865224
+      "e\u0301letjelze\u0301s2_sprite sheet_18": -1553831740
+      "e\u0301letjelze\u0301s2_sprite sheet_19": -514230811
+      "e\u0301letjelze\u0301s2_sprite sheet_2": -837817413
+      "e\u0301letjelze\u0301s2_sprite sheet_20": 224541552
+      "e\u0301letjelze\u0301s2_sprite sheet_21": -1798762935
+      "e\u0301letjelze\u0301s2_sprite sheet_22": 1422866323
+      "e\u0301letjelze\u0301s2_sprite sheet_23": 926979398
+      "e\u0301letjelze\u0301s2_sprite sheet_24": 625780125
+      "e\u0301letjelze\u0301s2_sprite sheet_25": -463489719
+      "e\u0301letjelze\u0301s2_sprite sheet_26": -1264437805
+      "e\u0301letjelze\u0301s2_sprite sheet_27": 2042796362
+      "e\u0301letjelze\u0301s2_sprite sheet_28": 632809093
+      "e\u0301letjelze\u0301s2_sprite sheet_29": 1687139084
+      "e\u0301letjelze\u0301s2_sprite sheet_3": 2000491752
+      "e\u0301letjelze\u0301s2_sprite sheet_30": -1089810489
+      "e\u0301letjelze\u0301s2_sprite sheet_31": -1597364102
+      "e\u0301letjelze\u0301s2_sprite sheet_32": 48103099
+      "e\u0301letjelze\u0301s2_sprite sheet_33": -363516412
+      "e\u0301letjelze\u0301s2_sprite sheet_34": 440147207
+      "e\u0301letjelze\u0301s2_sprite sheet_35": 592326363
+      "e\u0301letjelze\u0301s2_sprite sheet_36": -157887911
+      "e\u0301letjelze\u0301s2_sprite sheet_37": -107776315
+      "e\u0301letjelze\u0301s2_sprite sheet_38": 603868645
+      "e\u0301letjelze\u0301s2_sprite sheet_39": 759002233
+      "e\u0301letjelze\u0301s2_sprite sheet_4": -1149598354
+      "e\u0301letjelze\u0301s2_sprite sheet_40": 972478133
+      "e\u0301letjelze\u0301s2_sprite sheet_41": 752020199
+      "e\u0301letjelze\u0301s2_sprite sheet_42": -462518196
+      "e\u0301letjelze\u0301s2_sprite sheet_43": 803944086
+      "e\u0301letjelze\u0301s2_sprite sheet_44": 381572509
+      "e\u0301letjelze\u0301s2_sprite sheet_45": 915439218
+      "e\u0301letjelze\u0301s2_sprite sheet_46": -1811433406
+      "e\u0301letjelze\u0301s2_sprite sheet_47": -743663736
+      "e\u0301letjelze\u0301s2_sprite sheet_48": 350909490
+      "e\u0301letjelze\u0301s2_sprite sheet_49": 1380608102
+      "e\u0301letjelze\u0301s2_sprite sheet_5": 774288678
+      "e\u0301letjelze\u0301s2_sprite sheet_50": 66140712
+      "e\u0301letjelze\u0301s2_sprite sheet_51": -1444395692
+      "e\u0301letjelze\u0301s2_sprite sheet_52": 253328757
+      "e\u0301letjelze\u0301s2_sprite sheet_53": 1745036201
+      "e\u0301letjelze\u0301s2_sprite sheet_54": 1063879
+      "e\u0301letjelze\u0301s2_sprite sheet_55": 13580907
+      "e\u0301letjelze\u0301s2_sprite sheet_56": -569052788
+      "e\u0301letjelze\u0301s2_sprite sheet_57": -707742035
+      "e\u0301letjelze\u0301s2_sprite sheet_58": 1613806321
+      "e\u0301letjelze\u0301s2_sprite sheet_59": -60126112
+      "e\u0301letjelze\u0301s2_sprite sheet_6": 1125432467
+      "e\u0301letjelze\u0301s2_sprite sheet_60": 1348429545
+      "e\u0301letjelze\u0301s2_sprite sheet_61": 1520797136
+      "e\u0301letjelze\u0301s2_sprite sheet_62": -731012453
+      "e\u0301letjelze\u0301s2_sprite sheet_63": 1711493306
+      "e\u0301letjelze\u0301s2_sprite sheet_64": 926505339
+      "e\u0301letjelze\u0301s2_sprite sheet_65": -1838431618
+      "e\u0301letjelze\u0301s2_sprite sheet_66": 890183405
+      "e\u0301letjelze\u0301s2_sprite sheet_67": -373800144
+      "e\u0301letjelze\u0301s2_sprite sheet_68": -1403365707
+      "e\u0301letjelze\u0301s2_sprite sheet_69": -1132016929
+      "e\u0301letjelze\u0301s2_sprite sheet_7": -1880111265
+      "e\u0301letjelze\u0301s2_sprite sheet_8": 560652941
+      "e\u0301letjelze\u0301s2_sprite sheet_9": -165724713
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

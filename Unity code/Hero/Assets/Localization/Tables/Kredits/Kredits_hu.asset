@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Kredits_hu
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: hu
+  m_SharedData: {fileID: 11400000, guid: 211db1bd75735c147b140862014ef568, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 224032026624
+    m_Localized: KREDITEK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266272862208
+    m_Localized: "VIZU\xC1LIS DESIGN \xC9S KARAKTER ANIM\xC1CI\xD3K"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 515682955264
+    m_Localized: "UNITY FEJLESZT\xC9S"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 647853862912
+    m_Localized: "M\xC1TRAI NIKOLETT RITA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 802908893184
+    m_Localized: DEME VIKTOR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 854687576064
+    m_Localized: KONZULENSEK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 973096972288
+    m_Localized: "GY\xD6NGY D\xC1NIEL"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1067485589504
+    m_Localized: "TROLL EDE M\xC1TY\xC1S"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1340551557120
+    m_Localized: "K\xDCL\xD6N K\xD6SZ\xD6NET"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1438228508672
+    m_Localized: "ELEKES P\xC1L"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1501310840832
+    m_Localized: "SZIL\xC1GYI RUDOLF"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1583552753664
+    m_Localized: "GELLE SZEBASZTI\xC1N"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1658010038272
+    m_Localized: "M\xC1TRAI MIH\xC1LY"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1719481757696
+    m_Localized: "K\xC9SZ\xDCLT AZ ESZTERH\xC1ZY K\xC1ROLY KATOLIKUS EGYETEM M\xC9DIA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2021207404544
+    m_Localized: "\xC9S DESIGN  INT\xC9ZET \xC9S A MATEMATIKAI \xC9S INFORMATIKAI"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2035128299520
+    m_Localized: "INT\xC9ZET KOOPER\xC1CI\xD3JA J\xD3VOLT\xC1B\xD3L"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

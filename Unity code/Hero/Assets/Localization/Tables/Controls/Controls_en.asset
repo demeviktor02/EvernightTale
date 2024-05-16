@@ -60,6 +60,38 @@ MonoBehaviour:
       WEAPON'
     m_Metadata:
       m_Items: []
+  - m_Id: 7280286536134656
+    m_Localized: DELETE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7280314507948032
+    m_Localized: SELECT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7289749561241600
+    m_Localized: 'KEYBOARD
+
+      CONTROLS'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7289832667181056
+    m_Localized: 'CONTROLLER
+
+      CONTROLS'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7301293716107264
+    m_Localized: TALK / DELETE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7301877160570880
+    m_Localized: SWITCH WEAPON / BACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7302278140227584
+    m_Localized: JUMP / SELECT
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
