@@ -24,11 +24,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 430310334464
-    m_Key: Jump
+    m_Key: PRESS          TO JUMP
     m_Metadata:
       m_Items: []
   - m_Id: 562187640832
-    m_Key: HoldJump
+    m_Key: PRESS TO DOUBLE JUMP
     m_Metadata:
       m_Items: []
   - m_Id: 719717310464

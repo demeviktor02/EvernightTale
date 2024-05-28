@@ -36,6 +36,62 @@ MonoBehaviour:
     m_Localized: WHAT'S YOUR NAME CHILD?
     m_Metadata:
       m_Items: []
+  - m_Id: 7502126487531520
+    m_Localized: CHOOSE GAME MODE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7502537873256448
+    m_Localized: CHALLANGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7502617565032448
+    m_Localized: STORY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7506919239020544
+    m_Localized: ARE YOU READY FOR THE CHALLANGE? THE ,,CHALLANGE" MODE REPRESENTS
+      TOUGH TRIALS, BUT ONLY THROUGH THEM CAN YOU BECOME A TRUE HERO. WILL YOU TAKE
+      ON THE FIGHT?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7507176333078528
+    m_Localized: DO YOU LOVE STORIES AND ADVENTURES BUT PREFER NOT TO RISK YOUR LIFE?
+      IN ,,STORY" MODE, YOUR LIFE IS LESS ENDANGERED, ALLOWING YOU TO EXPLORE THE
+      WORLD IN PEACE.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8181318950678528
+    m_Localized: WHAT'S YOUR NAME?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192582665990144
+    m_Localized: WHAT'S YOUR NAME CHILD?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10514411728498688
+    m_Localized: DELETE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10515221925425152
+    m_Localized: CHOOSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10515466939887616
+    m_Localized: BACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10542825743151104
+    m_Localized: 'MODE: STORY'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10542913274081280
+    m_Localized: 'MODE: CHALLANGE'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11224944119214080
+    m_Localized: SKIP
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

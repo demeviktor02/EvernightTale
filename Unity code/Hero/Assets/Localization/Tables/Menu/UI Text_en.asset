@@ -23,7 +23,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2285002203136
-    m_Localized: OPTIONS
+    m_Localized: SETTINGS
     m_Metadata:
       m_Items: []
   - m_Id: 2366052933632
@@ -75,7 +75,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 72683579990700032
-    m_Localized: OPTIONS
+    m_Localized: SETTINGS
     m_Metadata:
       m_Items: []
   - m_Id: 72683697104056320

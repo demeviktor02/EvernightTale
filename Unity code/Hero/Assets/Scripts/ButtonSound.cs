@@ -10,7 +10,7 @@ public class ButtonSound : MonoBehaviour
 
     public void PlayHoverSound()
     {
-        AudioManager.instance.PlayAudio("Menu","Hover");
+        AudioManager.instance.PlayAudio("Menu", "Hover" + Random.Range(1, 3));
     }
 
     public void PlayChooseSound()
@@ -21,18 +21,25 @@ public class ButtonSound : MonoBehaviour
     public void PlayChangeSound()
     {
         AudioManager.instance.PlayAudio("Menu", "Change");
-        //EventSystem.current.SetSelectedGameObject(settingMenuMenuFirst);
     }
 
     public void PlayChangeBackSound()
     {
         AudioManager.instance.PlayAudio("Menu", "Change");
-        //EventSystem.current.SetSelectedGameObject(mainMenuFirst);
     }
 
     public void PlayPlaySound()
     {
         AudioManager.instance.PlayAudio("Menu", "Play");
-        //EventSystem.current.SetSelectedGameObject(mainMenuFirst);
+    }
+
+    public void PlayCampfireSound()
+    {
+        AudioManager.instance.PlayAudio("Trigger", "Campfire");
+    }
+
+    public void StopCampfireSound()
+    {
+        AudioManager.instance.StopAudio("Trigger");
     }
 }

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int lastLevelIndex = 0;
     public Vector2 SpawnPoint;
     public bool inGame;
+    public string heroName;
 
     //public Joystick joystick;
     public Button jumpButton;

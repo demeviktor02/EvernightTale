@@ -1,0 +1,670 @@
+fileFormatVersion: 2
+guid: 6c4fef86ffc40854188971ff4e2d14a7
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: nyilacska jobb
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2984
+      y: 3656
+      width: 272
+      height: 194
+    spriteID: 64b993d4bcfe7754385b2b84a79c18a2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2984, y: 3656}
+    spritePosition: {x: 2510, y: 105}
+  - name: nyilacska bal
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2984
+      y: 3858
+      width: 272
+      height: 194
+    spriteID: 1d277660dfd0add4cbd661be7bbbc37e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2984, y: 3858}
+    spritePosition: {x: 1057, y: 105}
+  - name: popup inda keret
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2172
+      width: 2355
+      height: 1701
+    spriteID: 3c94b9d277cae92409859a7b48f3c952
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2172}
+    spritePosition: {x: 738, y: 270}
+  - name: Story
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3299
+      y: 2762
+      width: 387
+      height: 250
+    spriteID: 17da91e8bfd531e4db8736f911d2e4c6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3299, y: 2762}
+    spritePosition: {x: 2011, y: 887}
+  - name: challange
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3299
+      y: 2504
+      width: 555
+      height: 250
+    spriteID: ce8ab633f13b11e4da05990dcefd1db8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3299, y: 2504}
+    spritePosition: {x: 1330, y: 886}
+  - name: glow effect
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2367
+      y: 2172
+      width: 924
+      height: 355
+    spriteID: fd62c308a39b81646bf2e6702c3700af
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2367, y: 2172}
+    spritePosition: {x: 1463, y: 1152}
+  - name: glow effect
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2367
+      y: 2535
+      width: 771
+      height: 355
+    spriteID: d2b09a75d9f4c3b40860bec3fb7ccf9a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2367, y: 2535}
+    spritePosition: {x: 1534, y: 1241}
+  - name: "V\xE1lassz j\xE1t\xE9km\xF3dot"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1083
+      y: 3881
+      width: 611
+      height: 171
+    spriteID: 1eaaf80b3dbedc14383a42c88d582646
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1083, y: 3881}
+    spritePosition: {x: 1620, y: 1296}
+  - name: "K\xE9szen \xE1llsz a kih\xEDv\xE1sra? A \u201CKIH\xCDV\xC1S\u201D m\xF3d
+      kem\xE9ny pr\xF3bat\xE9teleket"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3881
+      width: 1071
+      height: 134
+    spriteID: 6550cd2302579a04b95fe985bb06d4ed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3881}
+    spritePosition: {x: 1385, y: 140}
+  - name: hover story gomb
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2367
+      y: 3277
+      width: 652
+      height: 371
+    spriteID: ae207f01dc53f004488ba7f8802bc00a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2367, y: 3277}
+    spritePosition: {x: 2966, y: 826}
+  - name: basic story gomb
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3299
+      y: 2172
+      width: 604
+      height: 324
+    spriteID: 63045247e532e3d41ae7b4e2ae8d2fab
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3299, y: 2172}
+    spritePosition: {x: 1901, y: 849}
+  - name: hover challenge gomb
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2367
+      y: 2898
+      width: 657
+      height: 371
+    spriteID: 8000f973e3fa97e418e48e2f2fea973d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2367, y: 2898}
+    spritePosition: {x: 119, y: 826}
+  - name: basic challenge gomb
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2367
+      y: 3656
+      width: 609
+      height: 324
+    spriteID: 7506c4b8bfdcde94b81f98aceb6d6817
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2367, y: 3656}
+    spritePosition: {x: 1302, y: 850}
+  - name: "popup alatti s\xF6t\xE9t\xEDt\u0151 layer"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 3838
+      height: 2160
+    spriteID: 399341a002bb767409ba1ad28f1d0d2f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 0}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Artboard 1
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: dd2b3da580a628e40abb512669450f0d
+    layerID: 3
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: nyilacska jobb
+    spriteName: nyilacska jobb
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 64b993d4bcfe7754385b2b84a79c18a2
+    layerID: 527
+    mosaicPosition: {x: 2984, y: 3656}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: nyilacska bal
+    spriteName: nyilacska bal
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 1d277660dfd0add4cbd661be7bbbc37e
+    layerID: 526
+    mosaicPosition: {x: 2984, y: 3858}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: popup ablak
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 07b01e31e3433164fa800da8a426ee8a
+    layerID: 210
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: popup inda keret
+    spriteName: popup inda keret
+    isGroup: 0
+    parentIndex: 3
+    spriteID: 3c94b9d277cae92409859a7b48f3c952
+    layerID: 336
+    mosaicPosition: {x: 4, y: 2172}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Story
+    spriteName: Story
+    isGroup: 0
+    parentIndex: 3
+    spriteID: 17da91e8bfd531e4db8736f911d2e4c6
+    layerID: 209
+    mosaicPosition: {x: 3299, y: 2762}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: challange
+    spriteName: challange
+    isGroup: 0
+    parentIndex: 3
+    spriteID: ce8ab633f13b11e4da05990dcefd1db8
+    layerID: 208
+    mosaicPosition: {x: 3299, y: 2504}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: glow effect
+    spriteName: glow effect
+    isGroup: 0
+    parentIndex: 3
+    spriteID: fd62c308a39b81646bf2e6702c3700af
+    layerID: 531
+    mosaicPosition: {x: 2367, y: 2172}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: glow effect
+    spriteName: glow effect
+    isGroup: 0
+    parentIndex: 3
+    spriteID: d2b09a75d9f4c3b40860bec3fb7ccf9a
+    layerID: 530
+    mosaicPosition: {x: 2367, y: 2535}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "V\xE1lassz j\xE1t\xE9km\xF3dot"
+    spriteName: "V\xE1lassz j\xE1t\xE9km\xF3dot"
+    isGroup: 0
+    parentIndex: 3
+    spriteID: 1eaaf80b3dbedc14383a42c88d582646
+    layerID: 528
+    mosaicPosition: {x: 1083, y: 3881}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "K\xE9szen \xE1llsz a kih\xEDv\xE1sra? A \u201CKIH\xCDV\xC1S\u201D m\xF3d
+      kem\xE9ny pr\xF3bat\xE9teleket"
+    spriteName: "K\xE9szen \xE1llsz a kih\xEDv\xE1sra? A \u201CKIH\xCDV\xC1S\u201D
+      m\xF3d kem\xE9ny pr\xF3bat\xE9teleket"
+    isGroup: 0
+    parentIndex: 3
+    spriteID: 6550cd2302579a04b95fe985bb06d4ed
+    layerID: 363
+    mosaicPosition: {x: 4, y: 3881}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: hover story gomb
+    spriteName: hover story gomb
+    isGroup: 0
+    parentIndex: 3
+    spriteID: ae207f01dc53f004488ba7f8802bc00a
+    layerID: 367
+    mosaicPosition: {x: 2367, y: 3277}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: basic story gomb
+    spriteName: basic story gomb
+    isGroup: 0
+    parentIndex: 3
+    spriteID: 63045247e532e3d41ae7b4e2ae8d2fab
+    layerID: 365
+    mosaicPosition: {x: 3299, y: 2172}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: hover challenge gomb
+    spriteName: hover challenge gomb
+    isGroup: 0
+    parentIndex: 3
+    spriteID: 8000f973e3fa97e418e48e2f2fea973d
+    layerID: 366
+    mosaicPosition: {x: 2367, y: 2898}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: basic challenge gomb
+    spriteName: basic challenge gomb
+    isGroup: 0
+    parentIndex: 3
+    spriteID: 7506c4b8bfdcde94b81f98aceb6d6817
+    layerID: 364
+    mosaicPosition: {x: 2367, y: 3656}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "popup alatti s\xF6t\xE9t\xEDt\u0151 layer"
+    spriteName: "popup alatti s\xF6t\xE9t\xEDt\u0151 layer"
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 399341a002bb767409ba1ad28f1d0d2f
+    layerID: 212
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638515870171827273
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

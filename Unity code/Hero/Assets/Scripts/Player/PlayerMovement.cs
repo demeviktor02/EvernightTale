@@ -53,6 +53,8 @@ public class PlayerMovement2 : MonoBehaviour
     public ParticleSystem dust;
     public float frictionAmount;
 
+    public float idleTimer;
+
     private void Start()
     {
 
@@ -109,6 +111,22 @@ public class PlayerMovement2 : MonoBehaviour
         }
 
         sighTime -= Time.deltaTime;
+        idleTimer -= Time.deltaTime;
+
+        if (isRunning == false && idleTimer > 100f)
+        {
+            idleTimer = UnityEngine.Random.Range(8, 12);
+        }
+        else if (isRunning == true || isJumping == true)
+        {
+            idleTimer = 200f;
+        }
+
+        if (idleTimer <= 0)
+        {
+            animator.SetTrigger("Idle" + UnityEngine.Random.Range(1, 3));
+            idleTimer = UnityEngine.Random.Range(8, 12);
+        }
 
         if (isRunning == false && sighTime > 100f)
         {
@@ -122,7 +140,7 @@ public class PlayerMovement2 : MonoBehaviour
         if (sighTime <= 0)
         {
             AudioManager.instance.PlayAudio("Player", "PlayerSigh");
-            sighTime = UnityEngine.Random.Range(15, 25);
+            sighTime = UnityEngine.Random.Range(20, 25);
         }
 
         if (isRunning == true && isRunningOnce == false && isWalking == false)

@@ -28,7 +28,7 @@ public class PlayerCombat : MonoBehaviour
             && gameObject.GetComponent<PlayerMovement2>().isJumping == false)
         {
             doubleAttack = false;
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButtonDown("Fire1"))
             {
                 Attack();
                 timeBtwAttack = startAttackRate;
@@ -41,7 +41,7 @@ public class PlayerCombat : MonoBehaviour
 
         if (timeBtwAttack <= 2.5f && timeBtwAttack > 1f && doubleAttack == false && gameObject.GetComponent<PlayerMovement2>().isJumping == false)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButtonDown("Fire1"))
             {
                 doubleAttack = true;
                 DoubleAttack();

@@ -123,15 +123,34 @@ public class SettingsMenu : MonoBehaviour
 
     public void SwitchLanguage(bool IsNext)
     {
-        if (IsNext == true && settingsData.languageData +1 != languages.Count)
+        if (IsNext == true)
         {
-            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[settingsData.languageData + 1];
-            settingsData.languageData += 1;
+            if (settingsData.languageData + 1 == languages.Count)
+            {
+                LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[0];
+                settingsData.languageData = 0;
+            }
+            else
+            {
+                LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[settingsData.languageData + 1];
+                settingsData.languageData += 1;
+            }
+
+            
         }
-        else if (IsNext == false && settingsData.languageData - 1 != -1)
+        else if (IsNext == false)
         {
-            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[settingsData.languageData - 1];
-            settingsData.languageData -= 1;
+            if (settingsData.languageData - 1 == -1)
+            {
+                LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[languages.Count - 1];
+                settingsData.languageData = languages.Count - 1;
+            }
+            else
+            {
+                LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[settingsData.languageData - 1];
+                settingsData.languageData -= 1;
+            }
+            
         }
 
         languageText.text = languages[settingsData.languageData];
@@ -201,15 +220,33 @@ public class SettingsMenu : MonoBehaviour
 
     public void SwitchQuality(bool IsNext)
     {
-        if (IsNext == true && settingsData.qualityData + 1 != qualityes.Count)
+        if (IsNext == true)
         {
-            QualitySettings.SetQualityLevel(settingsData.qualityData + 1);
-            settingsData.qualityData += 1;
+            if (settingsData.qualityData + 1 == qualityes.Count)
+            {
+                QualitySettings.SetQualityLevel(0);
+                settingsData.qualityData = 0;
+            }
+            else
+            {
+                QualitySettings.SetQualityLevel(settingsData.qualityData + 1);
+                settingsData.qualityData += 1;
+            }
+            
         }
-        else if (IsNext == false && settingsData.qualityData - 1 != -1)
+        else if (IsNext == false)
         {
-            QualitySettings.SetQualityLevel(settingsData.qualityData - 1);
-            settingsData.qualityData -= 1;
+            if (settingsData.qualityData - 1 == -1)
+            {
+                QualitySettings.SetQualityLevel(2);
+                settingsData.qualityData = 2;
+            }
+            else
+            {
+                QualitySettings.SetQualityLevel(settingsData.qualityData - 1);
+                settingsData.qualityData -= 1;
+            }
+            
         }
 
         qualityText.text = qualityes[settingsData.qualityData];

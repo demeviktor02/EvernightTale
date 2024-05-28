@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     public int maxHealth = 100;
     public int currentHealth;
-    public ParticleSystem deathParticles;
 
     void Start()
     {
@@ -37,7 +36,6 @@ public class Enemy : MonoBehaviour
     public virtual void Die()
     {
         animator.SetBool("IsDead", true);
-        deathParticles.Play();
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;

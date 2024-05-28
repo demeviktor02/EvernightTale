@@ -27,11 +27,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 430310334464
-    m_Localized: Press (W) to jump
+    m_Localized: "PRESS          \n    TO JUMP"
     m_Metadata:
       m_Items: []
   - m_Id: 562187640832
-    m_Localized: Hold (W) to jump higher
+    m_Localized: 'PRESS TWICE
+
+      TO DOUBLE JUMP'
     m_Metadata:
       m_Items: []
   - m_Id: 719717310464

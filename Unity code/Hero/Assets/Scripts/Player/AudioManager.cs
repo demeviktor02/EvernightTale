@@ -74,6 +74,18 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    public void Mute(string listName)
+    {
+        SoundLists l = Array.Find(soundLists, sound => sound.listName == listName);
+        l.source.volume = 0;
+    }
+
+    public void UnMute(string listName)
+    {
+        SoundLists l = Array.Find(soundLists, sound => sound.listName == listName);
+        l.source.volume = 1;
+    }
+
 
 }
 

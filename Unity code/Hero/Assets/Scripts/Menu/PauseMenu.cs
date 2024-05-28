@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -13,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject optionsMenuUI;
     public Animator transitionAnimator;
     public Animator pauseMenuAnimator;
+    public GameObject hover;
 
     void Awake()
     {
@@ -37,7 +39,7 @@ public class PauseMenu : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Pause"))
         {
             if (GameIsPaused)
             {
@@ -53,8 +55,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        GameIsPaused = false;
-        AudioManager.instance.PlayAudio("Music", "Game");
+        GameIsPaused = false;        
         Cursor.visible = false;
         StartCoroutine(IResume());
         
@@ -68,16 +69,21 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
 
         transitionAnimator.Play("Out");
+        AudioManager.instance.PlayAudio("Music", "Game");
         yield return new WaitForSecondsRealtime(2f);
         Time.timeScale = 1f;
+        AudioManager.instance.UnMute("ForestLoop");
+        AudioManager.instance.UnMute("Forest");
+        AudioManager.instance.UnMute("Trigger");
+        ControllerManager.instance.SelectGameObject(null);
+
 
         yield return null;
     }
 
     public void Pause()
     {
-        GameIsPaused = true;
-        AudioManager.instance.PlayAudio("Music", "Pause");
+        GameIsPaused = true;        
         Cursor.visible = true;
         StartCoroutine(IPause());       
     }
@@ -91,12 +97,17 @@ public class PauseMenu : MonoBehaviour
             //yield return new WaitForSecondsRealtime(0.1f);
 
             Time.timeScale = 0f;
+            AudioManager.instance.Mute("ForestLoop");
+            AudioManager.instance.Mute("Forest");
+            AudioManager.instance.Mute("Trigger");
             transitionAnimator.Play("In");
 
             yield return new WaitForSecondsRealtime(3f);        
             
             pauseMenuUI.SetActive(true);
-            pauseMenuAnimator.Play("Out");           
+            pauseMenuAnimator.Play("Out");
+            AudioManager.instance.PlayAudio("Music", "Pause");
+            ControllerManager.instance.SelectGameObject(hover);
         }
 
         yield return null;
@@ -109,6 +120,10 @@ public class PauseMenu : MonoBehaviour
         GameManager.instance.lastLevelIndex = SceneManager.GetActiveScene().buildIndex;
         Time.timeScale = 1f;
         GameManager.instance.sessionTime = 0;
+        AudioManager.instance.UnMute("ForestLoop");
+        AudioManager.instance.UnMute("Forest");
+        AudioManager.instance.UnMute("Trigger");
+        AudioManager.instance.StopAudio("Trigger");
         SceneManager.LoadScene("Menu");
         
     }

@@ -169,7 +169,6 @@ public class PatrolEnemy : Enemy
 
     public override void Die()
     {
-        deathParticles.Play();
         AudioManager.instance.PlayAudio("Rat", "RatDie");
         animator.Play("Die");
         

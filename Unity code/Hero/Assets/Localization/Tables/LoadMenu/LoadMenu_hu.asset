@@ -34,6 +34,62 @@ MonoBehaviour:
     m_Localized: MI A NEVED FIAM?
     m_Metadata:
       m_Items: []
+  - m_Id: 7502126487531520
+    m_Localized: "V\xC1LASSZ J\xC1T\xC9KM\xD3DOT"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7502537873256448
+    m_Localized: "KIH\xCDV\xC1S"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7502617565032448
+    m_Localized: "T\xD6RT\xC9NET"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7506919239020544
+    m_Localized: "K\xC9SZEN \xC1LLSZ A KIH\xCDV\xC1SRA? A ,,KIH\xCDV\xC1S\" M\xD3D
+      KEM\xC9NY PR\xD3BAT\xC9TELEKET \xC1LL\xCDT EL\xC9D, DE CSAK \xCDGY V\xC1LHATSZ
+      VAL\xD3DI H\u0150SS\xC9. V\xC1LLALOD A K\xDCZDELMET?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7507176333078528
+    m_Localized: "SZERETED A T\xD6RT\xC9NETEKET \xC9S A KALANDOKAT, DE NEM AKAROD
+      KOCK\xC1ZATNI AZ \xC9LETED? ,,T\xD6RT\xC9NET\" M\xD3DBAN AZ \xC9LETED KEV\xC9SB\xC9
+      VESZ\xC9LYEZTETETT, \xCDGY NYUODTAN FELFEDEZHETED A VIL\xC1GOT."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8181318950678528
+    m_Localized: MI A NEVED?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192582665990144
+    m_Localized: MI A NEVED GYERMEKEM?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10514411728498688
+    m_Localized: "T\xD6RL\xC9S"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10515221925425152
+    m_Localized: "KIV\xC1LASZT"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10515466939887616
+    m_Localized: VISSZA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10542825743151104
+    m_Localized: "M\xD3D: T\xD6RT\xC9NET"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10542913274081280
+    m_Localized: "MODE: KIH\xCDV\xC1S"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11224944119214080
+    m_Localized: "UGR\xC1S"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

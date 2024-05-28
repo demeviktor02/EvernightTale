@@ -10,7 +10,7 @@ public class Table : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            animator.Play("SignTextAppear");
+            animator.Play("TextAppear");
         }
     }
 
@@ -18,7 +18,7 @@ public class Table : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            animator.Play("SignTextDisappear");
+            animator.Play("TextDisappear");
         }
     }
 }

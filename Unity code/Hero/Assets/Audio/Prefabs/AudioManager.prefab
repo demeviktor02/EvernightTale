@@ -624,6 +624,36 @@ MonoBehaviour:
       volume: 0
       pitch: 0
       loop: 0
+    - name: PlayerHurt1
+      clip: {fileID: 8300000, guid: ae270ccc1f41bcc4299ebea480997812, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: PlayerHurt2
+      clip: {fileID: 8300000, guid: a499d8af6c5cf4d44a08c71aace9726e, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: PlayerDieSword1
+      clip: {fileID: 8300000, guid: 7cc75118029262b4aaf5a97c0ab09429, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: PlayerDieSword2
+      clip: {fileID: 8300000, guid: 52bf7c36e26cd7e4c947106b1614a945, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: PlayerDie1
+      clip: {fileID: 8300000, guid: 03e6b79ba9fbd2b489f1bcda4b2af7b4, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: PlayerDie2
+      clip: {fileID: 8300000, guid: 59972b0e40b1fb647b77dae4ae83e57c, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
     source: {fileID: 2053734134843192007}
     isMusic: 0
     isLooping: 0
@@ -705,12 +735,12 @@ MonoBehaviour:
       pitch: 0
       loop: 0
     - name: Blacksmith1
-      clip: {fileID: 8300000, guid: 2a8a7ee059f9dc24b9e223b712efc8eb, type: 3}
+      clip: {fileID: 8300000, guid: 086d4f20c194e5f4abbff3b320329864, type: 3}
       volume: 0
       pitch: 0
       loop: 0
     - name: Blacksmith2
-      clip: {fileID: 8300000, guid: e8cf14f9961e85941b4ffaa8481483db, type: 3}
+      clip: {fileID: 8300000, guid: 6f6a32e2a82eb0846bcbcac3a57dfc1c, type: 3}
       volume: 0
       pitch: 0
       loop: 0
@@ -759,8 +789,13 @@ MonoBehaviour:
     isLooping: 0
   - listName: Menu
     list:
-    - name: Hover
-      clip: {fileID: 8300000, guid: f5b25050bb66e7847993de7a82ee8d38, type: 3}
+    - name: Hover1
+      clip: {fileID: 8300000, guid: 9144d4fa1890de548a2fb27f9b070b5e, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: Hover2
+      clip: {fileID: 8300000, guid: a0ed8c313ecf4644c8e0df02313bbf4c, type: 3}
       volume: 0
       pitch: 0
       loop: 0
@@ -801,6 +836,26 @@ MonoBehaviour:
       loop: 0
     - name: HearthBeatFast
       clip: {fileID: 8300000, guid: 9e5ec93db1df8914bac06c0066b58b5f, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: WindMill
+      clip: {fileID: 8300000, guid: 3d5d115434722884daf389259dab2178, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: OldLady
+      clip: {fileID: 8300000, guid: 07bf16eb13639bf4a92bd2fd905b4a5f, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: RatGirl
+      clip: {fileID: 8300000, guid: 5fcf5bcc84740344ca29eb5c9212d891, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: Campfire
+      clip: {fileID: 8300000, guid: 96e0ba0c6cab5734ba38d94d9c2eb503, type: 3}
       volume: 0
       pitch: 0
       loop: 0

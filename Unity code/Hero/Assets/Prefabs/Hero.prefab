@@ -5461,7 +5461,7 @@ SpriteRenderer:
   m_Size: {x: 10, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &5333965245821711823
@@ -5510,6 +5510,7 @@ MonoBehaviour:
   runtime: 0
   dust: {fileID: 1517461776547984422}
   frictionAmount: 10000
+  idleTimer: 200
 --- !u!50 &3387325603570313900
 Rigidbody2D:
   serializedVersion: 4
@@ -5635,9 +5636,9 @@ MonoBehaviour:
   animator: {fileID: 6599016443873207027}
   transition: {fileID: 418223782278037121}
   transitionTime: 3
-  dieParticle: {fileID: 7323306830835302960}
   respawnPoint: {x: 0, y: 0}
   CanvasAnimator: {fileID: 0}
+  IsDying: 0
 --- !u!95 &6599016443873207027
 Animator:
   serializedVersion: 5
@@ -6225,10 +6226,5 @@ PrefabInstance:
 --- !u!4 &7123267642311818365 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2329305317113193478, guid: 78d75c393ce428742a45ea5c659650e3, type: 3}
-  m_PrefabInstance: {fileID: 4794562247704860795}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &7323306830835302960 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2821549375498689099, guid: 78d75c393ce428742a45ea5c659650e3, type: 3}
   m_PrefabInstance: {fileID: 4794562247704860795}
   m_PrefabAsset: {fileID: 0}

@@ -27,11 +27,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 430310334464
-    m_Localized: "Nyomj (W)-t az ugr\xE1shoz"
+    m_Localized: "NYOMJ          \n    AZ UGR\xC1SHOZ"
     m_Metadata:
       m_Items: []
   - m_Id: 562187640832
-    m_Localized: Tartsd lenyomva a (W)-t, hogy magasabbra ugorj
+    m_Localized: "NYOMJ K\xC9TSZER          \nA DUPLA UGR\xC1SHOZ"
     m_Metadata:
       m_Items: []
   - m_Id: 719717310464

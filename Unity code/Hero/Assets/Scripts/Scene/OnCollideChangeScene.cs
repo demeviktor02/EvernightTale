@@ -31,7 +31,10 @@ public class OnCollideChangeScene : MonoBehaviour
             hero.GetComponent<Health>().TakeDamage(10);
 
         }
-        GameManager.instance.SpawnPoint = otherSide;
+        if (IsDying == false && collision.tag == "Player")
+        {
+            GameManager.instance.SpawnPoint = otherSide;
+        }
         StartCoroutine(LoadLevel());
     }
 

@@ -33,6 +33,58 @@ MonoBehaviour:
     m_Key: WHAT'S YOUR NAME CHILD
     m_Metadata:
       m_Items: []
+  - m_Id: 7502126487531520
+    m_Key: CHOOSE GAME MODE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7502537873256448
+    m_Key: CHALLANGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7502617565032448
+    m_Key: STORY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7506919239020544
+    m_Key: CHALLANGEDESC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7507176333078528
+    m_Key: STORYDESC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8181318950678528
+    m_Key: WHAT'S YOUR NAME?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192582665990144
+    m_Key: WHAT'S YOUR NAME CHILD?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10514411728498688
+    m_Key: DELETE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10515221925425152
+    m_Key: CHOOSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10515466939887616
+    m_Key: BACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10542825743151104
+    m_Key: 'MODE: STORY'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10542913274081280
+    m_Key: 'MODE: CHALLANGE'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11224944119214080
+    m_Key: SKIP
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

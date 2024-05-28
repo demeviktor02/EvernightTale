@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
@@ -8,8 +9,7 @@ public class NPC : MonoBehaviour
     public GameObject dialogePanel;
     public TMPro.TMP_Text dialogeText;
     public TMPro.TMP_Text nameText;
-    public string[] dialoge;
-    public string[] Names;
+    public LocalizedString[] dialoge;
     private int index;
 
     public bool currentDialogEnd = false;
@@ -29,39 +29,35 @@ public class NPC : MonoBehaviour
 
     public GameObject player;
 
+    public LocalizedString[] localizedString;
+
+    public float waitTime;
+
     // Update is called once per frame
     void Update()
     {
-        //if (playerIsClose && inDialoge == false)
-        //{
-
-        //}
-        //else
-        //{
-        //    animator.Play("Disappear");
-        //}
 
 
-        if (Input.GetKeyDown(KeyCode.E) && inDialoge && currentDialogEnd == true)
+        if (Input.GetButtonDown("Talk") && inDialoge && currentDialogEnd == true)
         {
             currentDialogEnd = false;
-            nameText.text = Names[index+1];
+            nameText.text = localizedString[index + 1].GetLocalizedString(); //Names[index+1];
             NextLine();
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && playerIsClose && inDialoge == false)
+        if (Input.GetButtonDown("Talk") && playerIsClose && inDialoge == false)
         {
             player.GetComponent<Animator>().Play("Idle");
-            nameText.text = Names[0];
+            nameText.text = localizedString[0].GetLocalizedString();
             player.GetComponent<PlayerMovement2>().enabled = false;
             NPCCam.SetActive(true);
             inDialoge = true;
             animator.Play("TextAppear");
             zeroText();
-            StartCoroutine(Typing());
+            StartCoroutine(StartTalking());
         }
 
-        if (dialogeText.text == dialoge[index])
+        if (dialogeText.text == dialoge[index].GetLocalizedString())
         {
             contButton.SetActive(true);
         }
@@ -73,9 +69,18 @@ public class NPC : MonoBehaviour
         index = 0;
     }
 
+    IEnumerator StartTalking()
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        StartCoroutine(Typing());
+
+        yield return null;
+    }
+
     IEnumerator Typing()
     {
-        foreach (char letter in dialoge[index].ToCharArray())
+        foreach (char letter in dialoge[index].GetLocalizedString().ToCharArray())
         {
             dialogeText.text += letter;
             yield return new WaitForSeconds(wordSpeed);

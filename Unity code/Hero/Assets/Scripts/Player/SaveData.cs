@@ -68,6 +68,7 @@ public class PlayerData
     public float PlayTime;
     public int Difficulty;
     public string StartDate;
+    public string HeroName;
 }
 
 

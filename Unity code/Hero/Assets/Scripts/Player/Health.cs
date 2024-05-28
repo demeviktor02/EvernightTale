@@ -15,12 +15,9 @@ public class Health : MonoBehaviour
     public Animator transition;
     public float transitionTime = -1f;
 
-    public ParticleSystem dieParticle;
-
-
-    public Vector2 respawnPoint;
-
     public Animator CanvasAnimator;
+
+    public bool IsDying;
 
     void Start()
     {
@@ -103,16 +100,14 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
+        IsDying = true;
+
         AudioManager.instance.StopAudio("PlayerRun");
         AudioManager.instance.StopAudio("Trigger");
         health = 0;
         gameObject.GetComponent<PlayerMovement2>().enabled = false;
         animator.SetTrigger("IsDying2");
-        
-        dieParticle.Play();
-
-        GameManager.instance.SpawnPoint = respawnPoint;
-        
+                
         StartCoroutine(LoadLevel());
     }
 
@@ -128,15 +123,41 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        takeDamage = true;
-
-        healthTimer = 10f;
-
-        health -= damage;
-
-        if (health <= 0)
+        if (IsDying == false)
         {
-            Die();
+            AudioManager.instance.PlayAudio("Player", "PlayerHurt" + Random.Range(1, 3));
+
+            takeDamage = true;
+
+            healthTimer = 10f;
+
+            health -= damage;
+
+            if (health <= 0)
+            {
+                Die();
+            }
+        }       
+        
+    }
+
+    public void DieSound(int sound)
+    {
+        if (sound == 0)
+        {
+            AudioManager.instance.PlayAudio("Player", "PlayerDie1");
+        }
+        else if (sound == 1)
+        {
+            AudioManager.instance.PlayAudio("Player", "PlayerDieSword1");
+        }
+        else if (sound == 2)
+        {
+            AudioManager.instance.PlayAudio("Player", "PlayerDie2");
+        }
+        else if (sound == 3)
+        {
+            AudioManager.instance.PlayAudio("Player", "PlayerDieSword2");
         }
     }
 

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: NPC_hu
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: hu
+  m_SharedData: {fileID: 11400000, guid: f90e3ffb88c2ede42b0856f73ba5688e, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 7496888320
+    m_Localized: "Nyomj (E)-t a folytat\xE1shoz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2304392893657088
+    m_Localized: " ID\u0150S ASSZONY"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2304746603507712
+    m_Localized: "H\u0150S"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2312963727388672
+    m_Localized: "Szervusz fiam. Mi j\xE1ratban vagy erre fel\xE9, hol mad\xE1r sem
+      j\xE1r?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2338225835831296
+    m_Localized: "FOLYTAT\xC1S"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2983422441648128
+    m_Localized: "Egy k\xFCldet\xE9sen vagyok, hogy meg\xF6ljem a boszork\xE1nyt
+      \xE9s h\u0151ss\xE9 v\xE1lhassak."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2983516142399488
+    m_Localized: "Ohoho! Igaz\xE1n vakmer\u0151 vagy! Nem kis feladatra v\xE1lalkozt\xE1l.
+      Mond csak leend\u0151 h\u0151s, tudn\xE1l seg\xEDteni a mi falunkon?"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

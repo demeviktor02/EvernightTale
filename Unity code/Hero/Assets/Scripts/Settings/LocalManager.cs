@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using System;
 using UnityEngine.UI;
 using Unity.Mathematics;
+using UnityEngine.Localization;
 
 
 public class LocalManager : MonoBehaviour
@@ -33,19 +34,24 @@ public class LocalManager : MonoBehaviour
 
     public GameObject LoadingScreen;
     public Animator animator;
+    public Image defaultImage;
 
-    public GameObject DifficultyPopUp;
+    public LocalizedString newGameLocal;
+    public LocalizedString continueLocal;
+    public LocalizedString storyLocal;
+    public LocalizedString challangeLocal;
 
-    private void Start()
-    {
-        //ContinueOrNewGame();
-    }
+    public Vector2 firstLevelStartPos;
+    public Vector2 secondLevelStartPos;
+
+    public int gameModeChanger;
+
 
     public void ContinueOrNewGame()
     {
         if (File.Exists(Application.persistentDataPath + "/PlayerData" + 1 + ".json"))
         {
-            Save1.text = "CONTINUE";
+            Save1.text = continueLocal.GetLocalizedString();
 
             //Mentés útjának megadása
             SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + 1 + ".json";
@@ -61,16 +67,16 @@ public class LocalManager : MonoBehaviour
         }
         else
         {
-            Save1.text = "NEW GAME";
+            Save1.text = newGameLocal.GetLocalizedString();
             GamePercent1.text = "0%";
             GameTime1.text = "00:00:00";
             Difficulty1.text = "-";
             StartTime1.text = "-";
-            Image1 = null;
+            Image1.gameObject.SetActive(false);
         }
         if (File.Exists(Application.persistentDataPath + "/PlayerData" + 2 + ".json"))
         {
-            Save2.text = "CONTINUE";
+            Save2.text = continueLocal.GetLocalizedString();
 
             //Mentés útjának megadása
             SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + 2 + ".json";
@@ -86,16 +92,16 @@ public class LocalManager : MonoBehaviour
         }
         else
         {
-            Save2.text = "NEW GAME";
+            Save2.text = newGameLocal.GetLocalizedString();
             GamePercent2.text = "0%";
             GameTime2.text = "00:00:00";
             Difficulty2.text = "-";
             StartTime2.text = "-";
-            Image2 = null;
+            Image2.gameObject.SetActive(false);
         }
         if (File.Exists(Application.persistentDataPath + "/PlayerData" + 3 + ".json"))
         {
-            Save3.text = "CONTINUE";
+            Save3.text = continueLocal.GetLocalizedString();
 
             //Mentés útjának megadása
             SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + 3 + ".json";
@@ -111,12 +117,12 @@ public class LocalManager : MonoBehaviour
         }
         else
         {
-            Save3.text = "NEW GAME";
+            Save3.text = newGameLocal.GetLocalizedString();
             GamePercent3.text = "0%";
             GameTime3.text = "00:00:00";
             Difficulty3.text = "-";
             StartTime3.text = "-";
-            Image3 = null;
+            Image3.gameObject.SetActive(false);
         }
 
 
@@ -135,8 +141,9 @@ public class LocalManager : MonoBehaviour
             else
             {
                 SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
-                DifficultyPopUp.SetActive(true);
-            }
+                SaveData.instance.imageSaveFilePath = Application.persistentDataPath + "/SaveImage" + saveNumber + ".png";
+                animator.Play("ChooseDifficultyOpen");
+}
         }
         else if (saveNumber == "2")
         {
@@ -148,7 +155,8 @@ public class LocalManager : MonoBehaviour
             else
             {
                 SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
-                DifficultyPopUp.SetActive(true);
+                SaveData.instance.imageSaveFilePath = Application.persistentDataPath + "/SaveImage" + saveNumber + ".png";
+                animator.Play("ChooseDifficultyOpen");
             }
         }
         else if (saveNumber == "3")
@@ -161,7 +169,8 @@ public class LocalManager : MonoBehaviour
             else
             {
                 SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
-                DifficultyPopUp.SetActive(true);
+                SaveData.instance.imageSaveFilePath = Application.persistentDataPath + "/SaveImage" + saveNumber + ".png";
+                animator.Play("ChooseDifficultyOpen");
             }
         }
         
@@ -174,11 +183,6 @@ public class LocalManager : MonoBehaviour
         SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
         SaveData.instance.imageSaveFilePath = Application.persistentDataPath + "/SaveImage" + saveNumber + ".png";
 
-        //Beolvasás
-        //string loadPlayerData = File.ReadAllText(SaveData.instance.saveFilePath);
-
-        //Értékadás
-        //SaveData.instance.playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData);
 
         if (saveNumber == "1")
         {
@@ -220,11 +224,11 @@ public class LocalManager : MonoBehaviour
 
         if (SaveData.instance.playerData.Difficulty == 0)
         {
-            Difficulty1.text = "Story";
+            Difficulty1.text = storyLocal.GetLocalizedString();
         }
         else if (SaveData.instance.playerData.Difficulty == 1)
         {
-            Difficulty1.text = "Challange";
+            Difficulty1.text = challangeLocal.GetLocalizedString();
         }
 
 
@@ -235,6 +239,7 @@ public class LocalManager : MonoBehaviour
 
         GameManager.instance.lastLevelIndex = SaveData.instance.playerData.LevelIndex;
         GameManager.instance.difficulty = SaveData.instance.playerData.Difficulty;
+        GameManager.instance.heroName = SaveData.instance.playerData.HeroName;
     }
 
     public void SetValue2()
@@ -244,11 +249,11 @@ public class LocalManager : MonoBehaviour
 
         if (SaveData.instance.playerData.Difficulty == 0)
         {
-            Difficulty2.text = "Story";
+            Difficulty2.text = storyLocal.GetLocalizedString();
         }
         else if (SaveData.instance.playerData.Difficulty == 1)
         {
-            Difficulty2.text = "Challange";
+            Difficulty2.text = challangeLocal.GetLocalizedString();
         }
 
 
@@ -259,6 +264,8 @@ public class LocalManager : MonoBehaviour
 
         GameManager.instance.lastLevelIndex = SaveData.instance.playerData.LevelIndex;
         GameManager.instance.difficulty = SaveData.instance.playerData.Difficulty;
+        GameManager.instance.heroName = SaveData.instance.playerData.HeroName;
+
     }
 
     public void SetValue3()
@@ -268,11 +275,11 @@ public class LocalManager : MonoBehaviour
 
         if (SaveData.instance.playerData.Difficulty == 0)
         {
-            Difficulty3.text = "Story";
+            Difficulty3.text = storyLocal.GetLocalizedString();
         }
         else if (SaveData.instance.playerData.Difficulty == 1)
         {
-            Difficulty3.text = "Challange";
+            Difficulty3.text = challangeLocal.GetLocalizedString();
         }
 
 
@@ -283,6 +290,8 @@ public class LocalManager : MonoBehaviour
 
         GameManager.instance.lastLevelIndex = SaveData.instance.playerData.LevelIndex;
         GameManager.instance.difficulty = SaveData.instance.playerData.Difficulty;
+        GameManager.instance.heroName = SaveData.instance.playerData.HeroName;
+
     }
 
     private Sprite LoadSprite(string path)
@@ -304,6 +313,7 @@ public class LocalManager : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/PlayerData" + saveNumber + ".json"))
         {
             File.Delete(Application.persistentDataPath + "/PlayerData" + saveNumber + ".json");
+            File.Delete(Application.persistentDataPath + "/SaveImage" + saveNumber + ".png");
 
             Debug.Log("Save file deleted!");
 
@@ -312,6 +322,8 @@ public class LocalManager : MonoBehaviour
         {
             Debug.Log("There is nothing to delete!");
         }
+
+        ContinueOrNewGame();
     }
 
     IEnumerator LoadSceneAsync(int difficulty)
@@ -336,6 +348,16 @@ public class LocalManager : MonoBehaviour
 
         GameManager.instance.inGame = true;
 
+        if (SaveData.instance.playerData.LevelIndex == 1)
+        {
+            GameManager.instance.SpawnPoint = firstLevelStartPos;
+        }
+        else
+        {
+            GameManager.instance.SpawnPoint = secondLevelStartPos;
+        }
+        
+
         LoadingScreen.SetActive(true);
 
         while (!operation.isDone)
@@ -352,5 +374,10 @@ public class LocalManager : MonoBehaviour
         SaveData.instance.playerData.StartDate = "";
         SaveData.instance.saveFilePath = "";
         SaveData.instance.imageSaveFilePath = "";
+    }
+
+    public void GameModeChanger(int difficulty)
+    {
+        gameModeChanger = difficulty;
     }
 }
