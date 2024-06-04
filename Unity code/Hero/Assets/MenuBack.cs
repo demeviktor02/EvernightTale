@@ -5,7 +5,8 @@ using UnityEngine;
 public class MenuBack : MonoBehaviour
 {
     public Animator animator;
-    public string animationName;
+    public LocalManager localManager;
+    public bool InGameSelection;
 
 
 
@@ -14,7 +15,17 @@ public class MenuBack : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            animator.Play(animationName);
+            if (InGameSelection)
+            {
+                animator.Play("ChooseDifficultyClose");
+            }
+            else
+            {
+                animator.Play("PlayBack");
+                localManager.paperHoveredBool = false;
+            }
+
+            ControllerManager.instance.NoSelectGameObject();
         }
     }
 }

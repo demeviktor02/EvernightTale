@@ -11,16 +11,19 @@ public class SelectGameObject : MonoBehaviour
 
     public void SelectGameObjectStory()
     {
+        ControllerManager.instance.SelectGameObject(null);
         ControllerManager.instance.SelectGameObject(story);
     }
 
     public void SelectGameObjectPaper()
     {
+        ControllerManager.instance.SelectGameObject(null);
         ControllerManager.instance.SelectGameObject(paper);
     }
 
     public void SelectGameObjectPlay()
     {
+        ControllerManager.instance.SelectGameObject(null);
         ControllerManager.instance.SelectGameObject(play);
     }
 }

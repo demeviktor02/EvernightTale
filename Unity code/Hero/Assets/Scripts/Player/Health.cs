@@ -18,6 +18,8 @@ public class Health : MonoBehaviour
     public Animator CanvasAnimator;
 
     public bool IsDying;
+    public bool IsDyingFromWater;
+    public bool IsDyingFromFalling;
 
     void Start()
     {
@@ -106,7 +108,12 @@ public class Health : MonoBehaviour
         AudioManager.instance.StopAudio("Trigger");
         health = 0;
         gameObject.GetComponent<PlayerMovement2>().enabled = false;
-        animator.SetTrigger("IsDying2");
+
+        if (!IsDyingFromFalling)
+        {
+            animator.SetTrigger("IsDying2");
+        }
+        
                 
         StartCoroutine(LoadLevel());
     }
@@ -125,7 +132,15 @@ public class Health : MonoBehaviour
     {
         if (IsDying == false)
         {
-            AudioManager.instance.PlayAudio("Player", "PlayerHurt" + Random.Range(1, 3));
+            if (!IsDyingFromWater)
+            {
+                AudioManager.instance.PlayAudio("Player", "PlayerHurt" + Random.Range(1, 3));
+            }
+            else if (IsDyingFromWater)
+            {
+                AudioManager.instance.PlayAudio("Player", "Water");
+            }
+            
 
             takeDamage = true;
 
@@ -143,22 +158,27 @@ public class Health : MonoBehaviour
 
     public void DieSound(int sound)
     {
-        if (sound == 0)
+        if (!IsDyingFromWater && !IsDyingFromFalling)
         {
-            AudioManager.instance.PlayAudio("Player", "PlayerDie1");
+            if (sound == 0)
+            {
+                AudioManager.instance.PlayAudio("Player", "PlayerDie1");
+            }
+            else if (sound == 1)
+            {
+                AudioManager.instance.PlayAudio("Player", "PlayerDieSword1");
+            }
+            else if (sound == 2)
+            {
+                AudioManager.instance.PlayAudio("Player", "PlayerDie2");
+            }
+            else if (sound == 3)
+            {
+                AudioManager.instance.PlayAudio("Player", "PlayerDieSword2");
+            }
         }
-        else if (sound == 1)
-        {
-            AudioManager.instance.PlayAudio("Player", "PlayerDieSword1");
-        }
-        else if (sound == 2)
-        {
-            AudioManager.instance.PlayAudio("Player", "PlayerDie2");
-        }
-        else if (sound == 3)
-        {
-            AudioManager.instance.PlayAudio("Player", "PlayerDieSword2");
-        }
+
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

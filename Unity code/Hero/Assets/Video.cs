@@ -7,6 +7,8 @@ public class Video : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
     public Animator animator;
+    public NPCMenu NPCMenu;
+    public bool InCutScene;
 
     // Update is called once per frame
     void Update()
@@ -17,7 +19,7 @@ public class Video : MonoBehaviour
         }
         
 
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel") && InCutScene == true)
         {
             animator.Play("EndCutscene");
         }
@@ -26,5 +28,15 @@ public class Video : MonoBehaviour
     public void PlayVideo()
     {
         videoPlayer.Play();
+    }
+
+    public void StartNpcTalking()
+    {
+        NPCMenu.startBool = true;
+    }
+
+    public void IsCutSceneOn()
+    {
+        InCutScene = true;
     }
 }

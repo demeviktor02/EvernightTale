@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.Localization.SmartFormat.PersistentVariables;
 using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
@@ -34,6 +35,12 @@ public class NPC : MonoBehaviour
     public float waitTime;
 
     // Update is called once per frame
+    private void Start()
+    {
+        (localizedString[1]["heroname"] as StringVariable).Value = SaveData.instance.playerData.HeroName;
+        (localizedString[3]["heroname"] as StringVariable).Value = SaveData.instance.playerData.HeroName;
+    }
+
     void Update()
     {
 
@@ -41,7 +48,7 @@ public class NPC : MonoBehaviour
         if (Input.GetButtonDown("Talk") && inDialoge && currentDialogEnd == true)
         {
             currentDialogEnd = false;
-            nameText.text = localizedString[index + 1].GetLocalizedString(); //Names[index+1];
+            nameText.text = localizedString[index + 1].GetLocalizedString().ToUpper(); //Names[index+1];
             NextLine();
         }
 

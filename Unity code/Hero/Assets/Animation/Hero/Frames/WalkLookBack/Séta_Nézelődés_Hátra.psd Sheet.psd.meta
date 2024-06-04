@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,12 +69,12 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -147,7 +147,385 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61b031082eea75409c9014891b83d70
+      internalID: -821090794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_1"
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9283cc465ce97d48893c90fe482b579
+      internalID: -1711540746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_2"
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50036142d5603824d8f9dda9173cdd42
+      internalID: 405852188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_3"
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 174e51c98f3abac4f906122f3473ea6e
+      internalID: 935910597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_4"
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd6e97402fd40dc4f99c74dbb194b8a7
+      internalID: 1477698206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_5"
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c2eb288d989e74ebff017c2145b67a
+      internalID: 1671304000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_6"
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d65576f79ef70c47877edc9d026a73d
+      internalID: 589510404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_7"
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e7bfbb489003342ae43dc4da55f186
+      internalID: -471874141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_8"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9f6e5a709f0aa4a8b6b87b97d15a6c
+      internalID: -1587736941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_9"
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6fe2e036d0336409a2418eb8dbb24f
+      internalID: -1156932425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_10"
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e546299bf0799644878cf51e90b6340
+      internalID: 1563898678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_11"
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f27a965bf81947429e4022e9dfa611e
+      internalID: 591991264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_12"
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8cee55a5e3dac642ac6b85146276a0c
+      internalID: -770738248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_13"
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b0481e6f26f58439f90ba692ffe8ff
+      internalID: -1882036938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_14"
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eedb3b66a0319ad488e5796dbf4b78e5
+      internalID: 653329263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_15"
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1c22b1e0935814892ca89d0a2b183a
+      internalID: -2142104715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_16"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967deb3e8c5a05442b81f4981f7c1364
+      internalID: -1433929794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_17"
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c68abe4177135843bea221b26ed4852
+      internalID: -516836076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,9 +536,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_0": -821090794
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_1": -1711540746
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_10": 1563898678
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_11": 591991264
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_12": -770738248
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_13": -1882036938
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_14": 653329263
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_15": -2142104715
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_16": -1433929794
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_17": -516836076
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_2": 405852188
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_3": 935910597
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_4": 1477698206
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_5": 1671304000
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_6": 589510404
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_7": -471874141
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_8": -1587736941
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Ha\u0301tra.psd Sheet_9": -1156932425
   mipmapLimitGroupName: 
-  pSDRemoveMatte: 0
+  pSDRemoveMatte: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

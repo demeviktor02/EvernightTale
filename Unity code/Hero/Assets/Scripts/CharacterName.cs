@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat.PersistentVariables;
+using UnityEngine.UI;
 
 public class CharacterName : MonoBehaviour
 {
@@ -10,8 +13,13 @@ public class CharacterName : MonoBehaviour
     public LocalManager localManager;
     public Animator animator;
     public bool once;
+    public bool ended;
+    public bool isActive;
     public GameObject particles;
+    public GameObject enter;
+    public GameObject aButton;
     public ButtonSound buttonSound;
+    public NPCMenu nPCMenu;
 
     // Update is called once per frame
     void Update()
@@ -22,21 +30,19 @@ public class CharacterName : MonoBehaviour
             once = true;
         }
 
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Submit") && inputField.gameObject.active == true)
         {
-            particles.SetActive(false);
-            buttonSound.StopCampfireSound();
-            localManager.LoadGame(localManager.gameModeChanger);
-
-            //if (inputField.text == "")
-            //{
-            //    errorText.gameObject.SetActive(true);
-            //}
-            //else
-            //{
-                    //particles.SetActive(false);
-                    //localManager.LoadGame(0);
-            //}
+            animator.Play("EnterHide");
+            SaveData.instance.playerData.HeroName = inputField.text;
+            (nPCMenu.dialoge[2]["variable"] as StringVariable).Value = SaveData.instance.playerData.HeroName;
+            ended = true;
+            isActive = false;
+            nPCMenu.InputField.SetActive(false);
+            nPCMenu.InputFieldText.SetActive(false);
+            
+            nPCMenu.AppearCanvas.SetActive(true);
+            nPCMenu.DialogText.SetActive(true);
+            nPCMenu.NextLine();
         } 
     }
 }

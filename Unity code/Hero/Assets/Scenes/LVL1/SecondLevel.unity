@@ -10511,7 +10511,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 95.347244, y: 7.1291456, z: 13.761124}
+  m_LocalPosition: {x: 95.35685, y: 7.1291456, z: 13.761124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16428,6 +16428,7 @@ MonoBehaviour:
   hero: {fileID: 0}
   IsDying: 0
   IsDyingFromWater: 0
+  IsDyingFromFalling: 0
 --- !u!61 &1352439098
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16539,8 +16540,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 634624609630967018, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: m_text
+      value: "Ohoho! Igaz\xE1n vakmer\u0151 vagy! Nem kis feladatra v\xE1lalkozt\xE1l.
+        Mond csak leend\u0151 h\u0151s, tudn\xE1l seg\xEDteni a mi falunkon?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 634624609630967018, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 634624609630967018, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      value: 16777215
       objectReference: {fileID: 0}
     - target: {fileID: 1223592748957271612, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
@@ -16556,15 +16566,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3931711195894229461, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1.9456
+      value: 1.9906
       objectReference: {fileID: 0}
     - target: {fileID: 3931711195894229461, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.9728
+      value: 0.9953
+      objectReference: {fileID: 0}
+    - target: {fileID: 3931711195894229461, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.103
       objectReference: {fileID: 0}
     - target: {fileID: 5409776172729422493, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051672036764251337, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232041612081494251, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 9.183
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232041612081494251, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.1463
       objectReference: {fileID: 0}
     - target: {fileID: 6783980229298928498, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: m_IsActive
@@ -16591,6 +16617,22 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: managedReferences[4397113698780184642]
+      value: Unity.Localization UnityEngine.Localization.SmartFormat.PersistentVariables.StringVariable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: managedReferences[4397113698780184643]
+      value: Unity.Localization UnityEngine.Localization.SmartFormat.PersistentVariables.StringVariable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: managedReferences[4397113698780184642].m_Value
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: managedReferences[4397113698780184643].m_Value
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: dialoge.Array.data[0].m_TableEntryReference.m_KeyId
       value: 2312963727388672
       objectReference: {fileID: 0}
@@ -16615,12 +16657,20 @@ PrefabInstance:
       value: 2983516142399488
       objectReference: {fileID: 0}
     - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: localizedString.Array.data[1].m_LocalVariables.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: localizedString.Array.data[3].m_LocalVariables.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: localizedString.Array.data[0].m_TableEntryReference.m_KeyId
       value: 2304392893657088
       objectReference: {fileID: 0}
     - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: localizedString.Array.data[1].m_TableEntryReference.m_KeyId
-      value: 2304746603507712
+      value: 11924880771084288
       objectReference: {fileID: 0}
     - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: localizedString.Array.data[2].m_TableEntryReference.m_KeyId
@@ -16628,7 +16678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: localizedString.Array.data[3].m_TableEntryReference.m_KeyId
-      value: 2304746603507712
+      value: 11924880771084288
       objectReference: {fileID: 0}
     - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: dialoge.Array.data[0].m_TableReference.m_TableCollectionName
@@ -16655,12 +16705,20 @@ PrefabInstance:
       value: GUID:f90e3ffb88c2ede42b0856f73ba5688e
       objectReference: {fileID: 0}
     - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: localizedString.Array.data[1].m_LocalVariables.Array.data[0].name
+      value: heroname
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: localizedString.Array.data[3].m_LocalVariables.Array.data[0].name
+      value: heroname
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: localizedString.Array.data[0].m_TableReference.m_TableCollectionName
       value: GUID:f90e3ffb88c2ede42b0856f73ba5688e
       objectReference: {fileID: 0}
     - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: localizedString.Array.data[1].m_TableReference.m_TableCollectionName
-      value: GUID:f90e3ffb88c2ede42b0856f73ba5688e
+      value: GUID:420a6423122867a4da8469030f1ef4e9
       objectReference: {fileID: 0}
     - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: localizedString.Array.data[2].m_TableReference.m_TableCollectionName
@@ -16668,11 +16726,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: localizedString.Array.data[3].m_TableReference.m_TableCollectionName
-      value: GUID:f90e3ffb88c2ede42b0856f73ba5688e
+      value: GUID:420a6423122867a4da8469030f1ef4e9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: localizedString.Array.data[1].m_LocalVariables.Array.data[0].variable
+      value: 4397113698780184642
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879626314150753388, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: localizedString.Array.data[3].m_LocalVariables.Array.data[0].variable
+      value: 4397113698780184643
       objectReference: {fileID: 0}
     - target: {fileID: 7100119961259885049, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: m_text
       value: "FOLYTAT\xC1S"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7100119961259885049, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0308e209b534d554f8f30e6ad1edfe03, type: 2}
+    - target: {fileID: 7100119961259885049, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7100119961259885049, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -9203146453937036229, guid: 0308e209b534d554f8f30e6ad1edfe03, type: 2}
+    - target: {fileID: 7100119961259885049, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
+      propertyPath: m_characterSpacing
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7100119961259885049, guid: fa95a0886313a164f8e67c164c9e78a9, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -18019,6 +18101,7 @@ MonoBehaviour:
   hero: {fileID: 0}
   IsDying: 0
   IsDyingFromWater: 0
+  IsDyingFromFalling: 0
 --- !u!1 &2124141641
 GameObject:
   m_ObjectHideFlags: 0

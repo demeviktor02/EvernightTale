@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
     {
 
 
-        if (Input.GetButtonDown("Pause"))
+        if (Input.GetButton("Pause"))
         {
             if (GameIsPaused)
             {
@@ -79,6 +79,23 @@ public class PauseMenu : MonoBehaviour
 
 
         yield return null;
+    }
+
+    public void RestartAnim()
+    {
+        pauseMenuAnimator.Play("NewGame");
+    }
+
+    public void Restart()
+    {
+        GameManager.instance.SpawnPoint = new Vector2(-79.11f, 7.68f);
+        Time.timeScale = 1f;
+        pauseMenuUI.SetActive(false);
+        SceneManager.LoadScene("FirstLevel");
+        AudioManager.instance.StopAudio("Trigger");
+        AudioManager.instance.UnMute("ForestLoop");
+        AudioManager.instance.UnMute("Forest");
+        AudioManager.instance.UnMute("Trigger");
     }
 
     public void Pause()

@@ -39,12 +39,8 @@ MonoBehaviour:
     m_Key: Sword
     m_Metadata:
       m_Items: []
-  - m_Id: 69068080727814144
-    m_Key: Attack
-    m_Metadata:
-      m_Items: []
-  - m_Id: 69432193756786688
-    m_Key: Presents
+  - m_Id: 82357613250572288
+    m_Key: PRESS       TO ATTACK
     m_Metadata:
       m_Items: []
   m_Metadata:

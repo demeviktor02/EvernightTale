@@ -85,6 +85,30 @@ MonoBehaviour:
     m_Key: SKIP
     m_Metadata:
       m_Items: []
+  - m_Id: 11835449762476032
+    m_Key: Yes, I have decided to save the world.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11836406378360832
+    m_Key: I see you are determined, my child.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11836536661831680
+    m_Key: Alright, 'xy' - good luck on your journey.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11836711623028736
+    m_Key: OLD MAN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11837300402647040
+    m_Key: KID
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11924880771084288
+    m_Key: HERONAME
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

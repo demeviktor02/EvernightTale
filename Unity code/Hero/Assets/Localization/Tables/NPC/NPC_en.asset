@@ -47,6 +47,15 @@ MonoBehaviour:
       me, future hero, could you salvage our village?
     m_Metadata:
       m_Items: []
+  - m_Id: 5160932931629056
+    m_Localized: If I remember correctly, there's a village at the edge of the forest.
+      Maybe I can find someone there who can point me in the right direction.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5194021149962240
+    m_Localized: Sir, are you okay?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

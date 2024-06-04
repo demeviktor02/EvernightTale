@@ -27,11 +27,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 430310334464
-    m_Localized: "NYOMJ          \n    AZ UGR\xC1SHOZ"
+    m_Localized: "NYOMJ          \n        AZ UGR\xC1SHOZ"
     m_Metadata:
       m_Items: []
   - m_Id: 562187640832
-    m_Localized: "NYOMJ K\xC9TSZER          \nA DUPLA UGR\xC1SHOZ"
+    m_Localized: "     NYOMJ 2X         \nA DUPLA UGR\xC1SHOZ"
     m_Metadata:
       m_Items: []
   - m_Id: 719717310464
@@ -39,16 +39,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 902077259776
-    m_Localized: "Nyomk (1)-t, hogy el\u0151vedd a kardodat"
+    m_Localized: "NYOMJ       AZ \xDCT\xC9SHEZ"
     m_Metadata:
       m_Items: []
-  - m_Id: 69068080727814144
-    m_Localized: "Nyomj (SPACE)-t az \xFCt\xE9shez"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 69432193756786688
-    m_Localized: "    M\xE1trai Nikolett\n       \t   \xE9s                         
-      bemutatja: \n    Deme Viktor"
+  - m_Id: 82357613250572288
+    m_Localized: "NYOMJ       AZ \xDCT\xC9SHEZ"
     m_Metadata:
       m_Items: []
   references:

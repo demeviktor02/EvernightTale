@@ -9,9 +9,19 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenuFirst;
     public bool once;
+    public float timer;
+    public Animator logoAnimator;
 
     private void Update()
     {
+        timer += Time.deltaTime;
+        if (timer >= 20f)
+        {
+            logoAnimator.Play("Disappear");
+            timer = 0f;
+        }
+
+
         if (Gamepad.current != null && once == false)
         {
             EventSystem.current.SetSelectedGameObject(mainMenuFirst);

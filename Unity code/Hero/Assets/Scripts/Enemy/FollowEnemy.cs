@@ -63,4 +63,9 @@ public class FollowEnemy : MonoBehaviour
 
         Gizmos.DrawWireSphere(pos, attackRange);
     }
+
+    public void PlayWalk()
+    {
+        animator.Play("Walk");
+    }
 }

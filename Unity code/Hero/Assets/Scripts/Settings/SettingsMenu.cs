@@ -6,6 +6,7 @@ using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.IO;
+using UnityEngine.Localization;
 
 
 public class SettingsMenu : MonoBehaviour
@@ -20,7 +21,8 @@ public class SettingsMenu : MonoBehaviour
     public List<string> languages;
     public TMPro.TMP_Text languageText;
 
-    public List<string> qualityes;
+    public LocalizedString[] qualityesL;
+    //public List<string> qualityes;
     public TMPro.TMP_Text qualityText;
 
     public Slider musicVolumeSlider;
@@ -155,7 +157,7 @@ public class SettingsMenu : MonoBehaviour
 
         languageText.text = languages[settingsData.languageData];
 
-
+        qualityText.text = qualityesL[settingsData.qualityData].GetLocalizedString();
 
     }
 
@@ -169,17 +171,37 @@ public class SettingsMenu : MonoBehaviour
 
     public void SwitchResolution(bool IsNext)
     {
-        if (IsNext == true && settingsData.resolutionData + 1 != resoulutionsList.Count)
+        if (IsNext == true)
         {
-            Resolution resolution = resolutionsNew[settingsData.resolutionData + 1];
-            Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen, Screen.currentResolution.refreshRate);
-            settingsData.resolutionData += 1;
+            if (settingsData.resolutionData + 1 == resoulutionsList.Count)
+            {
+                Resolution resolution = resolutionsNew[0];
+                Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen, Screen.currentResolution.refreshRate);
+                settingsData.resolutionData = 0;
+            }
+            else
+            {
+                Resolution resolution = resolutionsNew[settingsData.resolutionData + 1];
+                Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen, Screen.currentResolution.refreshRate);
+                settingsData.resolutionData += 1;
+            }
+            
         }
-        else if (IsNext == false && settingsData.resolutionData - 1 != -1)
+        else if (IsNext == false)
         {
-            Resolution resolution = resolutionsNew[settingsData.resolutionData - 1];
-            Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen, Screen.currentResolution.refreshRate);
-            settingsData.resolutionData -= 1;
+            if (settingsData.resolutionData - 1 == -1)
+            {
+                Resolution resolution = resolutionsNew[resoulutionsList.Count - 1];
+                Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen, Screen.currentResolution.refreshRate);
+                settingsData.resolutionData = resoulutionsList.Count - 1;
+            }
+            else
+            {
+                Resolution resolution = resolutionsNew[settingsData.resolutionData - 1];
+                Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen, Screen.currentResolution.refreshRate);
+                settingsData.resolutionData -= 1;
+            }
+            
         }
 
         resoultionText.text = resoulutionsList[settingsData.resolutionData];
@@ -214,7 +236,7 @@ public class SettingsMenu : MonoBehaviour
     {
         QualitySettings.SetQualityLevel(qualityIndex);
 
-        qualityText.text = qualityes[qualityIndex];
+        qualityText.text = qualityesL[qualityIndex].GetLocalizedString();
 
     }
 
@@ -222,7 +244,7 @@ public class SettingsMenu : MonoBehaviour
     {
         if (IsNext == true)
         {
-            if (settingsData.qualityData + 1 == qualityes.Count)
+            if (settingsData.qualityData + 1 == qualityesL.Length)
             {
                 QualitySettings.SetQualityLevel(0);
                 settingsData.qualityData = 0;
@@ -249,7 +271,7 @@ public class SettingsMenu : MonoBehaviour
             
         }
 
-        qualityText.text = qualityes[settingsData.qualityData];
+        qualityText.text = qualityesL[settingsData.qualityData].GetLocalizedString();
 
 
 

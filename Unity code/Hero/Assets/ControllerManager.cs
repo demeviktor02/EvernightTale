@@ -11,8 +11,9 @@ public class ControllerManager : MonoBehaviour
     public bool controllerConnected;
     public bool once1;
     public bool once2;
-    public GameObject mainMenuFirst;
+    //public GameObject mainMenuFirst;
     public GameObject lastSelectedgameObject;
+    public CharacterName characterName;
 
     void Awake()
     {
@@ -55,7 +56,6 @@ public class ControllerManager : MonoBehaviour
         if (controllerConnected && !once1)
         {
             Cursor.visible = false;
-            EventSystem.current.SetSelectedGameObject(mainMenuFirst);
 
             Debug.Log(EventSystem.current.currentSelectedGameObject);
             if (EventSystem.current.currentSelectedGameObject != null)
@@ -68,7 +68,11 @@ public class ControllerManager : MonoBehaviour
         else if (!controllerConnected)
         {
             Cursor.visible = true;
-            EventSystem.current.SetSelectedGameObject(null);
+            if (!characterName.isActive)
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+            }
+            
 
             once2 = true;
             once1 = false;

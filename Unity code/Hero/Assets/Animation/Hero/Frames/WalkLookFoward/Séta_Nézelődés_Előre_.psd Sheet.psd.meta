@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,12 +69,12 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -147,7 +147,385 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e31a87f228e4a140b159238b9876f9e
+      internalID: -1715207251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_1"
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86932f649b030274d8aeb85fd44f92da
+      internalID: -1116587203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_2"
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5b31fdf0ea711e48a81888a8eeb6f64
+      internalID: 1456231692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_3"
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23883ce5bd637c64eaf10498369f3f0f
+      internalID: 1007826804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_4"
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf59a7a397e7a314aa1f2bb2e87b33fe
+      internalID: 1383703121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_5"
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985b5f3778df06a4eb9486b1c9e760d6
+      internalID: -878446856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_6"
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3920ee9cc4c54554983843b25c8eace8
+      internalID: -978716869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_7"
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 2000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8c6eecafa631c1438d0c079d22a2ed9
+      internalID: 881631343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_8"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 795de39efd36321498d49e5e38ee92e7
+      internalID: -778941430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_9"
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d429fcaadec3fa247a1fe7f0bad63d5a
+      internalID: 1404857564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_10"
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860f44bafc2d84549bf714b10d5206d7
+      internalID: 859839658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_11"
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 931d9453863de564998398e8dae1af1d
+      internalID: -588735395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_12"
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55feda6d7c6c557449ed43d4d669a91c
+      internalID: 2111378543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_13"
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be14ec4db7ed5f547a436253c2ce2d97
+      internalID: -273252629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_14"
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 099f2a85da17cb04687e74d57b981dfb
+      internalID: -88975772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_15"
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7eab41afa3fbc40ab8a4e3d5af5852
+      internalID: 1616250580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_16"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 496c9c3a2dafd5e4caf7bd0641b7794e
+      internalID: 1753891678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_17"
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa871c96bca2a1c45bd266e1aa5f3cde
+      internalID: 1384557363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,9 +536,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_0": -1715207251
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_1": -1116587203
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_10": 859839658
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_11": -588735395
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_12": 2111378543
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_13": -273252629
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_14": -88975772
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_15": 1616250580
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_16": 1753891678
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_17": 1384557363
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_2": 1456231692
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_3": 1007826804
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_4": 1383703121
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_5": -878446856
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_6": -978716869
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_7": 881631343
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_8": -778941430
+      "Se\u0301ta_Ne\u0301zelo\u030Bde\u0301s_Elo\u030Bre_.psd Sheet_9": 1404857564
   mipmapLimitGroupName: 
-  pSDRemoveMatte: 0
+  pSDRemoveMatte: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -7,6 +7,7 @@ using System;
 using UnityEngine.UI;
 using Unity.Mathematics;
 using UnityEngine.Localization;
+using UnityEngine.EventSystems;
 
 
 public class LocalManager : MonoBehaviour
@@ -46,6 +47,22 @@ public class LocalManager : MonoBehaviour
 
     public int gameModeChanger;
 
+    public ControllerManager controllerManager;
+    public int paperHovered;
+    public bool paperHoveredBool;
+
+    private void Start()
+    {
+        controllerManager = GameObject.FindGameObjectWithTag("ControllerManager").GetComponent<ControllerManager>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Delete"))
+        {
+            DeleteSaveFile();
+        }
+    }
 
     public void ContinueOrNewGame()
     {
@@ -140,6 +157,7 @@ public class LocalManager : MonoBehaviour
             }
             else
             {
+                paperHoveredBool = false;
                 SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
                 SaveData.instance.imageSaveFilePath = Application.persistentDataPath + "/SaveImage" + saveNumber + ".png";
                 animator.Play("ChooseDifficultyOpen");
@@ -154,6 +172,7 @@ public class LocalManager : MonoBehaviour
             }
             else
             {
+                paperHoveredBool = false;
                 SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
                 SaveData.instance.imageSaveFilePath = Application.persistentDataPath + "/SaveImage" + saveNumber + ".png";
                 animator.Play("ChooseDifficultyOpen");
@@ -168,6 +187,7 @@ public class LocalManager : MonoBehaviour
             }
             else
             {
+                paperHoveredBool = false;
                 SaveData.instance.saveFilePath = Application.persistentDataPath + "/PlayerData" + saveNumber + ".json";
                 SaveData.instance.imageSaveFilePath = Application.persistentDataPath + "/SaveImage" + saveNumber + ".png";
                 animator.Play("ChooseDifficultyOpen");
@@ -308,14 +328,16 @@ public class LocalManager : MonoBehaviour
         return null;
     }
 
-    public void DeleteSaveFile(string saveNumber)
+    public void DeleteSaveFile()
     {
-        if (File.Exists(Application.persistentDataPath + "/PlayerData" + saveNumber + ".json"))
+        if (File.Exists(Application.persistentDataPath + "/PlayerData" + paperHovered + ".json") && paperHoveredBool == true)
         {
-            File.Delete(Application.persistentDataPath + "/PlayerData" + saveNumber + ".json");
-            File.Delete(Application.persistentDataPath + "/SaveImage" + saveNumber + ".png");
+            File.Delete(Application.persistentDataPath + "/PlayerData" + paperHovered + ".json");
+            File.Delete(Application.persistentDataPath + "/SaveImage" + paperHovered + ".png");
 
             Debug.Log("Save file deleted!");
+
+            ContinueOrNewGame();
 
         }
         else
@@ -323,7 +345,7 @@ public class LocalManager : MonoBehaviour
             Debug.Log("There is nothing to delete!");
         }
 
-        ContinueOrNewGame();
+        
     }
 
     IEnumerator LoadSceneAsync(int difficulty)
@@ -372,12 +394,41 @@ public class LocalManager : MonoBehaviour
         SaveData.instance.playerData.PlayTime = 0;
         SaveData.instance.playerData.Difficulty = 0;
         SaveData.instance.playerData.StartDate = "";
+        SaveData.instance.playerData.HeroName = "";
         SaveData.instance.saveFilePath = "";
         SaveData.instance.imageSaveFilePath = "";
+        
     }
 
     public void GameModeChanger(int difficulty)
     {
         gameModeChanger = difficulty;
     }
+
+    public void SelectGameObject(GameObject gameObject)
+    {
+
+
+        controllerManager.lastSelectedgameObject = gameObject;
+        if (controllerManager.controllerConnected == true)
+        {
+            EventSystem.current.SetSelectedGameObject(gameObject);
+        }
+        else if (controllerManager.controllerConnected == false)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+
+    }
+
+    public void setPaperHovered(int number)
+    {
+        paperHovered = number;
+    }
+
+    public void setPaperHoveredBool(bool Istrue)
+    {
+        paperHoveredBool = Istrue;
+    }
+
 }

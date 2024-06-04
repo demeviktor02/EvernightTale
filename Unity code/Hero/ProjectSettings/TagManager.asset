@@ -9,6 +9,7 @@ TagManager:
   - Water
   - PauseMenu
   - Transition
+  - ControllerManager
   layers:
   - Default
   - TransparentFX

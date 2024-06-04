@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: hu
   m_SharedData: {fileID: 11400000, guid: 420a6423122867a4da8469030f1ef4e9, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 4397113698780184638
   m_TableData:
   - m_Id: 26690023424
     m_Localized: "V\xC1LASSZ\nMENT\xC9SI PONTOT"
@@ -90,6 +91,37 @@ MonoBehaviour:
     m_Localized: "UGR\xC1S"
     m_Metadata:
       m_Items: []
+  - m_Id: 11835449762476032
+    m_Localized: "Igen, elhat\xE1roztam, hogy megmentem a vil\xE1got"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11836406378360832
+    m_Localized: "L\xE1tom elt\xF6k\xE9lt vagy gyermekem. Mond csak, milyen n\xE9ven
+      fog emlegetni a vil\xE1g?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11836536661831680
+    m_Localized: Rendben {variable} - sok sikert az utadon.
+    m_Metadata:
+      m_Items:
+      - rid: 4397113698780184638
+  - m_Id: 11836711623028736
+    m_Localized: "\xD6REGEMBER"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11837300402647040
+    m_Localized: GYERMEK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11924880771084288
+    m_Localized: '{heroname}'
+    m_Metadata:
+      m_Items:
+      - rid: 4397113698780184638
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4397113698780184638
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00701973440d2a00007059aa9d5d2a00

@@ -49,6 +49,15 @@ MonoBehaviour:
       Mond csak leend\u0151 h\u0151s, tudn\xE1l seg\xEDteni a mi falunkon?"
     m_Metadata:
       m_Items: []
+  - m_Id: 5160932931629056
+    m_Localized: "Ha j\xF3l eml\xE9kszem, az erd\u0151 sz\xE9l\xE9n van egy falu.
+      Ott tal\xE1n tal\xE1lok valakit, aki \xFAtbaigaz\xEDthat."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5194021149962240
+    m_Localized: "B\xE1csi, j\xF3l tetszik lenni?"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
