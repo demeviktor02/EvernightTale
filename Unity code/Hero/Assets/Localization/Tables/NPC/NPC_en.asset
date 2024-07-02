@@ -56,6 +56,30 @@ MonoBehaviour:
     m_Localized: Sir, are you okay?
     m_Metadata:
       m_Items: []
+  - m_Id: 6480350747914240
+    m_Localized: '  PRESS        TO TALK'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12628172991983616
+    m_Localized: Who are you and what are you doing in our village, strange creature?
+      I haven't seen you around here before. What's with that outfit? Are you some
+      kind of court jester?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12628268479508480
+    m_Localized: I'm on a mission, I'm going to kill the witch and free the people
+      from the curse, I will be the new hero.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12628278713610240
+    m_Localized: Hahaha, another fool! What nonsense, you want to be a hero? You'd
+      better go back to chasing frogs.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12628608788557824
+    m_Localized: MOUSE GIRL
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

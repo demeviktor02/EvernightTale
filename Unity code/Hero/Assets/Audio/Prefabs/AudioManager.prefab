@@ -545,6 +545,7 @@ Transform:
   - {fileID: 6488644293853166267}
   - {fileID: 7470259466525012299}
   - {fileID: 2083868827941241080}
+  - {fileID: 191191870561896513}
   - {fileID: 6920708213643000477}
   - {fileID: 7594727483271972890}
   m_Father: {fileID: 0}
@@ -576,6 +577,11 @@ MonoBehaviour:
       loop: 0
     - name: Pause
       clip: {fileID: 8300000, guid: 2088d570c1887ad4bac092fb705da0a5, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: SpiderEscape
+      clip: {fileID: 8300000, guid: f78643be6d4a9384dadc0e40f3f42b27, type: 3}
       volume: 0
       pitch: 0
       loop: 0
@@ -665,7 +671,7 @@ MonoBehaviour:
   - listName: PlayerRun
     list:
     - name: PlayerRun
-      clip: {fileID: 8300000, guid: 6578632a520f4e8488a6a488835b12f2, type: 3}
+      clip: {fileID: 8300000, guid: 11943a66224dfa14891f31516f54cec2, type: 3}
       volume: 0
       pitch: 0
       loop: 1
@@ -754,22 +760,12 @@ MonoBehaviour:
     isLooping: 0
   - listName: VillageLoop
     list:
-    - name: VillagePig
-      clip: {fileID: 8300000, guid: 71ac9e7567b52ef4cba7664461eaf5ad, type: 3}
+    - name: Village
+      clip: {fileID: 8300000, guid: 14d2a3bd1e213ca4fa16a367a3a43631, type: 3}
       volume: 0
       pitch: 0
       loop: 0
-    - name: VillageSheep
-      clip: {fileID: 8300000, guid: 6d88387a8d4cf57488d3bf1475a10b12, type: 3}
-      volume: 0
-      pitch: 0
-      loop: 0
-    - name: VillageHen
-      clip: {fileID: 8300000, guid: 471819bf6baa78a43ab482830f6ff241, type: 3}
-      volume: 0
-      pitch: 0
-      loop: 0
-    source: {fileID: 0}
+    source: {fileID: 7547118028995480797}
     isMusic: 0
     isLooping: 1
   - listName: Rat
@@ -859,12 +855,62 @@ MonoBehaviour:
       volume: 0
       pitch: 0
       loop: 0
+    - name: SpiderBreath
+      clip: {fileID: 8300000, guid: df7c0d9043064f844badd5580778db8b, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
     - name: Campfire
       clip: {fileID: 8300000, guid: 96e0ba0c6cab5734ba38d94d9c2eb503, type: 3}
       volume: 0
       pitch: 0
       loop: 0
     source: {fileID: 6992382811935990486}
+    isMusic: 0
+    isLooping: 1
+  - listName: Spider
+    list:
+    - name: WakeUp
+      clip: {fileID: 8300000, guid: d8e45c2f677b8a74f99ed0d77cb726b0, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: MissHit
+      clip: {fileID: 8300000, guid: 7bd57485ff3ec204db695cb4365783e2, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: PlayerHit
+      clip: {fileID: 8300000, guid: 462423cb48cba8141ba5a7a730358979, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: WoodHit1
+      clip: {fileID: 8300000, guid: 1ef49fda126fe8f4f8ad16e70c50cf0b, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: WoodHit2
+      clip: {fileID: 8300000, guid: 20aebe0eaeabeaa46a06eb183718e6f8, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    - name: WoodHit3
+      clip: {fileID: 8300000, guid: 625b71e5a47f1fe4586d0cca43c964d6, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    source: {fileID: 2053734134843192007}
+    isMusic: 0
+    isLooping: 1
+  - listName: SpiderMove
+    list:
+    - name: Move
+      clip: {fileID: 8300000, guid: 1a847e0b39ba656499ff28140740af9a, type: 3}
+      volume: 0
+      pitch: 0
+      loop: 0
+    source: {fileID: 4213853543856437846}
     isMusic: 0
     isLooping: 1
   CurrentMusicPlay: 
@@ -910,6 +956,134 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6968572225700527446, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &6423677592361368629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 191191870561896513}
+  - component: {fileID: 4213853543856437846}
+  m_Layer: 0
+  m_Name: SpiderWalk Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &191191870561896513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6423677592361368629}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3354393657195656943}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &4213853543856437846
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6423677592361368629}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 2083971377044379120, guid: 13baf5dcbf9102349b065de01465bb78, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

@@ -21,27 +21,27 @@ public class Health : MonoBehaviour
     public bool IsDyingFromWater;
     public bool IsDyingFromFalling;
 
+    public GameObject panel;
+
     void Start()
     {
+        StartCoroutine(Ianim());
         transform.position = GameManager.instance.SpawnPoint;
-
-        transition.Play("Out");
- 
-
-        if (GameManager.instance.difficulty == 0)
-        {
-            
-        }
-        else if (GameManager.instance.difficulty == 1)
-        {
-            
-        }
-        else if (GameManager.instance.difficulty == 2)
-        {
-            
-        }
+       
 
     }
+
+
+    public IEnumerator Ianim()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        transition.Play("Out");
+        panel.SetActive(false);
+
+        yield return null;
+    }
+
 
     void Update()
     {

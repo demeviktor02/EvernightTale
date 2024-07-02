@@ -26,17 +26,6 @@ public class OnCollideWalk : MonoBehaviour
                 player.GetComponent<PlayerMovement2>().playerSpeed = player.GetComponent<PlayerMovement2>().runningSpeed;
             }
 
-            //animator.SetBool("IsWalking", !player.GetComponent<PlayerMovement2>().isWalking);
-            //player.GetComponent<PlayerMovement2>().isWalking = !player.GetComponent<PlayerMovement2>().isWalking;
-
-            //if (player.GetComponent<PlayerMovement2>().isWalking == true)
-            //{
-            //    player.GetComponent<PlayerMovement2>().playerSpeed = player.GetComponent<PlayerMovement2>().walkingSpeed;
-            //}
-            //else
-            //{
-            //    player.GetComponent<PlayerMovement2>().playerSpeed = player.GetComponent<PlayerMovement2>().runningSpeed;
-            //}
         }
         
     }

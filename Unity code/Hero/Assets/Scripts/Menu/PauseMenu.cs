@@ -9,12 +9,14 @@ public class PauseMenu : MonoBehaviour
     public static PauseMenu instance;
 
 
-    public static bool GameIsPaused = false;
+    public bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
     public Animator transitionAnimator;
     public Animator pauseMenuAnimator;
     public GameObject hover;
+
+    public bool pausing;
 
     void Awake()
     {
@@ -39,8 +41,10 @@ public class PauseMenu : MonoBehaviour
     {
 
 
-        if (Input.GetButton("Pause"))
+        if (Input.GetButtonDown("Pause") && GameManager.instance.inCutscene == false && GameManager.instance.inGame == true && pausing == false)
         {
+            pausing = true;
+
             if (GameIsPaused)
             {
                 Resume();
@@ -73,16 +77,16 @@ public class PauseMenu : MonoBehaviour
         yield return new WaitForSecondsRealtime(2f);
         Time.timeScale = 1f;
         AudioManager.instance.UnMute("ForestLoop");
-        AudioManager.instance.UnMute("Forest");
         AudioManager.instance.UnMute("Trigger");
         ControllerManager.instance.SelectGameObject(null);
-
+        pausing = false;
 
         yield return null;
     }
 
     public void RestartAnim()
     {
+        AudioManager.instance.PlayAudio("Menu", "Play");
         pauseMenuAnimator.Play("NewGame");
     }
 
@@ -94,7 +98,6 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("FirstLevel");
         AudioManager.instance.StopAudio("Trigger");
         AudioManager.instance.UnMute("ForestLoop");
-        AudioManager.instance.UnMute("Forest");
         AudioManager.instance.UnMute("Trigger");
     }
 
@@ -115,7 +118,6 @@ public class PauseMenu : MonoBehaviour
 
             Time.timeScale = 0f;
             AudioManager.instance.Mute("ForestLoop");
-            AudioManager.instance.Mute("Forest");
             AudioManager.instance.Mute("Trigger");
             transitionAnimator.Play("In");
 
@@ -126,6 +128,8 @@ public class PauseMenu : MonoBehaviour
             AudioManager.instance.PlayAudio("Music", "Pause");
             ControllerManager.instance.SelectGameObject(hover);
         }
+
+        pausing = false;
 
         yield return null;
     }

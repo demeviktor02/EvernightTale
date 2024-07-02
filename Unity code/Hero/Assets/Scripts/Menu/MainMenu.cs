@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     public bool once;
     public float timer;
     public Animator logoAnimator;
+    public GameObject exit;
 
     private void Update()
     {
@@ -36,10 +37,14 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    //private void Start()
-    //{
-    //    EventSystem.current.SetSelectedGameObject(mainMenuFirst);
-    //}
+    private void Start()
+    {
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            exit.SetActive(false);
+        }
+        
+    }
 
     public void PlayGame()
     {

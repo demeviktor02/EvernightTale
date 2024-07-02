@@ -60,44 +60,24 @@ public class PlayerMovement2 : MonoBehaviour
 
         if (isWalking == true)
         {
-            playerSpeed = 4f;
+            playerSpeed = walkingSpeed;
             animator.SetBool("IsWalking", true);
         }
 
-        //GameManager.instance.transition.Play("LevelLoaderEnd");
-
-        //joystick = GameManager.instance.joystick;
-        //jumpButton = GameManager.instance.jumpButton;
-        //pauseButton = GameManager.instance.pauseButton;
-
-        //if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
-        //{
-        //joystick.gameObject.SetActive(true);
-        //jumpButton.gameObject.SetActive(true);
-        //pauseButton.gameObject.SetActive(true);
-        //}
-
-        //jumpButton.onClick.AddListener(jumpButtonTaskOnClick);
     }
 
     private void Update()
     {
-        if (gameObject.GetComponent<PlayerCombat>().isAttack == true)
-        {
-            playerSpeed = 0;
-        }
-        else
-        {
+
+
             if (isWalking)
             {
-                playerSpeed = 4f;
+                playerSpeed = walkingSpeed;
             }
             else
             {
-                playerSpeed = 6.3f;
+                playerSpeed = runningSpeed;
             }
-            
-        }
 
         
 
@@ -105,8 +85,6 @@ public class PlayerMovement2 : MonoBehaviour
         runtime -= Time.deltaTime;
         if (runtime < 0)
         {
-            //AudioManager.instance.musicSounds[0].source.pitch = Random.Range(0.8f, 1.1f);
-            //AudioManager.instance.musicSounds[0].source.volume = Random.Range(0.3f, 0.5f);
             runtime = 1;
         }
 
@@ -183,10 +161,9 @@ public class PlayerMovement2 : MonoBehaviour
         }
 
         jumpPressedRemember -= Time.deltaTime;
+        
+        
         Jump();
-
-
-
 
     }
 

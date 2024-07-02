@@ -5,21 +5,28 @@ using UnityEngine;
 public class OnCollideSound : MonoBehaviour
 {
     public bool start = true;
-    public string triggerSound;
+    public string soundList;
+    public string sound;
+    public bool music;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {        
         if (collision.tag == "Player")
         {
-            if (start == true)
+            if (start == true && music == false)
             {
-                AudioManager.instance.PlayAudio("Trigger", triggerSound);
+                AudioManager.instance.PlayAudio(soundList, sound);
                 start = false;
             }
-            else if (start == false)
+            else if (start == false && music == false)
             {
-                AudioManager.instance.StopAudio("Trigger");//triggerSound
+                AudioManager.instance.StopAudio(soundList);
                 start = true;
+            }
+
+            if (music == true && AudioManager.instance.CurrentMusicPlay != sound)
+            {
+                AudioManager.instance.PlayAudio(soundList, sound); ;
             }
             
         }

@@ -43,7 +43,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 82357613250572288
-    m_Localized: PRESS       TO ATTACK
+    m_Localized: " PRESS       \n     TO ATTACK"
     m_Metadata:
       m_Items: []
   references:

@@ -34,11 +34,19 @@ public class NPC : MonoBehaviour
 
     public float waitTime;
 
+    public Video2 video2;
+
+    public bool IsCutscene;
+
     // Update is called once per frame
     private void Start()
     {
         (localizedString[1]["heroname"] as StringVariable).Value = SaveData.instance.playerData.HeroName;
-        (localizedString[3]["heroname"] as StringVariable).Value = SaveData.instance.playerData.HeroName;
+        if (IsCutscene)
+        {
+            (localizedString[3]["heroname"] as StringVariable).Value = SaveData.instance.playerData.HeroName;
+        }
+        
     }
 
     void Update()
@@ -48,7 +56,6 @@ public class NPC : MonoBehaviour
         if (Input.GetButtonDown("Talk") && inDialoge && currentDialogEnd == true)
         {
             currentDialogEnd = false;
-            nameText.text = localizedString[index + 1].GetLocalizedString().ToUpper(); //Names[index+1];
             NextLine();
         }
 
@@ -101,6 +108,12 @@ public class NPC : MonoBehaviour
 
         if (index < dialoge.Length - 1)
         {
+            if (IsCutscene == false && index == 1)
+            {
+                AudioManager.instance.PlayAudio("Village", "RatGirl");
+            }
+
+            nameText.text = localizedString[index + 1].GetLocalizedString().ToUpper();
             index++;
             dialogeText.text = "";
             StartCoroutine(Typing());
@@ -108,9 +121,20 @@ public class NPC : MonoBehaviour
         else
         {
             animator.Play("TalkingEnd");
-            NPCCam.SetActive(false);
+            
             player.GetComponent<PlayerMovement2>().enabled = true;
             zeroText();
+
+
+            if (IsCutscene == true)
+            {
+                video2.GetComponent<Animator>().Play("Start");
+            }
+            else
+            {
+                NPCCam.SetActive(false);
+            }
+            
         }
     }
 

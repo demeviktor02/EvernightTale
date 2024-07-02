@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     public int difficulty;
 
+    public bool inCutscene;
+
     void Awake()
     {
        

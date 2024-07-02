@@ -30,7 +30,7 @@ public class CharacterName : MonoBehaviour
             once = true;
         }
 
-        if (Input.GetButtonDown("Submit") && inputField.gameObject.active == true)
+        if (Input.GetButtonDown("Submit") && inputField.gameObject.active == true && inputField.text != "")
         {
             animator.Play("EnterHide");
             SaveData.instance.playerData.HeroName = inputField.text;

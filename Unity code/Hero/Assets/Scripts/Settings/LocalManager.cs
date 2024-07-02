@@ -51,6 +51,8 @@ public class LocalManager : MonoBehaviour
     public int paperHovered;
     public bool paperHoveredBool;
 
+    public GameObject particle;
+
     private void Start()
     {
         controllerManager = GameObject.FindGameObjectWithTag("ControllerManager").GetComponent<ControllerManager>();
@@ -350,6 +352,7 @@ public class LocalManager : MonoBehaviour
 
     IEnumerator LoadSceneAsync(int difficulty)
     {
+        
 
         try
         {
@@ -378,8 +381,8 @@ public class LocalManager : MonoBehaviour
         {
             GameManager.instance.SpawnPoint = secondLevelStartPos;
         }
-        
 
+        particle.SetActive(false);
         LoadingScreen.SetActive(true);
 
         while (!operation.isDone)

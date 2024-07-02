@@ -58,6 +58,30 @@ MonoBehaviour:
     m_Localized: "B\xE1csi, j\xF3l tetszik lenni?"
     m_Metadata:
       m_Items: []
+  - m_Id: 6480350747914240
+    m_Localized: "NYOMJ       BESZ\xC9DHEZ"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12628172991983616
+    m_Localized: "H\xE1t te meg ki vagy \xE9s mit csin\xE1lsz a falunkban, furcsa
+      szerzet? Nem l\xE1ttalak m\xE9g errefel\xE9. Mi ez a hacuka? T\xE1n udvari
+      bolond vagy?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12628268479508480
+    m_Localized: "K\xFCldet\xE9sen vagyok, meg fogom \xF6lni a boszork\xE1nyt \xE9s
+      felszabad\xEDtom az embereket az \xE1tok al\xF3l, \xE9n leszek az \xFAj h\u0151s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12628278713610240
+    m_Localized: "Hahaha, m\xE9gegy fajank\xF3! Micsoda badars\xE1g, te akarsz h\u0151s
+      lenni? Ink\xE1bb menj vissza b\xE9k\xE1t kergetni."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12628608788557824
+    m_Localized: "EG\xC9R L\xC1NY"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

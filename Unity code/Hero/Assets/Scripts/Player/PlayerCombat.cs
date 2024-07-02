@@ -102,6 +102,7 @@ public class PlayerCombat : MonoBehaviour
         animator.SetBool("DoubleAttack",true);
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        Collider2D[] hitTree = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, treeLayers);
 
         if (hitEnemies.Length == 0)
         {
@@ -114,7 +115,24 @@ public class PlayerCombat : MonoBehaviour
                 AudioManager.instance.PlayAudio("Player","PlayerHit2");
                 enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
             }
-        }       
+        }
+
+        if (hitTree.Length == 0)
+        {
+            Debug.Log(Random.Range(1, 4));
+            AudioManager.instance.PlayAudio("Player", "PlayerMiss" + Random.Range(1, 4));
+        }
+        else
+        {
+            foreach (Collider2D tree in hitTree)
+            {
+
+                AudioManager.instance.PlayAudio("Forest", "ForestTree" + Random.Range(1, 4));
+                tree.GetComponent<Animator>().Play("Falling");
+                AudioManager.instance.PlayAudio("Forest", "ForestTreeFall");
+                tree.GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("Ground");
+            }
+        }
     }
 
     public void PlayerAttack()
