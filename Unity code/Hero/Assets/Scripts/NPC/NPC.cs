@@ -38,6 +38,9 @@ public class NPC : MonoBehaviour
 
     public bool IsCutscene;
 
+    public Animator Mobile;
+    public bool placebo;
+
     // Update is called once per frame
     private void Start()
     {
@@ -53,13 +56,13 @@ public class NPC : MonoBehaviour
     {
 
 
-        if (Input.GetButtonDown("Talk") && inDialoge && currentDialogEnd == true)
+        if (Input.GetButton("Talk") && inDialoge && currentDialogEnd == true)
         {
             currentDialogEnd = false;
             NextLine();
         }
 
-        if (Input.GetButtonDown("Talk") && playerIsClose && inDialoge == false)
+        if (Input.GetButton("Talk") && playerIsClose && inDialoge == false)
         {
             player.GetComponent<Animator>().Play("Idle");
             nameText.text = localizedString[0].GetLocalizedString();
@@ -71,9 +74,30 @@ public class NPC : MonoBehaviour
             StartCoroutine(StartTalking());
         }
 
-        if (dialogeText.text == dialoge[index].GetLocalizedString())
+        if (dialogeText.text == dialoge[index].GetLocalizedString() && inDialoge == true)
         {
             contButton.SetActive(true);
+        }
+    }
+
+    public void mobileTalk()
+    {
+        if (playerIsClose && inDialoge == false)
+        {
+            player.GetComponent<Animator>().Play("Idle");
+            nameText.text = localizedString[0].GetLocalizedString();
+            player.GetComponent<PlayerMovement2>().enabled = false;
+            NPCCam.SetActive(true);
+            inDialoge = true;
+            animator.Play("TextAppear");
+            zeroText();
+            StartCoroutine(StartTalking());
+        }
+
+        if (inDialoge && currentDialogEnd == true)
+        {
+            currentDialogEnd = false;
+            NextLine();
         }
     }
 
@@ -144,6 +168,11 @@ public class NPC : MonoBehaviour
         {
             animator.Play("Appear");
             playerIsClose = true;
+
+            if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer || placebo == true)
+            {
+                Mobile.Play("TalkAppear");
+            }
         }
     }
 
@@ -155,6 +184,10 @@ public class NPC : MonoBehaviour
             playerIsClose = false;
             inDialoge = false;
 
+            if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer || placebo == true)
+            {
+                Mobile.Play("TalkDisappear");
+            }
         }
     }
 }

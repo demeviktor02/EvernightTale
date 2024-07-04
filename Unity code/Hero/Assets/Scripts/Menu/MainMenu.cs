@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public Animator logoAnimator;
     public GameObject exit;
 
+
     private void Update()
     {
         timer += Time.deltaTime;
@@ -22,19 +23,6 @@ public class MainMenu : MonoBehaviour
             timer = 0f;
         }
 
-
-        if (Gamepad.current != null && once == false)
-        {
-            EventSystem.current.SetSelectedGameObject(mainMenuFirst);
-            Cursor.visible = false;
-            once = true;
-        }
-        else if (Gamepad.current == null && once == true)
-        {
-            EventSystem.current.SetSelectedGameObject(null);
-            Cursor.visible = true;
-            once = false;
-        }
     }
 
     private void Start()
@@ -43,7 +31,8 @@ public class MainMenu : MonoBehaviour
         {
             exit.SetActive(false);
         }
-        
+
+        ControllerManager.instance.SelectGameObject(mainMenuFirst);
     }
 
     public void PlayGame()

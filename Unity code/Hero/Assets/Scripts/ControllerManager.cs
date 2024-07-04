@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class ControllerManager : MonoBehaviour
 {
@@ -10,11 +11,7 @@ public class ControllerManager : MonoBehaviour
 
     public bool controllerConnected;
     public bool once1;
-    public bool once2;
-    //public GameObject mainMenuFirst;
     public GameObject lastSelectedgameObject;
-    public CharacterName characterName;
-
     void Awake()
     {
 
@@ -33,60 +30,74 @@ public class ControllerManager : MonoBehaviour
 
     void Update()
     {
-        string[] names = Input.GetJoystickNames();
 
-        if (names.Length == 0)
+
+        if (Gamepad.current == null)
         {
             controllerConnected = false;
         }
-        else if (names.Length != 0)
+        else if (Gamepad.current != null)
         {
-            if (names[0] == "")
-            {
-                controllerConnected = false;
-            }
-            else if (names[0] != "")
-            {
-                controllerConnected = true;
-
-            }
+            controllerConnected = true;
         }
 
 
-        if (controllerConnected && !once1)
+        if (controllerConnected && !once1 && GameManager.instance.inGame == false)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
-            Debug.Log(EventSystem.current.currentSelectedGameObject);
             if (EventSystem.current.currentSelectedGameObject != null)
             {
                 once1 = true;
-                once2 = false;
             }
-            
+
+            EventSystem.current.SetSelectedGameObject(lastSelectedgameObject);
         }
         else if (!controllerConnected && GameManager.instance.inGame == false)
         {
+            Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            if (!characterName.isActive)
-            {
-                EventSystem.current.SetSelectedGameObject(null);
-            }
-            
 
-            once2 = true;
             once1 = false;
+
+            EventSystem.current.SetSelectedGameObject(null);
         }
 
 
         if (GameManager.instance.inGame == true && PauseMenu.instance.GameIsPaused == false)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
-        else
+        else if (GameManager.instance.inGame == true && PauseMenu.instance.GameIsPaused == true)
         {
-            Cursor.visible = true;
+            if (controllerConnected && !once1)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+
+                
+                if (EventSystem.current.currentSelectedGameObject != null)
+                {
+                    once1 = true;
+                }
+
+                EventSystem.current.SetSelectedGameObject(lastSelectedgameObject);
+
+            }
+            else if (!controllerConnected)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+                once1 = false;
+
+                EventSystem.current.SetSelectedGameObject(null);
+            }
+            
         }
+
     }
 
     public void SelectGameObject(GameObject gameObject)

@@ -32,9 +32,7 @@ public class PlayerMovement2 : MonoBehaviour
 
     private bool doubleJump;
 
-    //public Joystick joystick;
-    public Button jumpButton;
-    public Button pauseButton;
+    public Joystick joystick;
 
     public bool isWalking = false;
 
@@ -145,7 +143,7 @@ public class PlayerMovement2 : MonoBehaviour
 
         if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
         {
-            //horizontal = joystick.Horizontal;
+            horizontal = joystick.Horizontal;
         }
         else
         {
@@ -213,7 +211,7 @@ public class PlayerMovement2 : MonoBehaviour
         if ((jumpPressedRemember > 0) && (GroundedRemember > 0))
         {
             int random = UnityEngine.Random.Range(0, 4);
-            if (random == 0)
+            if (random == 0 && PauseMenu.instance.GameIsPaused == false)
             {
                 AudioManager.instance.PlayAudio("Player", "PlayerJump");
             }
@@ -227,7 +225,7 @@ public class PlayerMovement2 : MonoBehaviour
         else if (Input.GetButtonDown("Jump") && doubleJump)
         {
             int random = UnityEngine.Random.Range(0, 4);
-            if (random == 0)
+            if (random == 0 && PauseMenu.instance.GameIsPaused == false)
             {
                 AudioManager.instance.PlayAudio("Player", "PlayerJump");
             }
@@ -332,13 +330,27 @@ public class PlayerMovement2 : MonoBehaviour
 
     public void MobileJump()
     {
-        jumpPressedRemember = jumpPressedRememberTime;
+        if (doubleJump)
+        {
+            int random = UnityEngine.Random.Range(0, 4);
+            if (random == 0)
+            {
+                AudioManager.instance.PlayAudio("Player", "PlayerJump");
+            }
+            animator.SetTrigger("IsJumping");
+            GroundedRemember = 0f;
+            jumpPressedRemember = 0f;
+            isJumping = true;
+            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            doubleJump = false;
+        }
+        else
+        {
+            jumpPressedRemember = jumpPressedRememberTime;
+        }
+        
     }
 
-    void jumpButtonTaskOnClick()
-    {
-        jumpPressedRemember = jumpPressedRememberTime;
-    }
 
     public void IsRunning()
     {

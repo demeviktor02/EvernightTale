@@ -234,7 +234,6 @@ public class LocalManager : MonoBehaviour
 
     public void LoadGame(int difficulty)
     {
-        Cursor.visible = false;
         StartCoroutine(LoadSceneAsync(difficulty));
     }
 

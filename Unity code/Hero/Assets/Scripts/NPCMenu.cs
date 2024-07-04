@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.SmartFormat.PersistentVariables;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using TMPro;
 
 public class NPCMenu : MonoBehaviour
 {
@@ -32,12 +34,16 @@ public class NPCMenu : MonoBehaviour
     public GameObject DialogText;
     public CharacterName characterName;
 
+    public bool hideContinue;
+
+    public TMP_InputField TMPInputField;
+
     // Update is called once per frame
     void Update()
     {
         
 
-        if (Input.GetButtonDown("Talk") && inDialoge && currentDialogEnd == true)
+        if (Input.GetButton("Talk") && inDialoge && currentDialogEnd == true)
         {
             Debug.Log(dialoge.Length);
             Debug.Log(index);
@@ -55,7 +61,7 @@ public class NPCMenu : MonoBehaviour
             StartCoroutine(StartTalking());
         }
 
-        if (dialogeText.text == dialoge[index].GetLocalizedString())
+        if (dialogeText.text == dialoge[index].GetLocalizedString() && hideContinue == false)
         {
             contButton.SetActive(true);
         }
@@ -84,6 +90,12 @@ public class NPCMenu : MonoBehaviour
         currentDialogEnd = true;
     }
 
+    public IEnumerator WaitForInputActivation()
+    {
+        yield return new WaitForSeconds(1f);
+        TMPInputField.ActivateInputField();
+    }
+
     public void NextLine()
     {
         contButton.SetActive(false);
@@ -92,16 +104,20 @@ public class NPCMenu : MonoBehaviour
         {
             if (index == 1 && characterName.ended == false)
             {
-                
+                hideContinue = true;
+
+
                 InputField.SetActive(true);
                 InputFieldText.SetActive(true);
                 AppearCanvas.SetActive(false);
                 DialogText.SetActive(false);
                 characterName.isActive = true;
-                ControllerManager.instance.SelectGameObject(InputField);
+                StartCoroutine(WaitForInputActivation());
             }
             else
             {
+                hideContinue = false;
+
                 index++;
                 nameText.text = localizedString[index].GetLocalizedString();
                 dialogeText.text = "";

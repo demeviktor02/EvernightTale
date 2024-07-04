@@ -22,7 +22,6 @@ public class SettingsMenu : MonoBehaviour
     public TMPro.TMP_Text languageText;
 
     public LocalizedString[] qualityesL;
-    //public List<string> qualityes;
     public TMPro.TMP_Text qualityText;
 
     public Slider musicVolumeSlider;
@@ -78,13 +77,14 @@ public class SettingsMenu : MonoBehaviour
             Application.platform != RuntimePlatform.IPhonePlayer)
         {
 
-
             if (PlayerPrefs.GetString("unity.player_session_count") == "1")
             {
                 settingsData.environmentVolumeData = 0;
                 settingsData.musicVolumeData = 0;
                 settingsData.qualityData = 2;
                 settingsData.resolutionData = firstResolutionData;
+                settingsData.languageData = 0;
+                
 
 
                 SetEnvironmentVolume(settingsData.environmentVolumeData);
@@ -104,6 +104,8 @@ public class SettingsMenu : MonoBehaviour
                 SetQuality(settingsData.qualityData);
                 SetResolution(settingsData.resolutionData);
                 SetLanguage(settingsData.languageData);
+
+                
             }
         }
     }

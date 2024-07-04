@@ -15,6 +15,8 @@ public class Video2 : MonoBehaviour
     public string engVideoLink = "https://demeviktor02.github.io/EvernightTaleVideo/lady_eng.mp4";
     public string hunVideoLink = "https://demeviktor02.github.io/EvernightTaleVideo/lady_hun.mp4";
 
+    public GameObject rawimage;
+
 
     // Update is called once per frame
     void Update()
@@ -22,26 +24,28 @@ public class Video2 : MonoBehaviour
         if ((videoPlayer.frame) > 0 && (videoPlayer.isPlaying == false))
         {
             videoSkip.SetActive(false);
+            videoPlayer.Stop();
 
             NPC.NPCCam.SetActive(false);
             AudioManager.instance.UnMute("Village");
             AudioManager.instance.UnMute("VillageLoop");
             //AudioManager.instance.UnMute("Trigger");
             StartCoroutine(setInCutsceneFalse());
-            gameObject.SetActive(false);                      
+            gameObject.GetComponent<Animator>().Play("End");
         }
 
 
-        if (Input.GetButtonDown("Cancel") && inCutscene == true)
+        if (Input.GetButton("Cancel") && inCutscene == true)
         {
             videoSkip.SetActive(false);
+            videoPlayer.Stop();
 
             NPC.NPCCam.SetActive(false);
             AudioManager.instance.UnMute("Village");
             AudioManager.instance.UnMute("VillageLoop");
             //AudioManager.instance.UnMute("Trigger");
             StartCoroutine(setInCutsceneFalse());
-            gameObject.SetActive(false);
+            gameObject.GetComponent<Animator>().Play("End");
 
         }
     }
@@ -55,6 +59,20 @@ public class Video2 : MonoBehaviour
 
     public void PlayVideo()
     {
+        videoPlayer.Play();
+        videoSkip.SetActive(true);
+    }
+
+    public void IsCutSceneOn()
+    {
+        GameManager.instance.inCutscene = true;
+        inCutscene = true;
+        AudioManager.instance.Mute("Village");
+        AudioManager.instance.Mute("VillageLoop");
+    }
+
+    public void SetVideoClip()
+    {
         Locale currentSelectedLocale = LocalizationSettings.SelectedLocale;
         ILocalesProvider availableLocales = LocalizationSettings.AvailableLocales;
 
@@ -66,16 +84,5 @@ public class Video2 : MonoBehaviour
         {
             videoPlayer.url = hunVideoLink;
         }
-        videoPlayer.Play();
-        videoSkip.SetActive(true);
-    }
-
-    public void IsCutSceneOn()
-    {
-        GameManager.instance.inCutscene = true;
-        inCutscene = true;
-        AudioManager.instance.Mute("Village");
-        AudioManager.instance.Mute("VillageLoop");
-        //AudioManager.instance.Mute("Trigger");
     }
 }

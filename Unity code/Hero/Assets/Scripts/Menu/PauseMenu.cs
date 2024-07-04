@@ -38,8 +38,7 @@ public class PauseMenu : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-
+    {        
 
         if (Input.GetButtonDown("Pause") && GameManager.instance.inCutscene == false && GameManager.instance.inGame == true && pausing == false)
         {
@@ -56,11 +55,28 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void MobilePause()
+    {
+        if (GameManager.instance.inCutscene == false && GameManager.instance.inGame == true && pausing == false)
+        {
+            pausing = true;
+
+            if (GameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
 
     public void Resume()
     {
-        GameIsPaused = false;        
-        Cursor.visible = false;
+        GameIsPaused = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
         StartCoroutine(IResume());
         
     }
@@ -103,8 +119,13 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        GameIsPaused = true;        
-        Cursor.visible = true;
+        GameIsPaused = true;
+        //if (ControllerManager.instance.controllerConnected == false)
+        //{
+        //    Cursor.lockState = CursorLockMode.None;
+        //    Cursor.visible = true;
+        //}
+        
         StartCoroutine(IPause());       
     }
 

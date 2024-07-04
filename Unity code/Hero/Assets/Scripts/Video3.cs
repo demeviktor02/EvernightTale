@@ -22,6 +22,7 @@ public class Video3 : MonoBehaviour
         if ((videoPlayer.frame) > 0 && (videoPlayer.isPlaying == false))
         {
             videoSkip.SetActive(false);
+            videoPlayer.Stop();
 
             GameManager.instance.inGame = false;
             AudioManager.instance.UnMute("Village");
@@ -31,9 +32,10 @@ public class Video3 : MonoBehaviour
         }
 
 
-        if (Input.GetButtonDown("Cancel") && inCutscene == true)
+        if (Input.GetButton("Cancel") && inCutscene == true)
         {
             videoSkip.SetActive(false);
+            videoPlayer.Stop();
 
             GameManager.instance.inGame = false;
             AudioManager.instance.UnMute("Village");
@@ -54,17 +56,6 @@ public class Video3 : MonoBehaviour
 
     public void PlayVideo()
     {
-        Locale currentSelectedLocale = LocalizationSettings.SelectedLocale;
-        ILocalesProvider availableLocales = LocalizationSettings.AvailableLocales;
-
-        if (currentSelectedLocale == availableLocales.GetLocale("en"))//settingsMenu.settingsData.languageData == 0)
-        {
-            videoPlayer.url = engVideoLink;
-        }
-        else
-        {
-            videoPlayer.url = hunVideoLink;
-        }
         videoPlayer.Play();
         videoSkip.SetActive(true);
     }
@@ -79,5 +70,20 @@ public class Video3 : MonoBehaviour
         AudioManager.instance.StopAudio("Village");
         AudioManager.instance.StopAudio("VillageLoop");
         AudioManager.instance.StopAudio("Trigger");
+    }
+
+    public void SetVideoClip()
+    {
+        Locale currentSelectedLocale = LocalizationSettings.SelectedLocale;
+        ILocalesProvider availableLocales = LocalizationSettings.AvailableLocales;
+
+        if (currentSelectedLocale == availableLocales.GetLocale("en"))
+        {
+            videoPlayer.url = engVideoLink;
+        }
+        else
+        {
+            videoPlayer.url = hunVideoLink;
+        }
     }
 }

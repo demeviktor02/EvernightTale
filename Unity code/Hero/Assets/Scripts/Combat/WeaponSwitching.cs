@@ -11,7 +11,7 @@ public class WeaponSwitching : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        changeWeaponButton = GameManager.instance.changeWeaponButton;
+        //changeWeaponButton = GameManager.instance.changeWeaponButton;
 
         if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
         {

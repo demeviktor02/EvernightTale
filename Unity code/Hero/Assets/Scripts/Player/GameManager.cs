@@ -14,10 +14,10 @@ public class GameManager : MonoBehaviour
     public bool inGame;
     public string heroName;
 
-    //public Joystick joystick;
+    public Joystick joystick;
     public Button jumpButton;
     public Button pauseButton;
-    public Button changeWeaponButton;
+    public Button talkButton;
 
     public float sessionTime;
 
@@ -49,6 +49,13 @@ public class GameManager : MonoBehaviour
             sessionTime += Time.deltaTime;
         }
 
+        if (inGame && Application.platform == RuntimePlatform.Android || inGame && Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            joystick.GetComponent<GameObject>().SetActive(true);
+            jumpButton.GetComponent<GameObject>().SetActive(true);
+            pauseButton.GetComponent<GameObject>().SetActive(true);
+            talkButton.GetComponent<GameObject>().SetActive(true);
+        }
     }
 
 }

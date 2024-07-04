@@ -21,12 +21,14 @@ public class Video : MonoBehaviour
     {
         if ((videoPlayer.frame) > 0 && (videoPlayer.isPlaying == false))
         {
+            videoPlayer.Stop();
             animator.Play("EndCutscene");
         }
         
 
-        if (Input.GetButtonDown("Cancel") && InCutScene == true)
+        if (Input.GetButton("Cancel") && InCutScene == true)
         {
+            videoPlayer.Stop();
             animator.Play("EndCutscene");
         }
     }
