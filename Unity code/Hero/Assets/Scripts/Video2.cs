@@ -12,8 +12,10 @@ public class Video2 : MonoBehaviour
     public GameObject videoSkip;
     public bool inCutscene;
     public NPC NPC;
-    public string engVideoLink = "https://demeviktor02.github.io/EvernightTaleVideo/lady_eng.mp4";
-    public string hunVideoLink = "https://demeviktor02.github.io/EvernightTaleVideo/lady_hun.mp4";
+    //public string engVideoLink = "https://demeviktor02.github.io/EvernightTaleVideo/lady_eng.mp4";
+    //public string hunVideoLink = "https://demeviktor02.github.io/EvernightTaleVideo/lady_hun.mp4";
+    public VideoClip engVideo;
+    public VideoClip hunVideo;
 
     public GameObject rawimage;
 
@@ -35,7 +37,7 @@ public class Video2 : MonoBehaviour
         }
 
 
-        if (Input.GetButton("Cancel") && inCutscene == true)
+        if (Input.GetButton("Cancel") && inCutscene == true || Input.touchCount > 0 && inCutscene == true)
         {
             videoSkip.SetActive(false);
             videoPlayer.Stop();
@@ -78,11 +80,13 @@ public class Video2 : MonoBehaviour
 
         if (currentSelectedLocale == availableLocales.GetLocale("en"))
         {
-            videoPlayer.url = engVideoLink;
+            //videoPlayer.url = engVideoLink;
+            videoPlayer.clip = engVideo;
         }
         else
         {
-            videoPlayer.url = hunVideoLink;
+            //videoPlayer.url = hunVideoLink;
+            videoPlayer.clip = hunVideo;
         }
     }
 }

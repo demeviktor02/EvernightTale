@@ -12,6 +12,8 @@ public class ControllerManager : MonoBehaviour
     public bool controllerConnected;
     public bool once1;
     public GameObject lastSelectedgameObject;
+
+    public bool inNameWrite;
     void Awake()
     {
 
@@ -42,7 +44,7 @@ public class ControllerManager : MonoBehaviour
         }
 
 
-        if (controllerConnected && !once1 && GameManager.instance.inGame == false)
+        if (controllerConnected && !once1 && GameManager.instance.inGame == false )
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -54,7 +56,7 @@ public class ControllerManager : MonoBehaviour
 
             EventSystem.current.SetSelectedGameObject(lastSelectedgameObject);
         }
-        else if (!controllerConnected && GameManager.instance.inGame == false)
+        else if (!controllerConnected && GameManager.instance.inGame == false && inNameWrite == false)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -65,12 +67,14 @@ public class ControllerManager : MonoBehaviour
         }
 
 
-        if (GameManager.instance.inGame == true && PauseMenu.instance.GameIsPaused == false)
+        if (GameManager.instance.inGame == true && PauseMenu.instance.GameIsPaused == false
+            && Application.platform != RuntimePlatform.Android && Application.platform != RuntimePlatform.IPhonePlayer)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
-        else if (GameManager.instance.inGame == true && PauseMenu.instance.GameIsPaused == true)
+        else if (GameManager.instance.inGame == true && PauseMenu.instance.GameIsPaused == true
+            && Application.platform != RuntimePlatform.Android && Application.platform != RuntimePlatform.IPhonePlayer)
         {
             if (controllerConnected && !once1)
             {

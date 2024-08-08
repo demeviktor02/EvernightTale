@@ -25,10 +25,11 @@ public class GameManager : MonoBehaviour
 
     public bool inCutscene;
 
-    void Awake()
-    {
-       
+    public int current;
+    public TMPro.TMP_Text fps;
 
+    void Awake()
+    {       
         if (instance == null)
         {
             instance = this;
@@ -41,8 +42,14 @@ public class GameManager : MonoBehaviour
 
     }
 
+
     private void Update()
     {
+        //Application.targetFrameRate = 60;
+        //QualitySettings.vSyncCount = 0;
+
+        current = (int)(1f / Time.unscaledDeltaTime);
+        fps.text = current.ToString();
 
         if (inGame)
         {

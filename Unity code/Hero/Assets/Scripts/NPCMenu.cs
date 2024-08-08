@@ -43,7 +43,8 @@ public class NPCMenu : MonoBehaviour
     {
         
 
-        if (Input.GetButton("Talk") && inDialoge && currentDialogEnd == true)
+        if (Input.GetButton("Talk") && inDialoge && currentDialogEnd == true ||
+            Input.touchCount > 0 && inDialoge && currentDialogEnd == true)
         {
             Debug.Log(dialoge.Length);
             Debug.Log(index);
@@ -104,6 +105,8 @@ public class NPCMenu : MonoBehaviour
         {
             if (index == 1 && characterName.ended == false)
             {
+                ControllerManager.instance.inNameWrite = true;
+
                 hideContinue = true;
 
 

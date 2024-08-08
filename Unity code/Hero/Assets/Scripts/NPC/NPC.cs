@@ -56,7 +56,7 @@ public class NPC : MonoBehaviour
     {
 
 
-        if (Input.GetButton("Talk") && inDialoge && currentDialogEnd == true)
+        if (Input.GetButton("Talk") && inDialoge && currentDialogEnd == true || Input.touchCount > 0 && inDialoge && currentDialogEnd)
         {
             currentDialogEnd = false;
             NextLine();
@@ -92,6 +92,7 @@ public class NPC : MonoBehaviour
             animator.Play("TextAppear");
             zeroText();
             StartCoroutine(StartTalking());
+            Mobile.Play("HideAll");
         }
 
         if (inDialoge && currentDialogEnd == true)
@@ -110,6 +111,7 @@ public class NPC : MonoBehaviour
     IEnumerator StartTalking()
     {
         yield return new WaitForSeconds(waitTime);
+
 
         StartCoroutine(Typing());
 
@@ -156,6 +158,7 @@ public class NPC : MonoBehaviour
             }
             else
             {
+                Mobile.Play("ShowAll");
                 NPCCam.SetActive(false);
             }
             

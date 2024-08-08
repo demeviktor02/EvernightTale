@@ -143,7 +143,7 @@ public class PlayerMovement2 : MonoBehaviour
 
         if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
         {
-            horizontal = joystick.Horizontal;
+            horizontal = joystick.Horizontal + Input.GetAxisRaw("Horizontal");
         }
         else
         {

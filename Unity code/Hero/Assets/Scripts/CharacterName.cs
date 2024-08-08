@@ -30,8 +30,11 @@ public class CharacterName : MonoBehaviour
             once = true;
         }
 
-        if (Input.GetButtonDown("Submit") && inputField.gameObject.active == true && inputField.text != "")
+        if (Input.GetButtonDown("Submit") && inputField.gameObject.active == true && inputField.text != "" ||
+            Input.touchCount > 0 && inputField.gameObject.active == true && inputField.text != "")
         {
+            ControllerManager.instance.inNameWrite = false;
+
             animator.Play("EnterHide");
             SaveData.instance.playerData.HeroName = inputField.text;
             (nPCMenu.dialoge[2]["variable"] as StringVariable).Value = SaveData.instance.playerData.HeroName;

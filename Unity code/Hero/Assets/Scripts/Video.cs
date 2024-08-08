@@ -12,8 +12,10 @@ public class Video : MonoBehaviour
     public Animator animator;
     public NPCMenu NPCMenu;
     public bool InCutScene;
-    public string engVideoLink = "https://demeviktor02.github.io/EvernightTaleVideo/intro_eng.mp4";
-    public string hunVideoLink = "https://demeviktor02.github.io/EvernightTaleVideo/intro_hun.mp4";
+    //private string engVideoLink = "https://demeviktor02.github.io/EvernightTaleVideo/intro_eng.mp4";
+    //private string hunVideoLink = "https://demeviktor02.github.io/EvernightTaleVideo/intro_hun.mp4";
+    public VideoClip engVideo;
+    public VideoClip hunVideo;
 
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class Video : MonoBehaviour
         }
         
 
-        if (Input.GetButton("Cancel") && InCutScene == true)
+        if (Input.GetButton("Cancel") && InCutScene == true || Input.touchCount > 0 && InCutScene == true)
         {
             videoPlayer.Stop();
             animator.Play("EndCutscene");
@@ -55,11 +57,13 @@ public class Video : MonoBehaviour
 
         if (currentSelectedLocale == availableLocales.GetLocale("en"))
         {
-            videoPlayer.url = engVideoLink;
+            videoPlayer.clip = engVideo;
+            //videoPlayer.url = engVideoLink;
         }
         else
         {
-            videoPlayer.url = hunVideoLink;
+            videoPlayer.clip = hunVideo;
+            //videoPlayer.url = hunVideoLink;
         }
     }
 }
